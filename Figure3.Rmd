@@ -1,0 +1,695 @@
+---
+title: "Figure3"
+output: html_document
+date: "2024-09-29"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# loading libraries
+```{r}
+library(reshape2)
+library(tidyverse)
+library(ggplot2)
+library(RColorBrewer)
+library(gtable)
+library(ggh4x)
+library(broom)
+library(vegan)
+library(stringi)
+library(gridExtra)
+library(VennDiagram)
+library(eulerr)
+library(magrittr)
+library(circlize)
+library(ComplexHeatmap)
+library(rsample)
+library(randomForest)
+library(ranger)
+library(caret)
+library(skimr)
+library(RANN)
+library(caretEnsemble)
+library(combinat)
+library(plotROC)
+library(cowplot)
+library(AmesHousing)
+library(ggrepel)
+```
+
+# Figure 3a and 3b
+```{r}
+df_supp16 <- read.delim("/Users/chey2/Desktop/DOCK8_paper_codes/Input_files/Supp_16_input.txt", header = TRUE, sep = "\t") # input
+
+pairs_grp <- c("Pre-Tx", "Post-Tx-onIS-1M", "Post-Tx-onIS-2M", "Post-Tx-onIS-3M", "Post-Tx-onIS-6M", "Post-Tx-onIS>12M", "Post-Tx-offIS-12M", "Post-Tx-offIS-24M")
+
+combn(pairs_grp, 2) %>% 
+  data.frame() %>% 
+  select(c(3, 4, 6, 7, 24, 28)) -> comb_pairs
+
+pairwise_PERMANOVA_ctrl <- function(Pcoa_df, Pcoa_metatable, site) {
+  pairwise_PER_out_ctrl <- map(comb_pairs, ~paste(., collapse = " VS ")) %>% 
+    unlist() %>% 
+    unname() %>%
+    data.frame()
+  colnames(pairwise_PER_out_ctrl) = "Comparisons"
+  pairwise_PER_out_ctrl %>% 
+    mutate(R2_time=NA, pvalue_time=NA, F_time=NA) -> pairwise_PER_out_ctrl
+  #ncol(comb_pairs
+  for (i in 1:ncol(comb_pairs)){
+    Pcoa_metatable %>%
+      filter(Group %in% comb_pairs[,i]) %>%
+      group_by(subject_id) %>% 
+      dplyr::summarise(num= dplyr::n()) %>%
+      filter(num == 1) %>%
+      ungroup() %>% .$subject_id -> need_remove # remove unpaired samples
+    
+    Pcoa_metatable %>%
+      filter(Group %in% comb_pairs[,i]) %>%
+      filter(!subject_id %in% need_remove) %>% 
+      droplevels() -> meta_temp
+    
+    if (nrow(meta_temp) >=6){
+      Pcoa_df[rownames(Pcoa_df) %in% meta_temp$variable,] -> df_temp
+      meta_temp <- meta_temp[order(meta_temp$subject_id, meta_temp$Group),]
+      df_temp <- df_temp[match(meta_temp$variable, rownames(df_temp)),]
+      df_temp[is.na(df_temp)] = 0
+      
+      bray_dist <- vegdist(df_temp)
+      fit1 <- adonis2(bray_dist ~ Group, permutations=1, data = meta_temp)
+      pop <- rep(NA, 999)
+      pop[1] <- fit1$R2[1]
+      ctrl <- permute::how(plots = Plots(strata = meta_temp$subject_id) , within = Within(type = "series", mirror = FALSE))
+      nobs <- nrow(df_temp)
+      # nobs <- 5
+      set.seed(111)
+      # pval <- c()
+      for(n in 2:999){
+        idx <- shuffle(nobs, control = ctrl)
+        meta_temp <- meta_temp[idx,]
+        fit.rand <- adonis2(bray_dist ~ Group, data = meta_temp, permutations = 1)
+        pop[n] <- fit.rand$R2[1]
+      }
+      pval <- sum(pop >= pop[1]) / (999)
+      pairwise_PER_out_ctrl[i, 2] <- fit1$R2[1]
+      pairwise_PER_out_ctrl[i, 3] <- pval
+      pairwise_PER_out_ctrl[i, 4] <- fit1$F[1]
+    }
+  }
+  pairwise_PER_out_ctrl$p_adj_time <- p.adjust(pairwise_PER_out_ctrl$pvalue_time, method = "BH")
+  pairwise_PER_out_ctrl$site <- {{site}}
+  return(pairwise_PER_out_ctrl)
+}
+  
+df_supp16$Group <- factor(df_supp16$Group)
+df_supp16$relative_abu <- as.numeric(df_supp16$relative_abu)
+
+Pcoa_for_each_site <- function(site, topn=3, pairwise_PERMANOVA_ctrl_func = TRUE, variable_scalar = 1, label_s = 5, arrow = FALSE, HV = TRUE){
+  
+  # select site
+  if(HV == TRUE) {
+    df_supp16_temp = df_supp16 %>% filter(!Group=="Donor")
+  }
+  else{
+    df_supp16_temp = df_supp16 %>% 
+      filter(!Group %in% c("HVs", "Donor"))
+  }
+  
+  df_supp16_temp %>% 
+    filter(site_specific %in% {{site}}) %>% 
+    select(variable, taxa, relative_abu) %>% 
+    pivot_wider(names_from = taxa, values_from = relative_abu) %>%
+    column_to_rownames(var = "variable") -> Pcoa_df
+  Pcoa_df[is.na(Pcoa_df)] = 0
+  
+  # metatable
+  df_supp16_temp %>%
+    filter(site_specific %in% {{site}}) %>% 
+    select(variable, Group, subject_id) %>%
+    unique() -> Pcoa_metatable
+  
+  # PERMANOVA test
+  set.seed(111)
+  if (pairwise_PERMANOVA_ctrl_func==TRUE){
+    pairwise_PERMANOVA_ctrl_out <- pairwise_PERMANOVA_ctrl(Pcoa_df, Pcoa_metatable, {{site}})
+  }
+  else{
+    pairwise_PERMANOVA_ctrl_out <- NULL
+  }
+  # Compute bray-curtis distance
+  vgd <- vegdist(Pcoa_df, method='bray') # sample are rows
+  trait_pcoa = pcoa(vgd)
+  n <- nrow(Pcoa_df)
+  points <- scale(trait_pcoa$vectors)
+  # Compute covariance of variables with all axises
+  S <- cov(Pcoa_df, points)
+  # select positive values
+  pos_eigen = trait_pcoa$values$Eigenvalues[seq(ncol(S))]
+  # Standardize value of covariance
+  Stand_cov <- S %*% diag((pos_eigen/(n - 1))^(-0.5))
+  colnames(Stand_cov) <- colnames(trait_pcoa$vectors)
+  # Compute contribution
+  varcorr <- Stand_cov^2
+  varcontr <- varcorr %>% data.frame() %>% mutate_if(is.numeric, funs(./sum(.)*100))
+  Vartemp <- list(VarContribution=varcontr,
+                    VarCoordinates=Stand_cov)
+  
+  # first two axises
+  varcontr12 <- Vartemp$VarContribution[,1:2]
+  tmpvars <- names(sort(rowSums(varcontr12), decreasing=TRUE))
+  # target arrow number
+  varlist = tmpvars[1:{{topn}}]
+  
+  biplotcoord <- Vartemp$VarCoordinates[match(varlist, rownames(Vartemp$VarCoordinates)),1:2, drop=FALSE]
+  biplotcoord <- data.frame(biplotcoord, check.names=FALSE)
+  trait_pcoa$U <- biplotcoord
+  
+  # add metainfo
+  trait_pcoa$vectors <- data.frame(trait_pcoa$vectors) %>% rownames_to_column(var = "variable")
+  trait_pcoa$vectors <- trait_pcoa$vectors %>% left_join(Pcoa_metatable)
+  
+  trait_pcoa$vectors %>% 
+  mutate(new_grp = case_when(
+    Group %in% c("Post-Tx-onIS-1M", "Post-Tx-onIS-2M", "Post-Tx-onIS-3M") ~ "Post-Tx-onIS<=3M",
+    TRUE ~ Group
+  )) -> trait_pcoa$vectors
+trait_pcoa$vectors$new_grp <- factor(trait_pcoa$vectors$new_grp, levels = c("Pre-Tx", "Post-Tx-onIS<=3M", "Post-Tx-onIS-6M", "Post-Tx-onIS>12M", "Post-Tx-offIS-12M", "Post-Tx-offIS-24M", "HVs"))
+  
+  my_colors <- c("#C7E9B4", "#47af6f","#7FCDBB", "#FEE090", "#1D91C0", "#081D58", "#c51b8a")
+  names(my_colors) <- c("Pre-Tx", "Post-Tx-onIS<=3M", "Post-Tx-onIS-6M", "Post-Tx-onIS>12M", "Post-Tx-offIS-12M", "Post-Tx-offIS-24M", "HVs")
+  pcoa_df = as.data.frame(trait_pcoa$vectors)
+  arrow_df = as.data.frame(trait_pcoa$U/variable_scalar)
+  arrow_df$variable = rownames(arrow_df) 
+  eigen_values = trait_pcoa$values$Relative_eig[c(1, 2)]*100
+  axes_labs = list(paste("PC1 (", round(eigen_values[[1]], 1), "%)", sep = ''), paste("PC1 (", round(eigen_values[[2]],1), "%)", sep = ''))
+  
+  #pdes={{site}}
+  if(arrow == TRUE) {
+    p0 <- ggplot(pcoa_df, aes(x=Axis.1, y=Axis.2)) +
+      geom_point(aes(color = factor(new_grp)), size = 1.5, alpha=0.99) +
+      geom_segment(data = arrow_df, x = 0, y = 0, alpha = 0.9, mapping = aes(xend = Axis.1, yend = Axis.2), arrow = arrow(length = unit(1, "mm")), linewidth =0.25) +
+      ggrepel::geom_text_repel(data = arrow_df, aes(label = variable),
+                                  size = 2, fontface = "italic") +
+      labs(x = axes_labs[[1]], y = axes_labs[[2]]) +
+      theme_bw() +
+      theme(axis.title.x=element_text(size = 8), axis.text.x = element_text(size = 6), axis.title.y=element_text(size = 8), axis.text.y = element_text(size = 6)) + 
+      theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank()) +
+      scale_color_manual(values=my_colors) +
+      #ggtitle(pdes) +
+      theme(plot.title = element_text(vjust = -9, hjust = 0.03, size = 6)) +
+      theme(legend.position="none") + 
+      guides(color=guide_legend(title = "Group"))}
+  
+  else {
+    p0 <- ggplot(pcoa_df, aes(x=Axis.1, y=Axis.2)) +
+      geom_point(aes(color = factor(new_grp)), size = 1.5, alpha=0.99) +
+      labs(x = axes_labs[[1]], y = axes_labs[[2]]) +
+      theme_bw() +
+      theme(axis.title.x=element_text(size = 8), axis.text.x = element_text(size = 6), axis.title.y=element_text(size = 8), axis.text.y = element_text(size = 6)) + 
+      theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank()) +
+      scale_color_manual(values=my_colors) + 
+      #ggtitle(pdes) +
+      theme(plot.title = element_text(vjust = -9, hjust = 0.03, size = 6)) +
+      theme(legend.position="none") + 
+      guides(color=guide_legend(title = "Group"))}
+  return(list(p0, pairwise_PERMANOVA_ctrl_out))
+  }
+
+
+l_sites <- list("Ra", "Mb", "Vf", "Hp", "Ac", "Ic", "Pc", "Ph")
+
+p3a <- Pcoa_for_each_site(c("Mb", "Ra", "Vf", "Hp", "Ac", "Ic", "Pc", "Ph"), pairwise_PERMANOVA_ctrl_func = FALSE)
+p3b <- Pcoa_for_each_site(c("Vf"), topn=4, variable_scalar = 2.7, label_s = 0.3, arrow = TRUE, HV = TRUE, pairwise_PERMANOVA_ctrl_func = FALSE)
+
+p3a
+p3b
+```
+
+# Figure 3c
+```{r}
+df_supp14 <- read.delim("//Users/chey2/Desktop/DOCK8_paper_codes/Input_files/Supp_14_input.txt", header = TRUE, sep = "\t") 
+
+preoff1224 <-  c("Pt05", "Pt06", "Pt07", "Pt08", "Pt10", "Pt11")
+
+df_supp14 %>% 
+  filter(subject_id %in% preoff1224) %>% 
+  filter(Group %in% c( "Post-Tx-offIS-12M", "Post-Tx-offIS-24M", "Pre-Tx")) -> df_supp14_paired
+
+df_supp14_paired %>% 
+  group_by(subject_id, site_specific, taxa, Group) %>%
+  summarise(abu = sum(relative_abu)) %>%
+  ungroup() -> df_supp14_paired_p
+
+df_supp14_paired_p$Group <- factor(df_supp14_paired_p$Group, levels = c("Pre-Tx", "Post-Tx-offIS-12M", "Post-Tx-offIS-24M"))
+df_supp14_paired_p$subject_id <- factor(df_supp14_paired_p$subject_id, levels = c("Pt05", "Pt06", "Pt07", "Pt08", "Pt10", "Pt11"))
+df_supp14_paired_p$site_specific <- factor(df_supp14_paired_p$site_specific, levels = c("Ra", "Mb", "Vf", "Hp", "Ac", "Ic", "Pc", "Ph"))
+df_supp14_paired_p$taxa <- factor(df_supp14_paired_p$taxa, levels = c("Bacteria", "Actinobacteria", "Micrococcus luteus", "Corynebacterium tuberculostearicum", "Cutibacterium acnes", "Firmicutes", "Staphylococcus hominis", "Staphylococcus epidermidis","Staphylococcus aureus", "Proteobacteria", "Alphaproteobacteria",  "Gammaproteobacteria", "Fungi", "Malassezia restricta", "Malassezia globosa", "Eukaryotic virus", "Gammapapillomavirus 9", "Gammapapillomavirus 24", "Gammapapillomavirus 8", "Gammapapillomavirus 22", "Betapapillomavirus 2", "Betapapillomavirus 1", "Molluscum contagiosum virus"))
+
+color_pall_comb <- c(brewer.pal(5, 'Greens'),
+               brewer.pal(5, 'Oranges')[c(1,3, 4, 5)],
+               brewer.pal(11, 'BrBG')[5:3],
+               brewer.pal(11, "PiYG")[5:3],
+               brewer.pal(5, 'Purples'),
+               brewer.pal(9, 'Blues')[7:8],
+               brewer.pal(9, 'Blues')[3]
+               )
+
+p3c_left <- df_supp14_paired_p %>% 
+  filter(subject_id %in% c("Pt05", "Pt06", "Pt07")) %>% 
+  filter(site_specific %in% c("Ra", "Vf", "Ac", "Ph")) %>% 
+  ggplot(aes(x=Group, y = abu, fill = taxa)) +
+  geom_bar(stat = "identity", position = "fill", width = 0.8) +
+  scale_y_continuous(labels = function(x) x*100) +
+  facet_grid(site_specific~subject_id,scales = "free_x",space = "free_x") +
+  theme(axis.text.x = element_text(angle = 45, size=8, hjust=0.95,vjust=1), axis.title.x=element_blank(), axis.text.y=element_text(size=7), axis.title.y=element_text(size=12)) +
+  theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank(), legend.box = "vertical", legend.title=element_text(size=12), legend.text=element_text(size=8), legend.key.size=unit(0.5, "cm")) +
+  theme(strip.text.x=element_text(size=8), strip.text.y=element_text(size=8)) +
+  ylab("Mean relative abundance (%)") + 
+  scale_fill_manual("Classification", values = color_pall_comb) +
+  guides(fill=guide_legend(ncol=2))
+
+
+# p3c_right
+df_supp14$Group <- factor(df_supp14$Group, levels = c("Pre-Tx", "Post-Tx-onIS-1M", "Post-Tx-onIS-2M", "Post-Tx-onIS-3M", "Post-Tx-onIS-6M", "Post-Tx-offIS-12M", "Post-Tx-offIS-24M", "HVs", "Donor"))
+
+
+Bray_distance <- function(in_put, category = c("Pre-Tx", "Post-Tx-onIS-1M", "Post-Tx-onIS-2M", "Post-Tx-onIS-3M", "Post-Tx-onIS-6M", "Post-Tx-offIS-12M", "Post-Tx-offIS-24M"), abu){
+  df1 <- df_supp14 %>% 
+    filter(subject_id %in% {{in_put}}) %>% 
+    filter(Group %in% {{category}})
+  
+  df1 %>% 
+    group_by(subject_id, site_specific, taxa, Group) %>% 
+    summarise(mean_abu = mean({{abu}})) %>% 
+    ungroup() -> df_2
+  # remove unpaired sites
+
+  if (length({{category}}) ==2){
+    df_2 %>%
+    select(subject_id, site_specific, Group) %>%
+    unique() %>%
+    group_by(subject_id, site_specific) %>%
+    summarise(num=n()) %>% 
+    filter(num == 1) %>%
+    unite("target", subject_id:site_specific) %>% 
+    ungroup() %>% 
+    .$target -> need_remove
+  }
+  else if (length({{category}}) ==3){
+    df_2 %>%
+    select(subject_id, site_specific, Group) %>%
+    unique() %>%
+    group_by(subject_id, site_specific) %>%
+    summarise(num=n()) %>% 
+    filter(num <= 2) %>%
+    unite("target", subject_id:site_specific) %>% 
+    ungroup() %>% 
+    .$target -> need_remove
+  }
+    
+  df_2 %>% 
+    filter(!paste(subject_id, site_specific, sep = "_") %in% need_remove) %>% 
+    nest(data=c(taxa, Group, mean_abu)) -> nested_df_2
+
+    nested_df_2 %>% 
+      mutate(distance = map(
+        data, function(x){
+          x <- x %>% pivot_wider(names_from = taxa, values_from = mean_abu) %>% column_to_rownames(var = "Group")
+          dis <- vegdist(x, method="bray") %>%
+            as.matrix() %>%
+            melt()
+          if (length({{category}}) ==2){
+            dis = dis[c(3),]
+          } 
+          else if (length({{category}}) ==3){
+            dis = dis[c(4, 8),]
+          }
+          return(dis)
+        }
+      )) -> nested_df_dist
+    
+    return(nested_df_dist)
+}
+
+Bray_postoff12_24 <- Bray_distance(preoff1224, category = c("Pre-Tx", "Post-Tx-offIS-12M", "Post-Tx-offIS-24M"), relative_abu)
+
+Bray_postoff12_24$distance <- pmap(list(Bray_postoff12_24$subject_id,Bray_postoff12_24$site_specific,Bray_postoff12_24$distance), function(id, site, data){
+  data$subject_id <- id
+  data$site_specific <- site
+  return(data)})
+
+pre_post12_24_df <- do.call(rbind, Bray_postoff12_24$distance)
+pre_post12_24_df %>%
+  group_by(Var2, site_specific) %>% 
+  summarise(mean = mean(value), sd = sd(value)) %>% 
+  ungroup() -> Bray_pre_post12_24_df
+
+Bray_pre_post12_24_df %>% 
+  select(site_specific) %>% 
+  unique() %>% 
+  mutate(Var2="Pre-Tx", mean=0, sd=0) %>% 
+  relocate(site_specific, .after = Var2) -> Pre_value
+
+rbind(Bray_pre_post12_24_df, Pre_value) -> Bray_pre_post1224_all_plot
+
+Bray_pre_post1224_all_plot$Var2 <- factor(Bray_pre_post1224_all_plot$Var2, levels = c("Pre-Tx", "Post-Tx-offIS-12M", "Post-Tx-offIS-24M"))
+Bray_pre_post1224_all_plot$site_specific <- factor(Bray_pre_post1224_all_plot$site_specific, levels = c("Ra", "Mb", "Vf", "Hp", "Ac", "Ic", "Pc", "Ph"))
+
+p3c_right <- Bray_pre_post1224_all_plot %>%
+  filter(site_specific %in% c("Ra", "Vf", "Ac", "Ph")) %>% 
+  ggplot(aes(x=Var2, y=mean)) +
+  geom_point(size=0.7) +
+  geom_line(aes(group = 1), size=0.5) +
+  facet_grid(site_specific~.) +
+  geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=.3, linewidth=.2) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, size=8, hjust=0.95,vjust=1), axis.title.x=element_blank(), axis.text.y=element_text(size=8), axis.title.y=element_text(size=10)) +
+  theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank(), legend.title=element_text(size=10), legend.text=element_text(size=8)) + 
+  ylab("Bray Curtis dissimilarity")
+
+p3c_left
+p3c_right
+```
+
+# Figure 3d
+```{r}
+df_3d <- read.delim("/Users/chey2/Desktop/DOCK8_paper_codes/Input_files/fig3d_input.txt", header = TRUE, sep = "\t") 
+
+df_3d$new_grp <- factor(df_3d$new_grp, levels = c("Baseline", "12M"))
+df_3d$final_taxa <- factor(df_3d$final_taxa, levels = c("Bacteria", "Actinobacteria", "Micrococcus luteus", "Corynebacterium tuberculostearicum", "Cutibacterium acnes", "Firmicutes", "Staphylococcus hominis", "Staphylococcus epidermidis","Staphylococcus aureus", "Proteobacteria", "Alphaproteobacteria",  "Gammaproteobacteria", "Fungi", "Malassezia restricta", "Malassezia globosa"))
+df_3d$site_specific <- factor(df_3d$site_specific, levels = c("Ra", "Mb", "Vf", "Hp", "Ac", "Ic", "Pc", "Ph"))
+color <- c(brewer.pal(5, 'Greens'),
+               brewer.pal(5, 'Oranges')[c(1,3, 4, 5)],
+               brewer.pal(11, 'BrBG')[5:3],
+               brewer.pal(11, "PiYG")[5:3])
+
+
+p3d <- df_3d %>% 
+  filter(site_specific %in% c("Ra", "Vf", "Ac", "Ph")) %>% 
+   ggplot(aes(x=new_grp, y = new_abu, fill = factor(final_taxa))) +
+    geom_bar(stat = "identity", position = "fill", width = 0.8) +
+    scale_y_continuous(labels = function(x) x*100) +
+    facet_grid(site_specific~subject_id,scales = "free_x",space = "free_x") +
+    theme(axis.text.x = element_text(angle = 45, size=8, hjust=0.95,vjust=1), axis.title.x=element_blank(), axis.text.y=element_text(size=7), axis.title.y=element_text(size=12)) +
+   theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank(), legend.box = "vertical", legend.title=element_text(size=12), legend.text=element_text(size=8), legend.key.size=unit(0.5, "cm")) + 
+  theme(strip.text.x=element_text(size=8), strip.text.y=element_text(size=8)) +
+  ylab("Mean relative abundance (%)") + 
+    scale_fill_manual("Classification", values = color) +
+  guides(fill=guide_legend(ncol=2))
+
+p3d
+```
+
+# Figure 3e
+```{r}
+df_3e <- read.delim("/Users/chey2/Desktop/DOCK8_paper_codes/Input_files/fig3e_input.txt", header = TRUE, sep = "\t")
+
+df_3e$Group <- factor(df_3e$Group, levels = c("Pre-Tx", "Post-Tx-offIS-12M", "Post-Tx-offIS-24M"))
+df_3e$Subject <- factor(df_3e$Subject, levels = c("Pt04", "Pt05", "Pt06"))
+df_3e$Relative_abu <- as.numeric(df_3e$Relative_abu)
+df_3e$MLST <- factor(df_3e$MLST, levels = c("ST1 (IA1)", "ST2 (IA2)", "ST4 (IA1)", "ST5 (IB)", "ST139 (II)", "ST153"))
+
+p3e <- ggplot(df_3e, aes(x=Group, y=Relative_abu, fill=MLST)) + 
+  geom_bar(stat = "identity", width = 0.8) +
+  facet_grid(~factor(Subject), scales = "free_x", space = "free_x") + 
+    theme_bw() +
+    theme(axis.text.x = element_text(angle = 45, size=8, hjust=1, vjust=0.98), axis.title.x=element_blank(), axis.text.y=element_text(size=8), axis.title.y=element_text(size=10)) +
+  theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank(), legend.title=element_text(size=10), legend.text=element_text(size=8)) + 
+  ylab("Relative abundance (%)") +
+    scale_fill_manual("Cutibacterium acnes strains", values = c("#e8712f", "#608cff", "#8bb930", "#95007f", "#ce1558", "#46054c"))
+
+p3e
+
+```
+
+# Figure 3f
+```{r}
+df_supp19d <- read.delim("//Users/chey2/Desktop/DOCK8_paper_codes/Input_files/Supp_19d_input.txt", header = TRUE, sep = "\t") # input
+
+df_supp19d$Group <- factor(df_supp19d$Group, levels = c("Pre-Tx", "Post-Tx-12M", "Post-Tx-24M", "Donor"))
+df_supp19d$subject_id <- factor(df_supp19d$subject_id, levels = c("Pt07", "Pt08", "Pt09", "Pt10", "Pt14", "Pt15", "Pt18"))
+
+df_supp19d$site_specific <- factor(df_supp19d$site_specific, levels = c("Ra", "Mb", "Vf", "Hp", "Ac", "Ic", "Pc", "Ph"))
+
+df_supp19d$taxa <- factor(df_supp19d$taxa, levels = c("Bacteria", "Actinobacteria", "Micrococcus luteus", "Corynebacterium tuberculostearicum", "Cutibacterium acnes", "Firmicutes", "Staphylococcus hominis", "Staphylococcus epidermidis","Staphylococcus aureus", "Proteobacteria", "Alphaproteobacteria",  "Gammaproteobacteria", "Fungi", "Malassezia restricta", "Malassezia globosa", "Eukaryotic virus", "Gammapapillomavirus 9", "Gammapapillomavirus 24", "Gammapapillomavirus 8", "Gammapapillomavirus 22", "Betapapillomavirus 2", "Betapapillomavirus 1", "Molluscum contagiosum virus"))
+
+p3f_left <- df_supp19d %>% 
+  filter(!Group=="Pre-Tx") %>% 
+  filter(!site_specific %in% c("Mb", "Hp", "Ph")) %>% 
+  filter(subject_id %in% c("Pt07", "Pt08", "Pt09")) %>% 
+  ggplot(aes(x=as.factor(Group), y = relative_abu, fill = taxa)) +
+  geom_bar(stat = "identity", position = "fill", width = 0.8) +
+  scale_y_continuous(labels = function(x) x*100) +
+  facet_grid(site_specific~subject_id,scales = "free_x",space = "free_x") +
+  theme(axis.text.x = element_text(angle = 45, size=8, hjust=0.95,vjust=1), axis.title.x=element_blank(), axis.text.y=element_text(size=7), axis.title.y=element_text(size=12)) +
+  theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank(), legend.box = "vertical", legend.title=element_text(size=12), legend.text=element_text(size=8), legend.key.size=unit(0.5, "cm")) +
+  theme(strip.text.x=element_text(size=8), strip.text.y=element_text(size=8)) +
+  ylab("Mean relative abundance (%)") + 
+  scale_fill_manual("Classification", values = color_pall_comb) +
+  guides(fill=guide_legend(ncol=2))
+
+
+df3f <- read.delim("/Users/chey2/Desktop/DOCK8_paper_codes/Input_files/fig3f_input.txt", header = TRUE, sep = "\t", check.names = FALSE) # input
+subject_lt <- c("Pt07", "Pt10", "Pt08", "Pt09")
+
+Bray_distance_donor <- function(in_put, category = c("Post-Tx-12M", "Post-Tx-24M", "Donor")){
+  # filter by sample 
+  df1 <- df3f %>% 
+    filter(new_subject %in% {{in_put}}) %>% 
+    filter(new_grp %in% {{category}})
+  
+  df1 %>% 
+    filter(site_specific %in% c("Ra", "Vf", "Ac", "Ic", "Pc")) %>% 
+    select(site_specific, taxa, relative_abu, new_grp) -> df_2
+  
+  df_2 %>% 
+    nest(data=c(taxa, new_grp, relative_abu)) -> nested_df_2
+  
+  nested_df_2 %>% 
+    mutate(distance = map(data, function(x){
+      x <- x %>% pivot_wider(names_from = taxa, values_from = relative_abu) %>% column_to_rownames(var = "new_grp")
+      x[is.na(x)] = 0
+      dis_temp <- vegdist(x, method="bray") %>%
+        as.matrix() 
+      lower_tri_indices <- which(lower.tri(dis_temp), arr.ind = TRUE)
+      values <- dis_temp[lower_tri_indices]
+      pairwise_comparisons <- apply(lower_tri_indices, 1, 
+                              function(idx) paste(rownames(dis_temp)[idx[1]], 
+                                                  colnames(dis_temp)[idx[2]], 
+                                                  sep=" - "))
+      comparison_df <- data.frame(PairwiseComparison = pairwise_comparisons, Value = values)
+      return(comparison_df)
+    })) -> nested_df_dist
+  nested_df_dist$subject_id <- {{in_put}}
+  return(nested_df_dist)
+  }
+
+dist_Pt07 <- Bray_distance_donor("Pt07", category = c("Post-Tx-12M", "Post-Tx-24M", "Donor"))
+dist_Pt10 <- Bray_distance_donor("Pt10", category = c("Post-Tx-12M", "Post-Tx-24M", "Donor"))
+dist_Pt08 <- Bray_distance_donor("Pt08", category = c("Post-Tx-12M", "Post-Tx-24M", "Donor"))
+dist_Pt09 <- Bray_distance_donor("Pt09", category = c("Post-Tx-12M", "Post-Tx-24M", "Donor"))
+
+donor_dist_l <- list(dist_Pt07, dist_Pt08, dist_Pt09, dist_Pt10)
+
+lapply(donor_dist_l, function(x){
+  y <- pmap(list(x$subject_id,x$site_specific,x$distance), function(id, site, data){
+  data$subject_id <- id
+  data$site_specific <- site
+  return(data)}) %>% do.call(rbind, .)
+  return(y)
+}) %>% do.call(rbind, .) -> donor_dis_all
+
+donor_dis_all %>% 
+  wilcox_test(data = ., Value ~ PairwiseComparison, p.adjust.method = "BH") -> donor_dis_all_stat
+
+donor_dis_all$site_specific <- factor(donor_dis_all$site_specific, levels = c("Ra", "Vf", "Ac", "Ic", "Pc"))
+my_comparisons <- list(c("Post-Tx-24M - Post-Tx-12M", "Donor - Post-Tx-12M"), c("Post-Tx-24M - Post-Tx-12M", "Donor - Post-Tx-24M"), c("Donor - Post-Tx-12M", "Donor - Post-Tx-24M"))
+
+p3f_right <- donor_dis_all %>% 
+  ggboxplot(x="PairwiseComparison", y="Value", size = 0.1) +
+  geom_jitter(aes(color=site_specific), position = position_jitter(width = 0.15), size=0.2) +
+  scale_color_manual(values = c("#8177cc","#60a862","#c75a93","#b2953e","#cc5d43")) + 
+  geom_pwc(aes(group=PairwiseComparison), method = "wilcox_test", label = "{p.adj.format} {p.adj.signif}", p.adjust.method = "BH", size = 0.1, label.size = 5) +
+  #stat_compare_means(comparisons = my_comparisons, size=3, method = "wilcox.test",  p.adjust.methods = "BH") +
+  theme(axis.text.x=element_text(size = 8, angle = 45, hjust=1, vjust=0.99), axis.ticks.x=element_blank(), axis.title.x=element_blank(), axis.title.y=element_text(size=10), axis.text.y=element_text(size=8)) +
+  ylab("Bray Curtis dissimilarity") +
+  theme(legend.title=element_text(size=10), legend.text=element_text(size=8), legend.position = "right") +
+  labs(color="Skin site")
+
+p3f_left
+p3f_right
+```
+
+# Figure 3g
+```{r}
+df_3g <- read.delim("/Users/chey2/Desktop/DOCK8_paper_codes/Input_files/fig3g_input.txt", header = TRUE, sep = "\t") # input
+
+df_3g$Group <- factor(df_3g$Group, levels = c("Pre-Tx", "Post-Tx-onIS-1M", "Post-Tx-onIS-2M", "Post-Tx-onIS-3M","Post-Tx-onIS-6M", "Post-Tx-onIS>12M", "Post-Tx-offIS-12M", "Post-Tx-offIS-24M"))
+
+p3g1 <- df_3g %>% 
+  ggplot(aes(x=Group, y=Number)) + 
+  geom_boxplot(lwd = 0.15, outlier.size = 0.1, outlier.shape = NA, width=0.4) +
+  geom_dotplot(binaxis='y', stackdir='center',stackratio=1.8, dotsize=0.2, aes(fill=variable), color=NA) + 
+  facet_grid(variable~., scales = "free") + 
+  scale_fill_manual("Group", values = c("#B0B0B0")) + 
+  theme(axis.text.x = element_text(angle = 45, size=8, hjust=0.95,vjust=1), axis.title.x=element_blank(), axis.text.y=element_text(size=8), axis.title.y=element_blank()) +
+  theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank(), legend.title=element_text(size=10), legend.text=element_text(size=7)) + scale_y_continuous(
+  labels = scales::number_format(accuracy = 0.1))
+
+p3g1
+
+
+df_3g <- read.delim("/Users/chey2/Desktop/DOCK8_paper_codes/Input_files/fig3g2_input.txt", header = TRUE, sep = "\t") # input
+
+df_3g %>% 
+  group_by(variable, SS) %>% 
+  summarise(new_value=sum(value)) %>% 
+  ungroup() %>% 
+  data.frame() %>% 
+  pivot_wider(names_from = variable, values_from = new_value) %>% 
+  column_to_rownames(var = "SS") -> df_3g_input
+
+df_3g %>% 
+  dplyr::select(variable, site_specific) %>% 
+  unique() %>% 
+  group_by(site_specific) %>% 
+  nest() -> nested_sites_16s
+
+meta_clean_16s_scorad <- df_3g %>% 
+  filter(!Group=="HVs") %>% 
+  select(variable, subject_id, site_specific, Tanner, Sex, Antibiotics, SCORAD, Immune) %>% 
+  unique()
+
+robust_random_nested_mlm_16s_scorad <- function(my_data){
+  fixed_factors <- c("SCORAD", "Antibiotics", "Sex", "Tanner", "Immune")
+  random_factors <- "(1|subject_id)"
+  fixed_effects <- paste("abundance", paste(fixed_factors, collapse = ' + '), sep = " ~ ")
+  full_formula <- paste(fixed_effects, random_factors, sep = " + ")
+
+  set.seed(111)
+  m <- lmerTest::lmer(as.formula(full_formula), data = my_data)
+  m_out <- data.frame(broom.mixed::tidy(m, effects = c("fixed"), conf.int = TRUE)[-1,]) %>% 
+    select(term, estimate, conf.low, conf.high, std.error, statistic, df, p.value) %>% 
+    mutate(padj = p.adjust(p.value, method = "BH")) %>%
+    mutate_if(is.numeric, round, digits=3) %>% 
+    unite("CI (95%)", conf.low:conf.high, sep="-")
+  return(m_out)
+}
+
+run_mlm_16s_scorad <- function(site, nested.df, trans.method){
+  target_met <- {{nested.df}} %>% 
+    filter(site_specific == {{site}}) %>% 
+    .[[2]] %>% 
+    .[[1]] %>% 
+    .$variable
+  my_df <- df_3g_input[,colnames(df_3g_input) %in% c(target_met)]
+  my_df[rowSums(my_df>0)>=0.1*ncol(my_df),] -> my_df
+  df_transform <- decostand(as.data.frame(my_df), {{trans.method}}, MARGIN = 2)
+  df_clean_otu_ml <- t(df_transform) %>% 
+    data.frame(check.names = FALSE) %>% 
+    rownames_to_column(var = "tube_label")
+  
+  meta_clean_16s_scorad %>% 
+    filter(variable %in% df_clean_otu_ml$tube_label) -> meta_clean_16s_scorad_new
+  meta_clean_16s_scorad_new <- meta_clean_16s_scorad_new %>% 
+    mutate_at(c("SCORAD"), as.numeric)
+  meta_clean_16s_scorad_new <- meta_clean_16s_scorad_new %>% 
+    mutate_at(c("subject_id", "site_specific", "Sex", "Antibiotics", "Tanner", "Immune"), as.factor)
+  meta_clean_16s_scorad_new <- meta_clean_16s_scorad_new %>% 
+    mutate_at(c("SCORAD"), ~scale(., center = TRUE, scale = TRUE)) 
+  meta_clean_16s_scorad_new$SCORAD <- as.numeric(meta_clean_16s_scorad_new$SCORAD)
+  
+  # combine results
+  test_df <- left_join(df_clean_otu_ml, meta_clean_16s_scorad_new, by=c("tube_label"="variable")) %>%
+  pivot_longer(cols = c(-subject_id, -tube_label, -site_specific, -Sex, -Tanner, -Antibiotics, -SCORAD, -Immune), names_to = "species", values_to = "abundance") %>%
+  arrange(species)
+  
+  mlm_out <- test_df %>%
+    tidyr::nest(data = c(-species)) %>%
+    dplyr::mutate(model = map(data, ~ robust_random_nested_mlm_16s_scorad(my_data = .))) %>%
+    dplyr::select(-data) %>%
+    unnest(cols = c(model)) %>% 
+    data.frame() %>%
+    dplyr::rename(feature = species, metadata = term, coef = estimate, stderr = std.error, pval = p.value) %>%
+    mutate(log2FoldChange = log2(exp(coef))) %>% 
+    mutate(site=paste0({{site}}))
+  return(mlm_out)
+} 
+
+All_sites = c("Ra", "Mb", "Vf", "Hp", "Ac", "Ic", "Pc", "Ph")
+rclr_mlm_16s_scorad <- map(All_sites, run_mlm_16s_scorad, nested_sites_16s, "rclr")
+rclr_mlm_16s_scorad_out <- do.call(rbind, rclr_mlm_16s_scorad)
+
+
+rclr_mlm_16s_scorad_out %>% 
+  filter(metadata=="SCORAD") %>% 
+  select(c(feature, pval, padj, log2FoldChange, site))-> df_scorad
+
+ass_plot <- function(site){
+  df_p = paste("df", {{site}}, sep = "_")
+  df_p = df_scorad %>% 
+    filter(site == {{site}})
+  df_p <-  df_p %>% 
+    mutate_at(c(2:4), as.numeric) %>% 
+    mutate(across(where(is.numeric), round, 3))
+  df_p = df_p %>% 
+    mutate(group = case_when(
+    padj <= 0.1 & log2FoldChange > (0.7) ~ "increased",
+    padj <= 0.1 & log2FoldChange < (-0.7) ~ "decreased",
+    TRUE ~ "ns"
+  ))
+
+  cols <- c("increased" = "#d04671", "decreased" = "#936bc0", "ns" = "grey") 
+  sizes <- c("increased" = 1.5, "decreased" = 1.5, "ns" = 1)
+  alphas <- c("increased" = 1, "decreased" = 1, "ns" = 0.7)
+  species <- df_p %>% 
+    filter(group %in% c("increased", "decreased")) 
+  df_p <- df_p %>% 
+  mutate(group=fct_relevel(group, "increased", "decreased"))
+  pdes <- paste({{site}})
+  
+  p <- df_p %>% 
+    ggplot(aes(x=log2FoldChange, y=-log10(padj), size=group, alpha=group)) + 
+    geom_point(aes(color=group)) +
+    geom_hline(yintercept=-log10(0.1), linetype = "dashed", size=0.1) +
+    geom_vline(xintercept = c(-0.6, 0.6),
+             linetype = "dashed", size=0.1) +
+  scale_color_manual(values = cols) +
+  scale_size_manual(values = sizes) +
+  scale_alpha_manual(values = alphas) +
+  # geom_label_repel(data = species,
+  #                  aes(label=feature), fill = "white") +
+  geom_text_repel(data = species, aes(label = feature), show.legend  = F) +
+  theme_bw() + # Select theme with a white background  
+  theme(panel.border = element_rect(colour = "black", fill = NA, size= 0.5),    
+        panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank()) +
+  scale_x_continuous(breaks = c(seq(-2, 2, 1)),     
+                     limits = c(-2, 2)) +
+  scale_y_continuous(breaks = c(seq(0, 3, 0.5)),     
+                     limits = c(0, 3)) + 
+    theme(axis.title.x=element_text(size=8), axis.title.y=element_text(size=8)) + 
+    ylab("-log10(adjusted P-value)") +
+    theme(legend.position = "none") +
+    ggtitle(pdes) +
+    theme(plot.title = element_text(vjust = -10, hjust = 0.04, size = 6))
+  return(p)
+}
+
+all_sites <- c("Ra", "Mb", "Ac", "Ic", "Vf", "Pc", "Hp", "Ph")
+asso_all_plots <- map(all_sites, ass_plot)
+
+p3g2 <- asso_all_plots[[3]]
+
+p3g1
+p3g2
+```
+
+
+
+
+
+
+
