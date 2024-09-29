@@ -1,0 +1,278 @@
+---
+title: "Figure4"
+output: html_document
+date: "2024-09-29"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# loading libraries
+```{r}
+library(reshape2)
+library(tidyverse)
+library(ggplot2)
+library(RColorBrewer)
+library(gtable)
+library(ggh4x)
+library(broom)
+library(vegan)
+library(stringi)
+library(gridExtra)
+library(VennDiagram)
+library(eulerr)
+library(magrittr)
+library(circlize)
+library(ComplexHeatmap)
+library(rsample)
+library(randomForest)
+library(ranger)
+library(caret)
+library(skimr)
+library(RANN)
+library(caretEnsemble)
+library(combinat)
+library(plotROC)
+library(cowplot)
+library(AmesHousing)
+```
+
+# Figure 4a
+```{r}
+df_4a <- read.delim("/Users/chey2/Desktop/DOCK8_paper_codes/Input_files/fig4a_input.txt", header = TRUE, sep = "\t") # input
+df_4a$grp <- factor(df_4a$grp, levels = c("increased", "normal", "decreased"))
+df_4a$Group <- factor(df_4a$Group, levels = c("Pre-Tx", "Post-Tx-onIS-1M", "Post-Tx-onIS-2M", "Post-Tx-onIS-3M","Post-Tx-onIS-6M", "Post-Tx-onIS>12M", "Post-Tx-offIS-12M", "Post-Tx-offIS-24M"))
+
+p4a <- df_4a %>%  
+  filter(KEY %in% c("CD4", "CD8", "NK", "CD19")) %>% 
+  ggplot(aes(x=Group, y=log_num)) + 
+  geom_boxplot(lwd = 0.15, outlier.size = 0.1, outlier.shape = NA, width=0.4) +
+  geom_dotplot(binaxis='y', stackdir='center',stackratio=1.8, dotsize=1, aes(fill=grp), color=NA) +
+  # geom_smooth(method = "loess", se = FALSE, aes(group = KEY), span = 0.7, fill="lightgrey", size=0.3) + 
+  facet_grid(KEY~., scales = "free") + 
+  scale_fill_manual("Group", values = c("#dfd049", "#1E6CB5", "#936bc0")) + 
+  theme(axis.text.x = element_text(angle = 45, size=8, hjust=0.95,vjust=1), axis.title.x=element_blank(), axis.text.y=element_text(size=8), axis.title.y=element_blank()) +
+  theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank(), legend.title=element_text(size=10), legend.text=element_text(size=7)) + scale_y_continuous(
+  labels = scales::number_format(accuracy = 0.1)) 
+
+p4a
+```
+
+# Figure 4b
+```{r}
+nano.obj.clean <- LoadNanostring(data.dir = "/Users/chey2/Desktop/DOCK8_paper_codes/Input_files/EHKSlide1clean", fov = "EHKSlide1clean")
+nano.obj.clean.new <- subset(nano.obj.clean, subset = nCount_Nanostring > 50 & nCount_Nanostring < 400 & nFeature_Nanostring > 30 & nFeature_Nanostring < 180) 
+nano.obj.clean.new.sct <- SCTransform(nano.obj.clean.new, assay = "Nanostring", clip.range = c(-10, 10))
+nano.obj.clean.new.sct <- RunPCA(nano.obj.clean.new.sct, verbose = FALSE)
+nano.obj.clean.new.sct <- RunUMAP(nano.obj.clean.new.sct, dims = 1:15)
+nano.obj.clean.new.sct <- FindNeighbors(nano.obj.clean.new.sct, reduction = "pca", dims = 1:15)
+nano.obj.clean.new.sct <- FindClusters(nano.obj.clean.new.sct, resolution = 0.24) 
+
+nano.obj.clean.new.sct.default <- FindAllMarkers(nano.obj.clean.new.sct, only.pos = TRUE)
+
+cluster.ids <- c("KC_basal", "KC_suprabasal_2", "Immune cells", "KC_suprabasal_1", "Fibroblasts", "KC_Granular")
+names(cluster.ids) <- levels(nano.obj.clean.new.sct)
+nano.obj.clean.new.sct <- RenameIdents(nano.obj.clean.new.sct, cluster.ids)
+
+nano.obj.clean.new.sct@active.ident <- factor(nano.obj.clean.new.sct@active.ident, levels = c("KC_basal", "KC_suprabasal_1", "KC_suprabasal_2", "KC_Granular", "Immune cells", "Fibroblasts"))
+
+#Figure 4b
+
+p4b <- ImageDimPlot(nano.obj.clean.new.sct, fov = "EHKSlide1clean", size = 0.3, border.color = "NA") + scale_fill_manual(values = c("#f54888","#009166", "#9be68c", "#006bbf", "#7a65dd","#e5b930"))
+p4b
+```
+
+# Figure 4c1
+```{r}
+df_metadata <- read.delim2(file = "/Users/chey2/Desktop/DOCK8_paper_codes/Input_files/EHKSlide1clean/fig4_input.txt", header = TRUE, sep = "\t", stringsAsFactors = FALSE, check.names = FALSE)
+
+df_metadata %>% 
+  filter(fov %in% c(1:19, 21)) -> df_metadata_clean_updated_pre
+df_metadata %>% 
+  filter(fov %in% c(23:35, 37)) -> df_metadata_clean_updated_post
+
+nano.obj.clean.new.sct@meta.data[rownames(nano.obj.clean.new.sct@meta.data) %in% df_metadata_clean_updated_pre$id_fov,] -> pre.meta.df
+nano.obj.clean.new.sct@meta.data[rownames(nano.obj.clean.new.sct@meta.data) %in% df_metadata_clean_updated_post$id_fov,] -> post.meta.df
+
+pre.meta.df %>% select(seurat_clusters) %>% 
+  mutate(group="pre") -> pre.meta.df.new
+post.meta.df %>% select(seurat_clusters) %>% 
+  mutate(group="post") -> post.meta.df.new
+
+pre.meta.df.new$cell <- cluster.ids[as.character(pre.meta.df.new$seurat_clusters)]
+post.meta.df.new$cell <- cluster.ids[as.character(post.meta.df.new$seurat_clusters)]
+pre.post.meta.df.new <- rbind(pre.meta.df.new, post.meta.df.new)
+
+pre.post.meta.df.new %>% 
+  group_by(group, cell) %>% 
+  summarise(num=n()) %>% 
+  ungroup() -> pre.post.meta.df.new.plot
+
+pre.post.meta.df.new.plot$group <- factor(pre.post.meta.df.new.plot$group, levels = c("pre", "post"))
+pre.post.meta.df.new.plot$cell <- factor(pre.post.meta.df.new.plot$cell, levels = c("KC_basal", "KC_suprabasal_2", "KC_suprabasal_1",  "Fibroblasts", "Immune cells", "KC_Granular"))
+
+p4c_right <- pre.post.meta.df.new.plot %>% 
+  ggplot(aes(x=group, y=num, fill=cell)) +
+   geom_bar(stat = "identity", position = "fill", width = 0.5) +
+   theme_bw() +
+  theme(axis.text.x = element_text(size=8), axis.title.x=element_blank(), axis.text.y=element_text(size=8), axis.title.y=element_text(size=10)) +
+  theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank(), legend.title=element_text(size=10), legend.text=element_text(size=8)) + 
+  scale_y_continuous(labels = function(x) x*100) +
+  ylab("Composition (%)") +
+    scale_fill_manual("Type", values = c("#f54888",   "#9be68c", "#009166", "#e5b930", "#7a65dd", "#006bbf"))
+
+
+nano.obj.clean.new.sct@meta.data %>% 
+  mutate(group=case_when(
+    rownames(nano.obj.clean.new.sct@meta.data) %in% df_metadata_clean_updated_pre$id_fov ~ "pre",
+    TRUE ~ "post"
+  )) -> nano.obj.clean.new.sct@meta.data
+
+nano.obj.clean.new.sct@meta.data$group <- factor(nano.obj.clean.new.sct@meta.data$group, levels = c("pre", "post"))
+
+p4c_left <- DimPlot(nano.obj.clean.new.sct, reduction = "umap", label = FALSE, cols = c("#f54888","#009166", "#9be68c","#006bbf", "#7a65dd", "#e5b930"), split.by = "group")
+
+p4c_left
+p4c_right
+```
+
+# Figure 4c2
+```{r}
+subset(nano.obj.clean.new.sct, idents = "Immune cells") -> nano.obj.immune
+nano.obj.immune.sct <- SCTransform(nano.obj.immune, assay = "Nanostring", clip.range = c(-10, 10))
+nano.obj.immune.sct <- RunPCA(nano.obj.immune.sct, verbose = FALSE)
+nano.obj.immune.sct <- RunUMAP(nano.obj.immune.sct, dims = 1:15)
+nano.obj.immune.sct <- FindNeighbors(nano.obj.immune.sct, reduction = "pca", dims = 1:15)
+nano.obj.immune.sct <- FindClusters(nano.obj.immune.sct, resolution = 0.3) #0.45, 0.25
+p.yc.nano.obj.immune.sct <- DimPlot(nano.obj.immune.sct, reduction = "umap", label = TRUE)
+nano.obj.immune.sct.default <- FindAllMarkers(nano.obj.immune.sct, only.pos = TRUE)
+# cluster 2 contaminated
+subset(nano.obj.immune.sct, idents = c(0, 1, 3, 4)) -> nano.obj.immune.subset1
+nano.obj.immune.subset1.sct <- SCTransform(nano.obj.immune.subset1, assay = "Nanostring", clip.range = c(-10, 10))
+nano.obj.immune.subset1.sct <- RunPCA(nano.obj.immune.subset1.sct, verbose = FALSE)
+nano.obj.immune.subset1.sct <- RunUMAP(nano.obj.immune.subset1.sct, dims = 1:15)
+nano.obj.immune.subset1.sct <- FindNeighbors(nano.obj.immune.subset1.sct, reduction = "pca", dims = 1:15)
+nano.obj.immune.subset1.sct <- FindClusters(nano.obj.immune.subset1.sct, resolution = 0.5) #0.45, 0.25
+p.yc.nano.obj.immune.subset1.sct <- DimPlot(nano.obj.immune.subset1.sct, reduction = "umap", label = TRUE)
+nano.obj.immune.subset1.sct.default <- FindAllMarkers(nano.obj.immune.subset1.sct, only.pos = TRUE)
+# further filter 
+subset(nano.obj.immune.subset1.sct, idents = c(0, 1, 2, 4)) -> nano.obj.immune.subset2
+nano.obj.immune.subset2.sct <- SCTransform(nano.obj.immune.subset2, assay = "Nanostring", clip.range = c(-10, 10))
+nano.obj.immune.subset2.sct <- RunPCA(nano.obj.immune.subset2.sct, verbose = FALSE)
+nano.obj.immune.subset2.sct <- RunUMAP(nano.obj.immune.subset2.sct, dims = 1:15)
+nano.obj.immune.subset2.sct <- FindNeighbors(nano.obj.immune.subset2.sct, reduction = "pca", dims = 1:15)
+nano.obj.immune.subset2.sct <- FindClusters(nano.obj.immune.subset2.sct, resolution =0.3) #0.45, 0.25
+p.yc.nano.obj.immune.subset2.sct <- DimPlot(nano.obj.immune.subset2.sct, reduction = "umap", label = TRUE)
+nano.obj.immune.subset2.sct.default <- FindAllMarkers(nano.obj.immune.subset2.sct, only.pos = TRUE)
+immune.cluster.ids <- c("cytotoxic", "APCs",  "Migratory APCs")
+names(immune.cluster.ids) <- levels(nano.obj.immune.subset2.sct)
+nano.obj.immune.subset2.sct <- RenameIdents(nano.obj.immune.subset2.sct, immune.cluster.ids)
+p4c_3 <- DimPlot(nano.obj.immune.subset2.sct, reduction = "umap", label = FALSE, cols = c("#6998dd", "#33aabb", "#f7a6b8"), split.by = "group")
+
+p4c_4 <- FeaturePlot(nano.obj.immune.subset2.sct, features = c("CD3D", "CD8A", "NKG7", "GZMB", "LYZ", "HLA-DRA", "CD74", "CCR7"), order = TRUE, pt.size = 0.3, alpha = 1, ncol = 4, keep.scale = "all")
+
+p4c_3
+p4c_4
+```
+
+# Figure 4d
+```{r}
+p4d1 <- ImageFeaturePlot(nano.obj.clean.new.sct, features = "KRT14", fov = "EHKSlide1clean", border.color = "NA")
+p4d2 <- ImageFeaturePlot(nano.obj.clean.new.sct, features = "B2M", fov = "EHKSlide1clean", border.color = "NA")
+p4d3 <- FeaturePlot(nano.obj.clean.new.sct, features = c("KRT14", "B2M") , split.by = "group", pt.size = 0.05)
+
+p4d1
+p4d2
+p4d3
+```
+
+# Figure 4e
+```{r}
+dfp <- read.delim2(file = "/Users/chey2/Desktop/DOCK8_paper_codes/Input_files/fig4e.txt", header = TRUE)
+
+dfp1 <- dfp %>% 
+  filter(Group=="Post") %>% 
+  mutate(Term = factor(Term, levels = (Term)))
+dfp2 <- dfp %>% 
+  filter(Group=="Pre") %>% 
+  mutate(Term = factor(Term, levels = rev(Term)))
+
+df_c <- rbind(dfp1, dfp2)
+df_c$logp <- as.numeric(df_c$logp)
+df_c$Group <- factor(df_c$Group, levels = c("Pre", "Post"))
+
+p4e <- ggplot(df_c, aes(x=Term, y=ifelse(Group=="Post", logp, -logp), fill=Group)) + 
+  geom_bar(stat="identity", position="identity") + 
+  coord_flip() +
+  scale_y_continuous(breaks = c(-10, -5, 5, 12), labels = c("10", "5", "5", "12")) +
+  theme_bw() + 
+  theme(axis.text.x = element_text(size=8), axis.title.x=element_text(size=10), axis.text.y=element_text(size=8), axis.title.y=element_blank()) + 
+  theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank(), legend.title=element_text(size=10), legend.text=element_text(size=8)) +
+  ylab("-log10(adjusted p)") +
+  scale_fill_manual(values = c("#C7E9B4", "#7FCDBB"), labels=c("Pre-Tx", "Post-Tx-3M")) 
+p4e
+```
+
+# Figure 4f 
+```{r}
+subset(nano.obj.clean.new.sct, idents = c("KC_basal", "KC_suprabasal_1", "KC_suprabasal_2", "KC_Granular")) -> nano.obj.all.KC
+nano.obj.all.KC.sct <- SCTransform(nano.obj.all.KC, assay = "Nanostring", clip.range = c(-10, 10))
+
+vplot_gene_cluster_obj <- function(obj, gene_signature, ident){
+  obj@assays$SCT@data %>% 
+    data.frame(check.names = FALSE) -> sct_data 
+  names(obj@active.ident)[obj@active.ident %in% {{ident}}] %>% 
+    as.vector() -> target_idents
+  sct_data[,colnames(sct_data) %in% target_idents] -> sct_data_target_idents
+  
+  sct_data_target_idents[rownames(sct_data_target_idents) %in% {{gene_signature}},] %>% 
+    rownames_to_column(var = "gene") %>% 
+    melt() -> sct_data_target_idents_gene
+  
+  sct_data_target_idents_gene$gene <- factor(sct_data_target_idents_gene$gene, levels = {{gene_signature}})
+  
+  obj@meta.data %>% 
+    rownames_to_column(var = "variable") %>% 
+    select(c(variable, group)) %>% 
+    data.frame(check.names = FALSE) -> meta_temp
+  
+  sct_data_target_idents_gene %>% 
+    left_join(meta_temp) -> sct_data_target_idents_gene
+  
+  p1 <- sct_data_target_idents_gene %>% 
+    ggplot(aes(x=group, y=value, fill=group)) + 
+    geom_violin() + 
+    geom_boxplot(width=0.1, fill="white", outlier.size = 0.1) +
+    facet_grid(gene ~., scales = "free_y") + 
+    scale_fill_manual(values = c("#C7E9B4", "#7FCDBB")) + 
+    theme_bw() +  
+    theme(axis.text.x = element_text(size=8), axis.title.x=element_blank(), axis.text.y=element_text(size=8), axis.title.y=element_text(size=10)) + theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank(), legend.title=element_text(size=10), legend.text=element_text(size=8)) + 
+    ylab("Expression level")
+  
+  # statistic
+  sct_data_target_idents_gene %>% 
+    group_by(gene) %>% 
+    wilcox_test(data =., value ~ group) %>% 
+    ungroup() %>% 
+    data.frame() %>% 
+    mutate(p.adj=p.adjust(p, method = "BH")) -> sct_data_target_idents_gene_stat
+  
+  sct_data_target_idents_gene %>% 
+  group_by(gene, group) %>% 
+  summarise(avg=mean(value)) %>% 
+  ungroup() %>% 
+  pivot_wider(names_from = group, values_from = avg) %>% 
+  mutate(log2fc=log2(post/pre)) ->sct_data_target_idents_gene.log2fc
+  
+  sct_data_target_idents_gene_stat %>% 
+    left_join(sct_data_target_idents_gene.log2fc) -> sct_data_target_idents_gene_stat_out
+  
+    return(list(p1, sct_data_target_idents_gene_stat_out))
+}
+
+gene_list <- c("MHCI", "B2M", "HLA-DRA", "CXCL9", "CXCL10", "STAT1")
+p4f <- vplot_gene_cluster_obj(nano.obj.all.KC.sct, gene_list,c("KC_basal", "KC_suprabasal_1", "KC_suprabasal_2", "KC_Granular"))
+p4f
+```
+
