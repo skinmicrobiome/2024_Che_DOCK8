@@ -1,8 +1,0 @@
-.gitignore
-*.DS_Store*
-Input_files/
-*.aln*
-*.csv*
-*.tsv*
-*.txt*
-
