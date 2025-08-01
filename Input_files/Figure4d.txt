@@ -1,0 +1,706 @@
+subject_id	final_taxa	Group	site_specific	new_abu	new_grp
+1	Hv01	Actinobacteria	First	Ac	0.274690479212127	Baseline
+2	Hv01	Actinobacteria	First	Hp	0.187370293784379	Baseline
+3	Hv01	Actinobacteria	First	Ic	0.626114552089814	Baseline
+4	Hv01	Actinobacteria	First	Mb	0.0405689405904261	Baseline
+5	Hv01	Actinobacteria	First	Pc	0.433218207705087	Baseline
+6	Hv01	Actinobacteria	First	Ph	0.305810709119954	Baseline
+7	Hv01	Actinobacteria	First	Ra	0.0192640150322709	Baseline
+8	Hv01	Actinobacteria	First	Vf	0.205116910781307	Baseline
+9	Hv01	Actinobacteria	Second	Ac	0.17849795176889	12M
+10	Hv01	Actinobacteria	Second	Hp	0.094801062939179	12M
+11	Hv01	Actinobacteria	Second	Ic	0.542231539988639	12M
+12	Hv01	Actinobacteria	Second	Mb	0.0932560602250364	12M
+13	Hv01	Actinobacteria	Second	Pc	0.355727824095817	12M
+14	Hv01	Actinobacteria	Second	Ph	0.382018606635105	12M
+15	Hv01	Actinobacteria	Second	Ra	0.0697849368741837	12M
+16	Hv01	Actinobacteria	Second	Vf	0.0814768215660497	12M
+17	Hv01	Alphaproteobacteria	First	Ac	0.00623160183876575	Baseline
+18	Hv01	Alphaproteobacteria	First	Hp	0.00259514511279893	Baseline
+19	Hv01	Alphaproteobacteria	First	Ic	0.000162969291199658	Baseline
+20	Hv01	Alphaproteobacteria	First	Mb	0.000427678156727456	Baseline
+21	Hv01	Alphaproteobacteria	First	Pc	0.0147091189289996	Baseline
+22	Hv01	Alphaproteobacteria	First	Ph	0.344090889958936	Baseline
+23	Hv01	Alphaproteobacteria	First	Ra	0.000452519623386136	Baseline
+24	Hv01	Alphaproteobacteria	First	Vf	0.00302938654403539	Baseline
+25	Hv01	Alphaproteobacteria	Second	Ac	0.000968351512958612	12M
+26	Hv01	Alphaproteobacteria	Second	Hp	0.00136578807726643	12M
+27	Hv01	Alphaproteobacteria	Second	Ic	0	12M
+28	Hv01	Alphaproteobacteria	Second	Mb	0.00020487217406752	12M
+29	Hv01	Alphaproteobacteria	Second	Pc	0.00604567440188822	12M
+30	Hv01	Alphaproteobacteria	Second	Ph	0.248015468979503	12M
+31	Hv01	Alphaproteobacteria	Second	Ra	0	12M
+32	Hv01	Alphaproteobacteria	Second	Vf	0.000631386923625494	12M
+33	Hv01	Bacteria	First	Ac	0.0115929990724304	Baseline
+34	Hv01	Bacteria	First	Hp	0.0133084326916459	Baseline
+35	Hv01	Bacteria	First	Ic	0.0049800815310756	Baseline
+36	Hv01	Bacteria	First	Mb	0.000686993302943735	Baseline
+37	Hv01	Bacteria	First	Pc	0.118671463662105	Baseline
+38	Hv01	Bacteria	First	Ph	0.00442892652718112	Baseline
+39	Hv01	Bacteria	First	Ra	0.000439590491289389	Baseline
+40	Hv01	Bacteria	First	Vf	0.0149650947996223	Baseline
+41	Hv01	Bacteria	Second	Ac	0.00291117187412382	12M
+42	Hv01	Bacteria	Second	Hp	0.0683038340891346	12M
+43	Hv01	Bacteria	Second	Ic	0.0574653072618065	12M
+44	Hv01	Bacteria	Second	Mb	0.000448503948634301	12M
+45	Hv01	Bacteria	Second	Pc	0.0577740562269616	12M
+46	Hv01	Bacteria	Second	Ph	0.00828183232339542	12M
+47	Hv01	Bacteria	Second	Ra	0.000355245973008272	12M
+48	Hv01	Bacteria	Second	Vf	0.00132154569297588	12M
+49	Hv01	Corynebacterium tuberculostearicum	First	Ac	0.114651384504535	Baseline
+50	Hv01	Corynebacterium tuberculostearicum	First	Hp	0.136990770046047	Baseline
+51	Hv01	Corynebacterium tuberculostearicum	First	Ic	0.100815775055948	Baseline
+52	Hv01	Corynebacterium tuberculostearicum	First	Mb	0.00965762727318275	Baseline
+53	Hv01	Corynebacterium tuberculostearicum	First	Pc	0.0986341991226569	Baseline
+54	Hv01	Corynebacterium tuberculostearicum	First	Ph	0.0215235050947013	Baseline
+55	Hv01	Corynebacterium tuberculostearicum	First	Ra	0.00388853442606701	Baseline
+56	Hv01	Corynebacterium tuberculostearicum	First	Vf	0.106329516466814	Baseline
+57	Hv01	Corynebacterium tuberculostearicum	Second	Ac	0.0764723547991005	12M
+58	Hv01	Corynebacterium tuberculostearicum	Second	Hp	0.0484191468981683	12M
+59	Hv01	Corynebacterium tuberculostearicum	Second	Ic	0.298877768733298	12M
+60	Hv01	Corynebacterium tuberculostearicum	Second	Mb	0.0260852111360024	12M
+61	Hv01	Corynebacterium tuberculostearicum	Second	Pc	0.181154791513455	12M
+62	Hv01	Corynebacterium tuberculostearicum	Second	Ph	0.047694413551202	12M
+63	Hv01	Corynebacterium tuberculostearicum	Second	Ra	0.00390944710491946	12M
+64	Hv01	Corynebacterium tuberculostearicum	Second	Vf	0.0329050102505979	12M
+65	Hv01	Cutibacterium acnes	First	Ac	0.407867745042951	Baseline
+66	Hv01	Cutibacterium acnes	First	Hp	0.431929415516274	Baseline
+67	Hv01	Cutibacterium acnes	First	Ic	0.0105177873320395	Baseline
+68	Hv01	Cutibacterium acnes	First	Mb	0.902722289953603	Baseline
+69	Hv01	Cutibacterium acnes	First	Pc	0.106931582460701	Baseline
+70	Hv01	Cutibacterium acnes	First	Ph	0.0138646366797252	Baseline
+71	Hv01	Cutibacterium acnes	First	Ra	0.937033167729435	Baseline
+72	Hv01	Cutibacterium acnes	First	Vf	0.47035138932682	Baseline
+73	Hv01	Cutibacterium acnes	Second	Ac	0.697233253879722	12M
+74	Hv01	Cutibacterium acnes	Second	Hp	0.675618963765484	12M
+75	Hv01	Cutibacterium acnes	Second	Ic	0.0316114335240482	12M
+76	Hv01	Cutibacterium acnes	Second	Mb	0.862787322842094	12M
+77	Hv01	Cutibacterium acnes	Second	Pc	0.263019681097659	12M
+78	Hv01	Cutibacterium acnes	Second	Ph	0.0817537615116656	12M
+79	Hv01	Cutibacterium acnes	Second	Ra	0.892041793643883	12M
+80	Hv01	Cutibacterium acnes	Second	Vf	0.85521211054623	12M
+81	Hv01	Firmicutes	First	Ac	0.0774321389946287	Baseline
+82	Hv01	Firmicutes	First	Hp	0.0955253178907637	Baseline
+83	Hv01	Firmicutes	First	Ic	0.0603121024431465	Baseline
+84	Hv01	Firmicutes	First	Mb	0.0212900217608063	Baseline
+85	Hv01	Firmicutes	First	Pc	0.101469275782315	Baseline
+86	Hv01	Firmicutes	First	Ph	0.127165931528064	Baseline
+87	Hv01	Firmicutes	First	Ra	0.0314054495508204	Baseline
+88	Hv01	Firmicutes	First	Vf	0.0792321374860741	Baseline
+89	Hv01	Firmicutes	Second	Ac	0.0146142006234471	12M
+90	Hv01	Firmicutes	Second	Hp	0.0612119793612788	12M
+91	Hv01	Firmicutes	Second	Ic	0.065839584760767	12M
+92	Hv01	Firmicutes	Second	Mb	0.00589999561647375	12M
+93	Hv01	Firmicutes	Second	Pc	0.0664593806487076	12M
+94	Hv01	Firmicutes	Second	Ph	0.0838669195427506	12M
+95	Hv01	Firmicutes	Second	Ra	0.0162246408358729	12M
+96	Hv01	Firmicutes	Second	Vf	0.00980045152537565	12M
+97	Hv01	Fungi	First	Ac	0.00140674069495441	Baseline
+98	Hv01	Fungi	First	Hp	0.00154399130583095	Baseline
+99	Hv01	Fungi	First	Ic	2.32149987463901e-05	Baseline
+100	Hv01	Fungi	First	Mb	9.12906672275758e-05	Baseline
+101	Hv01	Fungi	First	Pc	0.000410481966667943	Baseline
+102	Hv01	Fungi	First	Ph	6.29388262144932e-05	Baseline
+103	Hv01	Fungi	First	Ra	0.000237425880322076	Baseline
+104	Hv01	Fungi	First	Vf	0.00190327841731263	Baseline
+105	Hv01	Fungi	Second	Ac	0.000772370217050984	12M
+106	Hv01	Fungi	Second	Hp	0.00169106941747583	12M
+107	Hv01	Fungi	Second	Ic	3.80648977225479e-05	12M
+108	Hv01	Fungi	Second	Mb	0.000160575487782651	12M
+109	Hv01	Fungi	Second	Pc	0.00055898767106256	12M
+110	Hv01	Fungi	Second	Ph	0.000979613673141596	12M
+111	Hv01	Fungi	Second	Ra	8.35872877666522e-05	12M
+112	Hv01	Fungi	Second	Vf	0.000771914018431376	12M
+113	Hv01	Gammaproteobacteria	First	Ac	0.0230292532159916	Baseline
+114	Hv01	Gammaproteobacteria	First	Hp	0.0345748282829297	Baseline
+115	Hv01	Gammaproteobacteria	First	Ic	0.00423998737104068	Baseline
+116	Hv01	Gammaproteobacteria	First	Mb	0.00205409643454087	Baseline
+117	Hv01	Gammaproteobacteria	First	Pc	0.0763331635010149	Baseline
+118	Hv01	Gammaproteobacteria	First	Ph	0.0285116816428292	Baseline
+119	Hv01	Gammaproteobacteria	First	Ra	0.00211567616128583	Baseline
+120	Hv01	Gammaproteobacteria	First	Vf	0.0234384097734146	Baseline
+121	Hv01	Gammaproteobacteria	Second	Ac	0.00535221520604148	12M
+122	Hv01	Gammaproteobacteria	Second	Hp	0.0222803233157685	12M
+123	Hv01	Gammaproteobacteria	Second	Ic	0.000765202046525065	12M
+124	Hv01	Gammaproteobacteria	Second	Mb	0.00149016821205193	12M
+125	Hv01	Gammaproteobacteria	Second	Pc	0.0423521879044229	12M
+126	Hv01	Gammaproteobacteria	Second	Ph	0.0205194723822445	12M
+127	Hv01	Gammaproteobacteria	Second	Ra	0.000640835872877667	12M
+128	Hv01	Gammaproteobacteria	Second	Vf	0.00302133253832647	12M
+129	Hv01	Malassezia globosa	First	Ac	0.00115284994350336	Baseline
+130	Hv01	Malassezia globosa	First	Hp	0.00261733214733549	Baseline
+131	Hv01	Malassezia globosa	First	Ic	3.20366982700183e-05	Baseline
+132	Hv01	Malassezia globosa	First	Mb	0.00190660953458235	Baseline
+133	Hv01	Malassezia globosa	First	Pc	0.000372184859650798	Baseline
+134	Hv01	Malassezia globosa	First	Ph	0.000164427683485363	Baseline
+135	Hv01	Malassezia globosa	First	Ra	9.48136353761427e-05	Baseline
+136	Hv01	Malassezia globosa	First	Vf	0.00161619868657391	Baseline
+137	Hv01	Malassezia globosa	Second	Ac	0.00100686806822369	12M
+138	Hv01	Malassezia globosa	Second	Hp	0.00104810446958753	12M
+139	Hv01	Malassezia globosa	Second	Ic	6.7345588278354e-05	12M
+140	Hv01	Malassezia globosa	Second	Mb	0.0019015275435411	12M
+141	Hv01	Malassezia globosa	Second	Pc	0.00139532987319713	12M
+142	Hv01	Malassezia globosa	Second	Ph	0.000765134910756351	12M
+143	Hv01	Malassezia globosa	Second	Ra	0.000149760557248585	12M
+144	Hv01	Malassezia globosa	Second	Vf	0.000408447911071302	12M
+145	Hv01	Malassezia restricta	First	Ac	0.0144866906259398	Baseline
+146	Hv01	Malassezia restricta	First	Hp	0.0185119564256481	Baseline
+147	Hv01	Malassezia restricta	First	Ic	0.000336153181847728	Baseline
+148	Hv01	Malassezia restricta	First	Mb	0.00214132472349874	Baseline
+149	Hv01	Malassezia restricta	First	Pc	0.00307576670565862	Baseline
+150	Hv01	Malassezia restricta	First	Ph	0.000656137263286091	Baseline
+151	Hv01	Malassezia restricta	First	Ra	0.000902296703600234	Baseline
+152	Hv01	Malassezia restricta	First	Vf	0.0235168740815991	Baseline
+153	Hv01	Malassezia restricta	Second	Ac	0.019501724918614	12M
+154	Hv01	Malassezia restricta	Second	Hp	0.0199106506654411	12M
+155	Hv01	Malassezia restricta	Second	Ic	0.000943814258915482	12M
+156	Hv01	Malassezia restricta	Second	Mb	0.00624560205425883	12M
+157	Hv01	Malassezia restricta	Second	Pc	0.00885395194971175	12M
+158	Hv01	Malassezia restricta	Second	Ph	0.0037862128713766	12M
+159	Hv01	Malassezia restricta	Second	Ra	0.00239791031780583	12M
+160	Hv01	Malassezia restricta	Second	Vf	0.0120856584876395	12M
+161	Hv01	Micrococcus luteus	First	Ac	0.00423593261106711	Baseline
+162	Hv01	Micrococcus luteus	First	Hp	0.00396798632294769	Baseline
+163	Hv01	Micrococcus luteus	First	Ic	0.000356118080769624	Baseline
+164	Hv01	Micrococcus luteus	First	Mb	0.000368999359498359	Baseline
+165	Hv01	Micrococcus luteus	First	Pc	0.023907211442206	Baseline
+166	Hv01	Micrococcus luteus	First	Ph	0.103030858513125	Baseline
+167	Hv01	Micrococcus luteus	First	Ra	0.000149664498816886	Baseline
+168	Hv01	Micrococcus luteus	First	Vf	0.00276472518706368	Baseline
+169	Hv01	Micrococcus luteus	Second	Ac	0.000457440735765895	12M
+170	Hv01	Micrococcus luteus	Second	Hp	0.000900686594516995	12M
+171	Hv01	Micrococcus luteus	Second	Ic	4.29450128151822e-05	12M
+172	Hv01	Micrococcus luteus	Second	Mb	0.000190337323880297	12M
+173	Hv01	Micrococcus luteus	Second	Pc	0.00660139019554249	12M
+174	Hv01	Micrococcus luteus	Second	Ph	0.106798675533395	12M
+175	Hv01	Micrococcus luteus	Second	Ra	0	12M
+176	Hv01	Micrococcus luteus	Second	Vf	0.000410746251406913	12M
+177	Hv01	Proteobacteria	First	Ac	0.00393822534616667	Baseline
+178	Hv01	Proteobacteria	First	Hp	0.00370307017886931	Baseline
+179	Hv01	Proteobacteria	First	Ic	6.26804966152532e-05	Baseline
+180	Hv01	Proteobacteria	First	Mb	0.000318896694171977	Baseline
+181	Hv01	Proteobacteria	First	Pc	0.00266576951249722	Baseline
+182	Hv01	Proteobacteria	First	Ph	0.00364769834679372	Baseline
+183	Hv01	Proteobacteria	First	Ra	0.000209412760779125	Baseline
+184	Hv01	Proteobacteria	First	Vf	0.00444817899493864	Baseline
+185	Hv01	Proteobacteria	Second	Ac	0.001239213523661	12M
+186	Hv01	Proteobacteria	Second	Hp	0.00202285529129051	12M
+187	Hv01	Proteobacteria	Second	Ic	5.56333120560315e-05	12M
+188	Hv01	Proteobacteria	Second	Mb	0.00034975925212428	12M
+189	Hv01	Proteobacteria	Second	Pc	0.00182721769109148	12M
+190	Hv01	Proteobacteria	Second	Ph	0.00439440475516285	12M
+191	Hv01	Proteobacteria	Second	Ra	0.000428384849804092	12M
+192	Hv01	Proteobacteria	Second	Vf	0.00115179684247438	12M
+193	Hv01	Staphylococcus aureus	First	Ac	0.051582269791966	Baseline
+194	Hv01	Staphylococcus aureus	First	Hp	0.0588072023935235	Baseline
+195	Hv01	Staphylococcus aureus	First	Ic	0.190734894000316	Baseline
+196	Hv01	Staphylococcus aureus	First	Mb	0.0110662569382036	Baseline
+197	Hv01	Staphylococcus aureus	First	Pc	0.0162939647152756	Baseline
+198	Hv01	Staphylococcus aureus	First	Ph	0.0414208282670856	Baseline
+199	Hv01	Staphylococcus aureus	First	Ra	0.00130486286206712	Baseline
+200	Hv01	Staphylococcus aureus	First	Vf	0.0548149996357014	Baseline
+201	Hv01	Staphylococcus aureus	Second	Ac	0.000411560721406017	12M
+202	Hv01	Staphylococcus aureus	Second	Hp	0.000631759658904444	12M
+203	Hv01	Staphylococcus aureus	Second	Ic	0.00122978900334385	12M
+204	Hv01	Staphylococcus aureus	Second	Mb	0.000325534501812242	12M
+205	Hv01	Staphylococcus aureus	Second	Pc	0.00246699556585106	12M
+206	Hv01	Staphylococcus aureus	Second	Ph	0.00632983459831622	12M
+207	Hv01	Staphylococcus aureus	Second	Ra	0.000243796255986069	12M
+208	Hv01	Staphylococcus aureus	Second	Vf	0.000260040792257614	12M
+209	Hv01	Staphylococcus epidermidis	First	Ac	0.00737760545204265	Baseline
+210	Hv01	Staphylococcus epidermidis	First	Hp	0.00810884457352609	Baseline
+211	Hv01	Staphylococcus epidermidis	First	Ic	0.00123968093305723	Baseline
+212	Hv01	Staphylococcus epidermidis	First	Mb	0.00667358474640152	Baseline
+213	Hv01	Staphylococcus epidermidis	First	Pc	0.00303310663708256	Baseline
+214	Hv01	Staphylococcus epidermidis	First	Ph	0.00497492084459184	Baseline
+215	Hv01	Staphylococcus epidermidis	First	Ra	0.00249120867991406	Baseline
+216	Hv01	Staphylococcus epidermidis	First	Vf	0.00818893375100701	Baseline
+217	Hv01	Staphylococcus epidermidis	Second	Ac	0.000528356511048077	12M
+218	Hv01	Staphylococcus epidermidis	Second	Hp	0.00153906010691923	12M
+219	Hv01	Staphylococcus epidermidis	Second	Ic	0.000796434783117925	12M
+220	Hv01	Staphylococcus epidermidis	Second	Mb	0.000643455510669272	12M
+221	Hv01	Staphylococcus epidermidis	Second	Pc	0.00490429255214995	12M
+222	Hv01	Staphylococcus epidermidis	Second	Ph	0.00383079553546792	12M
+223	Hv01	Staphylococcus epidermidis	Second	Ra	0.0137396604266434	12M
+224	Hv01	Staphylococcus epidermidis	Second	Vf	0.000502023196164004	12M
+225	Hv01	Staphylococcus hominis	First	Ac	0.000324083652930838	Baseline
+226	Hv01	Staphylococcus hominis	First	Hp	0.000445413327481073	Baseline
+227	Hv01	Staphylococcus hominis	First	Ic	7.19664961138092e-05	Baseline
+228	Hv01	Staphylococcus hominis	First	Mb	2.53898641856669e-05	Baseline
+229	Hv01	Staphylococcus hominis	First	Pc	0.000274502998081751	Baseline
+230	Hv01	Staphylococcus hominis	First	Ph	0.000645909704026236	Baseline
+231	Hv01	Staphylococcus hominis	First	Ra	1.13619645698683e-05	Baseline
+232	Hv01	Staphylococcus hominis	First	Vf	0.000283966067715528	Baseline
+233	Hv01	Staphylococcus hominis	Second	Ac	3.29656399474679e-05	12M
+234	Hv01	Staphylococcus hominis	Second	Hp	0.000254715349584246	12M
+235	Hv01	Staphylococcus hominis	Second	Ic	3.51368286669673e-05	12M
+236	Hv01	Staphylococcus hominis	Second	Mb	1.10741715712173e-05	12M
+237	Hv01	Staphylococcus hominis	Second	Pc	0.000858238612482363	12M
+238	Hv01	Staphylococcus hominis	Second	Ph	0.000964853196516768	12M
+239	Hv01	Staphylococcus hominis	Second	Ra	0	12M
+240	Hv01	Staphylococcus hominis	Second	Vf	4.07134573736668e-05	12M
+241	Hv02	Actinobacteria	First	Hp	0.0658397820186039	Baseline
+242	Hv02	Actinobacteria	First	Ic	0.230902793660852	Baseline
+243	Hv02	Actinobacteria	First	Mb	0.0249450213080091	Baseline
+244	Hv02	Actinobacteria	First	Pc	0.480565786048842	Baseline
+245	Hv02	Actinobacteria	First	Ph	0.255109196991081	Baseline
+246	Hv02	Actinobacteria	First	Ra	0.0314499366683281	Baseline
+247	Hv02	Actinobacteria	First	Vf	0.122572194704988	Baseline
+248	Hv02	Actinobacteria	Second	Ac	0.124504068282047	12M
+249	Hv02	Actinobacteria	Second	Hp	0.121564651117395	12M
+250	Hv02	Actinobacteria	Second	Ic	0.334923922327455	12M
+251	Hv02	Actinobacteria	Second	Mb	0.0100970819328611	12M
+252	Hv02	Actinobacteria	Second	Pc	0.563918896222991	12M
+253	Hv02	Actinobacteria	Second	Ph	0.437930370000124	12M
+254	Hv02	Actinobacteria	Second	Ra	0.0290091976701546	12M
+255	Hv02	Actinobacteria	Second	Vf	0.0967411816140563	12M
+256	Hv02	Alphaproteobacteria	First	Hp	0.0281187448931085	Baseline
+257	Hv02	Alphaproteobacteria	First	Ic	0.00305083423656196	Baseline
+258	Hv02	Alphaproteobacteria	First	Mb	7.21342475158446e-05	Baseline
+259	Hv02	Alphaproteobacteria	First	Pc	0.00835701095199017	Baseline
+260	Hv02	Alphaproteobacteria	First	Ph	0.0490667856525064	Baseline
+261	Hv02	Alphaproteobacteria	First	Ra	0.000229370240339963	Baseline
+262	Hv02	Alphaproteobacteria	First	Vf	0.00241609517573913	Baseline
+263	Hv02	Alphaproteobacteria	Second	Ac	0.0021823173019146	12M
+264	Hv02	Alphaproteobacteria	Second	Hp	0.00607878333180557	12M
+265	Hv02	Alphaproteobacteria	Second	Ic	0.0144596708969833	12M
+266	Hv02	Alphaproteobacteria	Second	Mb	0.000468894877459903	12M
+267	Hv02	Alphaproteobacteria	Second	Pc	0.0275874394456315	12M
+268	Hv02	Alphaproteobacteria	Second	Ph	0.0505467659062485	12M
+269	Hv02	Alphaproteobacteria	Second	Ra	0.000250692910918904	12M
+270	Hv02	Alphaproteobacteria	Second	Vf	0.00210540385752462	12M
+271	Hv02	Bacteria	First	Hp	0.0182593731017537	Baseline
+272	Hv02	Bacteria	First	Ic	0.00528214197839089	Baseline
+273	Hv02	Bacteria	First	Mb	0.000123179126724551	Baseline
+274	Hv02	Bacteria	First	Pc	0.117883412815977	Baseline
+275	Hv02	Bacteria	First	Ph	0.0163421230889112	Baseline
+276	Hv02	Bacteria	First	Ra	0.000249030546654817	Baseline
+277	Hv02	Bacteria	First	Vf	0.00254120292168118	Baseline
+278	Hv02	Bacteria	Second	Ac	0.00198026076003299	12M
+279	Hv02	Bacteria	Second	Hp	0.00865626816354621	12M
+280	Hv02	Bacteria	Second	Ic	0.0220281332436375	12M
+281	Hv02	Bacteria	Second	Mb	0.000241383080709838	12M
+282	Hv02	Bacteria	Second	Pc	0.0399308814981245	12M
+283	Hv02	Bacteria	Second	Ph	0.00582067244190798	12M
+284	Hv02	Bacteria	Second	Ra	0.000262928368274049	12M
+285	Hv02	Bacteria	Second	Vf	0.00175304899273477	12M
+286	Hv02	Corynebacterium tuberculostearicum	First	Hp	0.000603386932668432	Baseline
+287	Hv02	Corynebacterium tuberculostearicum	First	Ic	0.00246483908727283	Baseline
+288	Hv02	Corynebacterium tuberculostearicum	First	Mb	2.28109493934353e-05	Baseline
+289	Hv02	Corynebacterium tuberculostearicum	First	Pc	0.015225589031255	Baseline
+290	Hv02	Corynebacterium tuberculostearicum	First	Ph	0.00668099023378454	Baseline
+291	Hv02	Corynebacterium tuberculostearicum	First	Ra	4.3325489841993e-05	Baseline
+292	Hv02	Corynebacterium tuberculostearicum	First	Vf	0.000626737571902701	Baseline
+293	Hv02	Corynebacterium tuberculostearicum	Second	Ac	0.000547112413381644	12M
+294	Hv02	Corynebacterium tuberculostearicum	Second	Hp	0.00215750291526558	12M
+295	Hv02	Corynebacterium tuberculostearicum	Second	Ic	0.0168829696369587	12M
+296	Hv02	Corynebacterium tuberculostearicum	Second	Mb	2.93722542864068e-05	12M
+297	Hv02	Corynebacterium tuberculostearicum	Second	Pc	0.0120576070956927	12M
+298	Hv02	Corynebacterium tuberculostearicum	Second	Ph	0.00828636833977376	12M
+299	Hv02	Corynebacterium tuberculostearicum	Second	Ra	5.55507625905089e-05	12M
+300	Hv02	Corynebacterium tuberculostearicum	Second	Vf	0.000720396761231311	12M
+301	Hv02	Cutibacterium acnes	First	Hp	0.214317365836282	Baseline
+302	Hv02	Cutibacterium acnes	First	Ic	0.221098810723567	Baseline
+303	Hv02	Cutibacterium acnes	First	Mb	0.876159441822094	Baseline
+304	Hv02	Cutibacterium acnes	First	Pc	0.0961702916935057	Baseline
+305	Hv02	Cutibacterium acnes	First	Ph	0.20864878322429	Baseline
+306	Hv02	Cutibacterium acnes	First	Ra	0.784465518189242	Baseline
+307	Hv02	Cutibacterium acnes	First	Vf	0.366133427368231	Baseline
+308	Hv02	Cutibacterium acnes	Second	Ac	0.378462878964888	12M
+309	Hv02	Cutibacterium acnes	Second	Hp	0.396653954367273	12M
+310	Hv02	Cutibacterium acnes	Second	Ic	0.221919288883514	12M
+311	Hv02	Cutibacterium acnes	Second	Mb	0.855929244323907	12M
+312	Hv02	Cutibacterium acnes	Second	Pc	0.152071473875063	12M
+313	Hv02	Cutibacterium acnes	Second	Ph	0.106709089446789	12M
+314	Hv02	Cutibacterium acnes	Second	Ra	0.50162981650565	12M
+315	Hv02	Cutibacterium acnes	Second	Vf	0.417447692103482	12M
+316	Hv02	Firmicutes	First	Hp	0.192954675201271	Baseline
+317	Hv02	Firmicutes	First	Ic	0.0594416722962969	Baseline
+318	Hv02	Firmicutes	First	Mb	0.00347948753351488	Baseline
+319	Hv02	Firmicutes	First	Pc	0.131517238268337	Baseline
+320	Hv02	Firmicutes	First	Ph	0.131073572372005	Baseline
+321	Hv02	Firmicutes	First	Ra	0.00650574099148381	Baseline
+322	Hv02	Firmicutes	First	Vf	0.16505830569003	Baseline
+323	Hv02	Firmicutes	Second	Ac	0.0108651050618474	12M
+324	Hv02	Firmicutes	Second	Hp	0.061441754565499	12M
+325	Hv02	Firmicutes	Second	Ic	0.0566111610820943	12M
+326	Hv02	Firmicutes	Second	Mb	0.00057713637196568	12M
+327	Hv02	Firmicutes	Second	Pc	0.0170540428909615	12M
+328	Hv02	Firmicutes	Second	Ph	0.0237007461321015	12M
+329	Hv02	Firmicutes	Second	Ra	0.00556338208046716	12M
+330	Hv02	Firmicutes	Second	Vf	0.0123077294367613	12M
+331	Hv02	Fungi	First	Hp	0.034985924419989	Baseline
+332	Hv02	Fungi	First	Ic	0.104731826566622	Baseline
+333	Hv02	Fungi	First	Mb	0.00407765088194877	Baseline
+334	Hv02	Fungi	First	Pc	0.0314468848509844	Baseline
+335	Hv02	Fungi	First	Ph	0.0305990840030328	Baseline
+336	Hv02	Fungi	First	Ra	0.0154722969900435	Baseline
+337	Hv02	Fungi	First	Vf	0.0543370942154665	Baseline
+338	Hv02	Fungi	Second	Ac	0.212168478628444	12M
+339	Hv02	Fungi	Second	Hp	0.158537397038789	12M
+340	Hv02	Fungi	Second	Ic	0.125756808441485	12M
+341	Hv02	Fungi	Second	Mb	0.0199972371131129	12M
+342	Hv02	Fungi	Second	Pc	0.0704329933876653	12M
+343	Hv02	Fungi	Second	Ph	0.0344719724109788	12M
+344	Hv02	Fungi	Second	Ra	0.107704801461396	12M
+345	Hv02	Fungi	Second	Vf	0.163259022595823	12M
+346	Hv02	Gammaproteobacteria	First	Hp	0.313562834744397	Baseline
+347	Hv02	Gammaproteobacteria	First	Ic	0.0192285376267148	Baseline
+348	Hv02	Gammaproteobacteria	First	Mb	0.000287590120465915	Baseline
+349	Hv02	Gammaproteobacteria	First	Pc	0.0181790876918504	Baseline
+350	Hv02	Gammaproteobacteria	First	Ph	0.133355319847194	Baseline
+351	Hv02	Gammaproteobacteria	First	Ra	0.000528643792021629	Baseline
+352	Hv02	Gammaproteobacteria	First	Vf	0.0363947938051371	Baseline
+353	Hv02	Gammaproteobacteria	Second	Ac	0.00785598678824839	12M
+354	Hv02	Gammaproteobacteria	Second	Hp	0.0369788765094161	12M
+355	Hv02	Gammaproteobacteria	Second	Ic	0.0125065193236532	12M
+356	Hv02	Gammaproteobacteria	Second	Mb	0.000344849215163891	12M
+357	Hv02	Gammaproteobacteria	Second	Pc	0.0187009412469448	12M
+358	Hv02	Gammaproteobacteria	Second	Ph	0.158900012468821	12M
+359	Hv02	Gammaproteobacteria	Second	Ra	0.000951507756654794	12M
+360	Hv02	Gammaproteobacteria	Second	Vf	0.0233376619639607	12M
+361	Hv02	Malassezia globosa	First	Hp	0.00222595379361322	Baseline
+362	Hv02	Malassezia globosa	First	Ic	0.00581035617622998	Baseline
+363	Hv02	Malassezia globosa	First	Mb	0.0193145042862204	Baseline
+364	Hv02	Malassezia globosa	First	Pc	0.00580237778300159	Baseline
+365	Hv02	Malassezia globosa	First	Ph	0.00307326197416261	Baseline
+366	Hv02	Malassezia globosa	First	Ra	0.00190486523406141	Baseline
+367	Hv02	Malassezia globosa	First	Vf	0.00328414255466763	Baseline
+368	Hv02	Malassezia globosa	Second	Ac	0.0032938726875813	12M
+369	Hv02	Malassezia globosa	Second	Hp	0.00622262011611041	12M
+370	Hv02	Malassezia globosa	Second	Ic	0.0432452248316314	12M
+371	Hv02	Malassezia globosa	Second	Mb	0.0155493682217601	12M
+372	Hv02	Malassezia globosa	Second	Pc	0.00654335013123085	12M
+373	Hv02	Malassezia globosa	Second	Ph	0.00147844594226234	12M
+374	Hv02	Malassezia globosa	Second	Ra	0.00255613886833273	12M
+375	Hv02	Malassezia globosa	Second	Vf	0.00226979281051272	12M
+376	Hv02	Malassezia restricta	First	Hp	0.115764080623322	Baseline
+377	Hv02	Malassezia restricta	First	Ic	0.334735163416568	Baseline
+378	Hv02	Malassezia restricta	First	Mb	0.0511646151732582	Baseline
+379	Hv02	Malassezia restricta	First	Pc	0.0792381769975425	Baseline
+380	Hv02	Malassezia restricta	First	Ph	0.0811712991928039	Baseline
+381	Hv02	Malassezia restricta	First	Ra	0.147696958951101	Baseline
+382	Hv02	Malassezia restricta	First	Vf	0.23488144392664	Baseline
+383	Hv02	Malassezia restricta	Second	Ac	0.253911618237827	12M
+384	Hv02	Malassezia restricta	Second	Hp	0.187916933414413	12M
+385	Hv02	Malassezia restricta	Second	Ic	0.144219533027461	12M
+386	Hv02	Malassezia restricta	Second	Mb	0.0964341514801058	12M
+387	Hv02	Malassezia restricta	Second	Pc	0.0806099694692173	12M
+388	Hv02	Malassezia restricta	Second	Ph	0.0353032271576324	12M
+389	Hv02	Malassezia restricta	Second	Ra	0.350704556930869	12M
+390	Hv02	Malassezia restricta	Second	Vf	0.275493700589331	12M
+391	Hv02	Micrococcus luteus	First	Hp	0.00155609860475285	Baseline
+392	Hv02	Micrococcus luteus	First	Ic	0.00307924320435822	Baseline
+393	Hv02	Micrococcus luteus	First	Mb	9.21045881168898e-05	Baseline
+394	Hv02	Micrococcus luteus	First	Pc	0.00585858206623868	Baseline
+395	Hv02	Micrococcus luteus	First	Ph	0.0350979127361732	Baseline
+396	Hv02	Micrococcus luteus	First	Ra	9.2476255629128e-05	Baseline
+397	Hv02	Micrococcus luteus	First	Vf	0.00140007641762661	Baseline
+398	Hv02	Micrococcus luteus	Second	Ac	0.00154277524104808	12M
+399	Hv02	Micrococcus luteus	Second	Hp	0.00770233889748922	12M
+400	Hv02	Micrococcus luteus	Second	Ic	0.00371280206199593	12M
+401	Hv02	Micrococcus luteus	Second	Mb	9.30437216427466e-05	12M
+402	Hv02	Micrococcus luteus	Second	Pc	0.00955887981804364	12M
+403	Hv02	Micrococcus luteus	Second	Ph	0.127117473028752	12M
+404	Hv02	Micrococcus luteus	Second	Ra	0.000285434465014898	12M
+405	Hv02	Micrococcus luteus	Second	Vf	0.00162049821641235	12M
+406	Hv02	Proteobacteria	First	Hp	0.00429371141328065	Baseline
+407	Hv02	Proteobacteria	First	Ic	0.00166986949690607	Baseline
+408	Hv02	Proteobacteria	First	Mb	0.000237578189908987	Baseline
+409	Hv02	Proteobacteria	First	Pc	0.00137507169128102	Baseline
+410	Hv02	Proteobacteria	First	Ph	0.00947069084536529	Baseline
+411	Hv02	Proteobacteria	First	Ra	0.000351336955441372	Baseline
+412	Hv02	Proteobacteria	First	Vf	0.00292654505497291	Baseline
+413	Hv02	Proteobacteria	Second	Ac	0.00224568493523837	12M
+414	Hv02	Proteobacteria	Second	Hp	0.00483610581238608	12M
+415	Hv02	Proteobacteria	Second	Ic	0.000721093885819243	12M
+416	Hv02	Proteobacteria	Second	Mb	0.00011987669717149	12M
+417	Hv02	Proteobacteria	Second	Pc	0.000657827904652211	12M
+418	Hv02	Proteobacteria	Second	Ph	0.00189623241882716	12M
+419	Hv02	Proteobacteria	Second	Ra	0.000411093505151306	12M
+420	Hv02	Proteobacteria	Second	Vf	0.00253916420609232	12M
+421	Hv02	Staphylococcus aureus	First	Hp	0.000105090537351453	Baseline
+422	Hv02	Staphylococcus aureus	First	Ic	0.000222938171011393	Baseline
+423	Hv02	Staphylococcus aureus	First	Mb	0.000102434074634672	Baseline
+424	Hv02	Staphylococcus aureus	First	Pc	0.000238714104277157	Baseline
+425	Hv02	Staphylococcus aureus	First	Ph	0.0019875161867625	Baseline
+426	Hv02	Staphylococcus aureus	First	Ra	0.000102306408786555	Baseline
+427	Hv02	Staphylococcus aureus	First	Vf	8.00655321395034e-05	Baseline
+428	Hv02	Staphylococcus aureus	Second	Ac	4.97698101841652e-05	12M
+429	Hv02	Staphylococcus aureus	Second	Hp	0.000121121856574576	12M
+430	Hv02	Staphylococcus aureus	Second	Ic	0.000144369949886243	12M
+431	Hv02	Staphylococcus aureus	Second	Mb	4.20686480747245e-06	12M
+432	Hv02	Staphylococcus aureus	Second	Pc	0.000244211332744781	12M
+433	Hv02	Staphylococcus aureus	Second	Ph	0.001033400787317	12M
+434	Hv02	Staphylococcus aureus	Second	Ra	5.16211266516305e-05	12M
+435	Hv02	Staphylococcus aureus	Second	Vf	6.6182565488716e-05	12M
+436	Hv02	Staphylococcus epidermidis	First	Hp	0.00687855930615072	Baseline
+437	Hv02	Staphylococcus epidermidis	First	Ic	0.00760108416325237	Baseline
+438	Hv02	Staphylococcus epidermidis	First	Mb	0.0198956239819	Baseline
+439	Hv02	Staphylococcus epidermidis	First	Pc	0.00715593158319285	Baseline
+440	Hv02	Staphylococcus epidermidis	First	Ph	0.0130835924023661	Baseline
+441	Hv02	Staphylococcus epidermidis	First	Ra	0.0108725134718608	Baseline
+442	Hv02	Staphylococcus epidermidis	First	Vf	0.00690216265993625	Baseline
+443	Hv02	Staphylococcus epidermidis	Second	Ac	0.000351454847095145	12M
+444	Hv02	Staphylococcus epidermidis	Second	Hp	0.00087215552622806	12M
+445	Hv02	Staphylococcus epidermidis	Second	Ic	0.00248225610170901	12M
+446	Hv02	Staphylococcus epidermidis	Second	Mb	0.000112903155508653	12M
+447	Hv02	Staphylococcus epidermidis	Second	Pc	0.000311740568974566	12M
+448	Hv02	Staphylococcus epidermidis	Second	Ph	0.000877135690462323	12M
+449	Hv02	Staphylococcus epidermidis	Second	Ra	0.000556490034889809	12M
+450	Hv02	Staphylococcus epidermidis	Second	Vf	0.000298239246725448	12M
+451	Hv02	Staphylococcus hominis	First	Hp	0.00053441857345501	Baseline
+452	Hv02	Staphylococcus hominis	First	Ic	0.000679889195395436	Baseline
+453	Hv02	Staphylococcus hominis	First	Mb	2.58237162944551e-05	Baseline
+454	Hv02	Staphylococcus hominis	First	Pc	0.000985844421724889	Baseline
+455	Hv02	Staphylococcus hominis	First	Ph	0.0252398712495615	Baseline
+456	Hv02	Staphylococcus hominis	First	Ra	3.56798151639943e-05	Baseline
+457	Hv02	Staphylococcus hominis	First	Vf	0.000445712400840765	Baseline
+458	Hv02	Staphylococcus hominis	Second	Ac	3.86160402232496e-05	12M
+459	Hv02	Staphylococcus hominis	Second	Hp	0.000259536367808317	12M
+460	Hv02	Staphylococcus hominis	Second	Ic	0.000386246305716596	12M
+461	Hv02	Staphylococcus hominis	Second	Mb	1.25068953735668e-06	12M
+462	Hv02	Staphylococcus hominis	Second	Pc	0.000319745112062148	12M
+463	Hv02	Staphylococcus hominis	Second	Ph	0.00592808782800152	12M
+464	Hv02	Staphylococcus hominis	Second	Ra	6.78755298533549e-06	12M
+465	Hv02	Staphylococcus hominis	Second	Vf	4.02850398626967e-05	12M
+466	Hv03	Actinobacteria	First	Ac	0.0745054439865806	Baseline
+467	Hv03	Actinobacteria	First	Hp	0.128706105638158	Baseline
+468	Hv03	Actinobacteria	First	Ic	0.092694639555145	Baseline
+469	Hv03	Actinobacteria	First	Mb	0.0311490345275554	Baseline
+470	Hv03	Actinobacteria	First	Pc	0.297283158866059	Baseline
+471	Hv03	Actinobacteria	First	Ph	0.142895060444471	Baseline
+472	Hv03	Actinobacteria	First	Ra	0.179492974439798	Baseline
+473	Hv03	Actinobacteria	First	Vf	0.0765346223820925	Baseline
+474	Hv03	Actinobacteria	Second	Ac	0.112617433312549	12M
+475	Hv03	Actinobacteria	Second	Hp	0.0933042849236368	12M
+476	Hv03	Actinobacteria	Second	Ic	0.123556682944501	12M
+477	Hv03	Actinobacteria	Second	Mb	0.0169180663444911	12M
+478	Hv03	Actinobacteria	Second	Pc	0.269123567696389	12M
+479	Hv03	Actinobacteria	Second	Ph	0.025304380066986	12M
+480	Hv03	Actinobacteria	Second	Ra	0.0990576221843407	12M
+481	Hv03	Actinobacteria	Second	Vf	0.0854367414168037	12M
+482	Hv03	Alphaproteobacteria	First	Ac	0.00425296140454725	Baseline
+483	Hv03	Alphaproteobacteria	First	Hp	0.0238997344794959	Baseline
+484	Hv03	Alphaproteobacteria	First	Ic	0.00113635660266831	Baseline
+485	Hv03	Alphaproteobacteria	First	Mb	0.000885098421857235	Baseline
+486	Hv03	Alphaproteobacteria	First	Pc	0.0104503211295395	Baseline
+487	Hv03	Alphaproteobacteria	First	Ph	0.0486278567983744	Baseline
+488	Hv03	Alphaproteobacteria	First	Ra	0.000606911803957955	Baseline
+489	Hv03	Alphaproteobacteria	First	Vf	0.00571939738483476	Baseline
+490	Hv03	Alphaproteobacteria	Second	Ac	0.00998648174249291	12M
+491	Hv03	Alphaproteobacteria	Second	Hp	0.00241689611403143	12M
+492	Hv03	Alphaproteobacteria	Second	Ic	0.00110634405845807	12M
+493	Hv03	Alphaproteobacteria	Second	Mb	0.00115681390847732	12M
+494	Hv03	Alphaproteobacteria	Second	Pc	0.0193065046563814	12M
+495	Hv03	Alphaproteobacteria	Second	Ph	0.00758542818780726	12M
+496	Hv03	Alphaproteobacteria	Second	Ra	0.000477227135411128	12M
+497	Hv03	Alphaproteobacteria	Second	Vf	0.00728843072722427	12M
+498	Hv03	Bacteria	First	Ac	0.00658547293047141	Baseline
+499	Hv03	Bacteria	First	Hp	0.0404252883972707	Baseline
+500	Hv03	Bacteria	First	Ic	0.00113302371319121	Baseline
+501	Hv03	Bacteria	First	Mb	0.00392286155890924	Baseline
+502	Hv03	Bacteria	First	Pc	0.00302490921463846	Baseline
+503	Hv03	Bacteria	First	Ph	0.00190396083280573	Baseline
+504	Hv03	Bacteria	First	Ra	0.000898054704678623	Baseline
+505	Hv03	Bacteria	First	Vf	0.0126542754585239	Baseline
+506	Hv03	Bacteria	Second	Ac	0.0167363101444567	12M
+507	Hv03	Bacteria	Second	Hp	0.0131878418342355	12M
+508	Hv03	Bacteria	Second	Ic	0.000491855380635078	12M
+509	Hv03	Bacteria	Second	Mb	0.00244801336148255	12M
+510	Hv03	Bacteria	Second	Pc	0.00354208109085687	12M
+511	Hv03	Bacteria	Second	Ph	0.000464313030323845	12M
+512	Hv03	Bacteria	Second	Ra	0.00069911473599135	12M
+513	Hv03	Bacteria	Second	Vf	0.0038878360170793	12M
+514	Hv03	Corynebacterium tuberculostearicum	First	Ac	0.00291559414580071	Baseline
+515	Hv03	Corynebacterium tuberculostearicum	First	Hp	0.000768003751400803	Baseline
+516	Hv03	Corynebacterium tuberculostearicum	First	Ic	0.00454844188210491	Baseline
+517	Hv03	Corynebacterium tuberculostearicum	First	Mb	0.00023137408179123	Baseline
+518	Hv03	Corynebacterium tuberculostearicum	First	Pc	0.0345059678489032	Baseline
+519	Hv03	Corynebacterium tuberculostearicum	First	Ph	0.0187581855458973	Baseline
+520	Hv03	Corynebacterium tuberculostearicum	First	Ra	0.000478221081129174	Baseline
+521	Hv03	Corynebacterium tuberculostearicum	First	Vf	0.0035352389165636	Baseline
+522	Hv03	Corynebacterium tuberculostearicum	Second	Ac	0.00580328839473312	12M
+523	Hv03	Corynebacterium tuberculostearicum	Second	Hp	0.000787943548295971	12M
+524	Hv03	Corynebacterium tuberculostearicum	Second	Ic	0.00615414212141391	12M
+525	Hv03	Corynebacterium tuberculostearicum	Second	Mb	0.000444977454263196	12M
+526	Hv03	Corynebacterium tuberculostearicum	Second	Pc	0.0563389936189939	12M
+527	Hv03	Corynebacterium tuberculostearicum	Second	Ph	0.0112401467179715	12M
+528	Hv03	Corynebacterium tuberculostearicum	Second	Ra	0.000321322707894181	12M
+529	Hv03	Corynebacterium tuberculostearicum	Second	Vf	0.00369554927593948	12M
+530	Hv03	Cutibacterium acnes	First	Ac	0.747538034627526	Baseline
+531	Hv03	Cutibacterium acnes	First	Hp	0.342799305057446	Baseline
+532	Hv03	Cutibacterium acnes	First	Ic	0.813342159671117	Baseline
+533	Hv03	Cutibacterium acnes	First	Mb	0.865244491684686	Baseline
+534	Hv03	Cutibacterium acnes	First	Pc	0.432462390529135	Baseline
+535	Hv03	Cutibacterium acnes	First	Ph	0.0610147448395347	Baseline
+536	Hv03	Cutibacterium acnes	First	Ra	0.705129834640365	Baseline
+537	Hv03	Cutibacterium acnes	First	Vf	0.691064032589331	Baseline
+538	Hv03	Cutibacterium acnes	Second	Ac	0.665578612859111	12M
+539	Hv03	Cutibacterium acnes	Second	Hp	0.762823242011809	12M
+540	Hv03	Cutibacterium acnes	Second	Ic	0.664447037042363	12M
+541	Hv03	Cutibacterium acnes	Second	Mb	0.950463458530881	12M
+542	Hv03	Cutibacterium acnes	Second	Pc	0.341327697576728	12M
+543	Hv03	Cutibacterium acnes	Second	Ph	0.00992319174341382	12M
+544	Hv03	Cutibacterium acnes	Second	Ra	0.823762167182026	12M
+545	Hv03	Cutibacterium acnes	Second	Vf	0.791679105189588	12M
+546	Hv03	Firmicutes	First	Ac	0.0303142085477762	Baseline
+547	Hv03	Firmicutes	First	Hp	0.0321235917662531	Baseline
+548	Hv03	Firmicutes	First	Ic	0.0180618803305401	Baseline
+549	Hv03	Firmicutes	First	Mb	0.065134779972012	Baseline
+550	Hv03	Firmicutes	First	Pc	0.0482857924508519	Baseline
+551	Hv03	Firmicutes	First	Ph	0.0294079664646899	Baseline
+552	Hv03	Firmicutes	First	Ra	0.013441031051006	Baseline
+553	Hv03	Firmicutes	First	Vf	0.0333310638812925	Baseline
+554	Hv03	Firmicutes	Second	Ac	0.0486599634273498	12M
+555	Hv03	Firmicutes	Second	Hp	0.0352221407788849	12M
+556	Hv03	Firmicutes	Second	Ic	0.00464899193611698	12M
+557	Hv03	Firmicutes	Second	Mb	0.00558197643237414	12M
+558	Hv03	Firmicutes	Second	Pc	0.0417887124619544	12M
+559	Hv03	Firmicutes	Second	Ph	0.0917753345665966	12M
+560	Hv03	Firmicutes	Second	Ra	0.00489242210878231	12M
+561	Hv03	Firmicutes	Second	Vf	0.0169415452000022	12M
+562	Hv03	Fungi	First	Ac	0.0035544390624122	Baseline
+563	Hv03	Fungi	First	Hp	0.00131787954736505	Baseline
+564	Hv03	Fungi	First	Ic	0.000605633630695849	Baseline
+565	Hv03	Fungi	First	Mb	0.000309826626437477	Baseline
+566	Hv03	Fungi	First	Pc	0.00192967401287888	Baseline
+567	Hv03	Fungi	First	Ph	0.000355421259905511	Baseline
+568	Hv03	Fungi	First	Ra	0.0630934072219327	Baseline
+569	Hv03	Fungi	First	Vf	0.00265071998365995	Baseline
+570	Hv03	Fungi	Second	Ac	0.00274845037803964	12M
+571	Hv03	Fungi	Second	Hp	0.00107192247669904	12M
+572	Hv03	Fungi	Second	Ic	0.000195188576791004	12M
+573	Hv03	Fungi	Second	Mb	0.000322358611919405	12M
+574	Hv03	Fungi	Second	Pc	0.00123072930379302	12M
+575	Hv03	Fungi	Second	Ph	3.75901894057121e-05	12M
+576	Hv03	Fungi	Second	Ra	0.0439067378487	12M
+577	Hv03	Fungi	Second	Vf	0.0016892180934191	12M
+578	Hv03	Gammaproteobacteria	First	Ac	0.0778632666390767	Baseline
+579	Hv03	Gammaproteobacteria	First	Hp	0.391840036536155	Baseline
+580	Hv03	Gammaproteobacteria	First	Ic	0.00715682467049229	Baseline
+581	Hv03	Gammaproteobacteria	First	Mb	0.0124487410569254	Baseline
+582	Hv03	Gammaproteobacteria	First	Pc	0.079973405057967	Baseline
+583	Hv03	Gammaproteobacteria	First	Ph	0.462235919718223	Baseline
+584	Hv03	Gammaproteobacteria	First	Ra	0.00529498773466197	Baseline
+585	Hv03	Gammaproteobacteria	First	Vf	0.125036594914158	Baseline
+586	Hv03	Gammaproteobacteria	Second	Ac	0.0482697416336133	12M
+587	Hv03	Gammaproteobacteria	Second	Hp	0.0374397338613676	12M
+588	Hv03	Gammaproteobacteria	Second	Ic	0.00593879011840063	12M
+589	Hv03	Gammaproteobacteria	Second	Mb	0.0046816276035851	12M
+590	Hv03	Gammaproteobacteria	Second	Pc	0.10217701626313	12M
+591	Hv03	Gammaproteobacteria	Second	Ph	0.436496228337649	12M
+592	Hv03	Gammaproteobacteria	Second	Ra	0.00430409772384139	12M
+593	Hv03	Gammaproteobacteria	Second	Vf	0.0271984794328895	12M
+594	Hv03	Malassezia globosa	First	Ac	0.00389252061717004	Baseline
+595	Hv03	Malassezia globosa	First	Hp	0.0019377051894563	Baseline
+596	Hv03	Malassezia globosa	First	Ic	0.0205756725413869	Baseline
+597	Hv03	Malassezia globosa	First	Mb	0.00381010360047503	Baseline
+598	Hv03	Malassezia globosa	First	Pc	0.010167625805334	Baseline
+599	Hv03	Malassezia globosa	First	Ph	0.00116711884784084	Baseline
+600	Hv03	Malassezia globosa	First	Ra	0.0035528966534057	Baseline
+601	Hv03	Malassezia globosa	First	Vf	0.00310385390780729	Baseline
+602	Hv03	Malassezia globosa	Second	Ac	0.00392121161312633	12M
+603	Hv03	Malassezia globosa	Second	Hp	0.00110965474289866	12M
+604	Hv03	Malassezia globosa	Second	Ic	0.0320386926232766	12M
+605	Hv03	Malassezia globosa	Second	Mb	0.00736355319890301	12M
+606	Hv03	Malassezia globosa	Second	Pc	0.00433605269830756	12M
+607	Hv03	Malassezia globosa	Second	Ph	7.35729036065746e-05	12M
+608	Hv03	Malassezia globosa	Second	Ra	0.00157070641738531	12M
+609	Hv03	Malassezia globosa	Second	Vf	0.00194219456783801	12M
+610	Hv03	Malassezia restricta	First	Ac	0.02132781117619	Baseline
+611	Hv03	Malassezia restricta	First	Hp	0.0120168724140364	Baseline
+612	Hv03	Malassezia restricta	First	Ic	0.00302023270234329	Baseline
+613	Hv03	Malassezia restricta	First	Mb	0.00345683282297001	Baseline
+614	Hv03	Malassezia restricta	First	Pc	0.0172551767030431	Baseline
+615	Hv03	Malassezia restricta	First	Ph	0.00370163813772974	Baseline
+616	Hv03	Malassezia restricta	First	Ra	0.0178379640809894	Baseline
+617	Hv03	Malassezia restricta	First	Vf	0.0183188277523725	Baseline
+618	Hv03	Malassezia restricta	Second	Ac	0.0173706989148717	12M
+619	Hv03	Malassezia restricta	Second	Hp	0.0120403403982496	12M
+620	Hv03	Malassezia restricta	Second	Ic	0.00167009362275453	12M
+621	Hv03	Malassezia restricta	Second	Mb	0.00365130574358718	12M
+622	Hv03	Malassezia restricta	Second	Pc	0.0107318129045862	12M
+623	Hv03	Malassezia restricta	Second	Ph	0.000277103994928292	12M
+624	Hv03	Malassezia restricta	Second	Ra	0.00930470154659954	12M
+625	Hv03	Malassezia restricta	Second	Vf	0.0136039791783743	12M
+626	Hv03	Micrococcus luteus	First	Ac	0.0134858082125959	Baseline
+627	Hv03	Micrococcus luteus	First	Hp	0.0122151655044473	Baseline
+628	Hv03	Micrococcus luteus	First	Ic	0.00364983139546971	Baseline
+629	Hv03	Micrococcus luteus	First	Mb	0.00130435556905277	Baseline
+630	Hv03	Micrococcus luteus	First	Pc	0.0540563778379099	Baseline
+631	Hv03	Micrococcus luteus	First	Ph	0.194286860384586	Baseline
+632	Hv03	Micrococcus luteus	First	Ra	0.000962797259681991	Baseline
+633	Hv03	Micrococcus luteus	First	Vf	0.0147701612445675	Baseline
+634	Hv03	Micrococcus luteus	Second	Ac	0.0486164744594007	12M
+635	Hv03	Micrococcus luteus	Second	Hp	0.0201106971432383	12M
+636	Hv03	Micrococcus luteus	Second	Ic	0.00527290123110939	12M
+637	Hv03	Micrococcus luteus	Second	Mb	0.00405372695828444	12M
+638	Hv03	Micrococcus luteus	Second	Pc	0.0902145656950564	12M
+639	Hv03	Micrococcus luteus	Second	Ph	0.0835888343041144	12M
+640	Hv03	Micrococcus luteus	Second	Ra	0.00156272705692184	12M
+641	Hv03	Micrococcus luteus	Second	Vf	0.0379063396150695	12M
+642	Hv03	Proteobacteria	First	Ac	0.010113026599815	Baseline
+643	Hv03	Proteobacteria	First	Hp	0.0106439886191211	Baseline
+644	Hv03	Proteobacteria	First	Ic	0.00260330409966038	Baseline
+645	Hv03	Proteobacteria	First	Mb	0.0108243890871292	Baseline
+646	Hv03	Proteobacteria	First	Pc	0.00528820294927566	Baseline
+647	Hv03	Proteobacteria	First	Ph	0.0164990891615944	Baseline
+648	Hv03	Proteobacteria	First	Ra	0.00312829670678851	Baseline
+649	Hv03	Proteobacteria	First	Vf	0.00904698143966473	Baseline
+650	Hv03	Proteobacteria	Second	Ac	0.0139709619445332	12M
+651	Hv03	Proteobacteria	Second	Hp	0.0190292200214213	12M
+652	Hv03	Proteobacteria	Second	Ic	0.00132615845907791	12M
+653	Hv03	Proteobacteria	Second	Mb	0.00188228012605472	12M
+654	Hv03	Proteobacteria	Second	Pc	0.0349948667682835	12M
+655	Hv03	Proteobacteria	Second	Ph	0.00117549715653093	12M
+656	Hv03	Proteobacteria	Second	Ra	0.00133009800956388	12M
+657	Hv03	Proteobacteria	Second	Vf	0.00618899866248691	12M
+658	Hv03	Staphylococcus aureus	First	Ac	0.00023051735168106	Baseline
+659	Hv03	Staphylococcus aureus	First	Hp	6.6005097060273e-05	Baseline
+660	Hv03	Staphylococcus aureus	First	Ic	0.000950984464132475	Baseline
+661	Hv03	Staphylococcus aureus	First	Mb	1.72464375327471e-05	Baseline
+662	Hv03	Staphylococcus aureus	First	Pc	0.000390920488636473	Baseline
+663	Hv03	Staphylococcus aureus	First	Ph	0.00306222271998976	Baseline
+664	Hv03	Staphylococcus aureus	First	Ra	6.91116844821231e-05	Baseline
+665	Hv03	Staphylococcus aureus	First	Vf	0.000297487338348822	Baseline
+666	Hv03	Staphylococcus aureus	Second	Ac	0.000341624181962034	12M
+667	Hv03	Staphylococcus aureus	Second	Hp	9.02256009049336e-05	12M
+668	Hv03	Staphylococcus aureus	Second	Ic	0.00253034471690963	12M
+669	Hv03	Staphylococcus aureus	Second	Mb	2.26509017044509e-05	12M
+670	Hv03	Staphylococcus aureus	Second	Pc	0.00105771240687856	12M
+671	Hv03	Staphylococcus aureus	Second	Ph	0.040399746933942	12M
+672	Hv03	Staphylococcus aureus	Second	Ra	9.63661225203178e-05	12M
+673	Hv03	Staphylococcus aureus	Second	Vf	0.000204104620236764	12M
+674	Hv03	Staphylococcus epidermidis	First	Ac	0.003015395983707	Baseline
+675	Hv03	Staphylococcus epidermidis	First	Hp	0.00115381132209654	Baseline
+676	Hv03	Staphylococcus epidermidis	First	Ic	0.030039015439055	Baseline
+677	Hv03	Staphylococcus epidermidis	First	Mb	0.0012003145600237	Baseline
+678	Hv03	Staphylococcus epidermidis	First	Pc	0.00244275535094238	Baseline
+679	Hv03	Staphylococcus epidermidis	First	Ph	0.00481275813754688	Baseline
+680	Hv03	Staphylococcus epidermidis	First	Ra	0.00597974948205956	Baseline
+681	Hv03	Staphylococcus epidermidis	First	Vf	0.00324739674938819	Baseline
+682	Hv03	Staphylococcus epidermidis	Second	Ac	0.00404172321105772	12M
+683	Hv03	Staphylococcus epidermidis	Second	Hp	0.00128790322712144	12M
+684	Hv03	Staphylococcus epidermidis	Second	Ic	0.150062663631575	12M
+685	Hv03	Staphylococcus epidermidis	Second	Mb	0.000945111325014504	12M
+686	Hv03	Staphylococcus epidermidis	Second	Pc	0.0100031808350063	12M
+687	Hv03	Staphylococcus epidermidis	Second	Ph	0.0287147623660131	12M
+688	Hv03	Staphylococcus epidermidis	Second	Ra	0.00855847789402581	12M
+689	Hv03	Staphylococcus epidermidis	Second	Vf	0.00183337159782034	12M
+690	Hv03	Staphylococcus hominis	First	Ac	0.00040549871464964	Baseline
+691	Hv03	Staphylococcus hominis	First	Hp	8.6506680238085e-05	Baseline
+692	Hv03	Staphylococcus hominis	First	Ic	0.000481999301997718	Baseline
+693	Hv03	Staphylococcus hominis	First	Mb	6.05499926421449e-05	Baseline
+694	Hv03	Staphylococcus hominis	First	Pc	0.00248332175488532	Baseline
+695	Hv03	Staphylococcus hominis	First	Ph	0.0112711967068106	Baseline
+696	Hv03	Staphylococcus hominis	First	Ra	3.37614550631061e-05	Baseline
+697	Hv03	Staphylococcus hominis	First	Vf	0.000689346057394442	Baseline
+698	Hv03	Staphylococcus hominis	Second	Ac	0.00133702378270187	12M
+699	Hv03	Staphylococcus hominis	Second	Hp	7.79533172054357e-05	12M
+700	Hv03	Staphylococcus hominis	Second	Ic	0.00056011353661703	12M
+701	Hv03	Staphylococcus hominis	Second	Mb	6.40794989777432e-05	12M
+702	Hv03	Staphylococcus hominis	Second	Pc	0.0138265060236547	12M
+703	Hv03	Staphylococcus hominis	Second	Ph	0.262943869500711	12M
+704	Hv03	Staphylococcus hominis	Second	Ra	0.000156211325996311	12M
+705	Hv03	Staphylococcus hominis	Second	Vf	0.000504106405228919	12M

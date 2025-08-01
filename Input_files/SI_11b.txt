@@ -1,0 +1,1441 @@
+site_specific	day	subject_id	new_taxa	abu_new
+Ra	Day 0	subject 5	Actinobacteria	0.536244243148106
+Ra	Day 0	subject 5	Alphaproteobacteria	0.0322456386017362
+Ra	Day 0	subject 5	Bacteria	0.00836303113848184
+Ra	Day 0	subject 5	Corynebacterium tuberculostearicum	0.014029638853693
+Ra	Day 0	subject 5	Cutibacterium acnes	0.0315721384115572
+Ra	Day 0	subject 5	Eukaryotic virus	4.84532510920153e-06
+Ra	Day 0	subject 5	Firmicutes	0.0242193575583438
+Ra	Day 0	subject 5	Fungi	0.178821568480192
+Ra	Day 0	subject 5	Gammaproteobacteria	0.0167236396144091
+Ra	Day 0	subject 5	Malassezia globosa	0.000176854366485856
+Ra	Day 0	subject 5	Malassezia restricta	0.0685322783445464
+Ra	Day 0	subject 5	Micrococcus luteus	0.000307678144434297
+Ra	Day 0	subject 5	Proteobacteria	0.0183831634643106
+Ra	Day 0	subject 5	Staphylococcus aureus	0.00763380970954701
+Ra	Day 0	subject 5	Staphylococcus epidermidis	0.0622309330400298
+Ra	Day 0	subject 5	Staphylococcus hominis	0.000511181799020761
+Ra	Day 0	subject 6	Actinobacteria	0.0687813599144446
+Ra	Day 0	subject 6	Alphaproteobacteria	0.000248083145053747
+Ra	Day 0	subject 6	Bacteria	0.000373972407340207
+Ra	Day 0	subject 6	Corynebacterium tuberculostearicum	0.000118498503248116
+Ra	Day 0	subject 6	Cutibacterium acnes	0.667679939730824
+Ra	Day 0	subject 6	Eukaryotic virus	2.36504289227008e-05
+Ra	Day 0	subject 6	Firmicutes	0.0119897820292709
+Ra	Day 0	subject 6	Fungi	0.00334234759577377
+Ra	Day 0	subject 6	Gammaproteobacteria	0.00308022200854717
+Ra	Day 0	subject 6	Malassezia globosa	0.00679752744619959
+Ra	Day 0	subject 6	Malassezia restricta	0.190330768493589
+Ra	Day 0	subject 6	Micrococcus luteus	0.000316817204110346
+Ra	Day 0	subject 6	Proteobacteria	0.000338004046686932
+Ra	Day 0	subject 6	Staphylococcus aureus	0.000676254452008476
+Ra	Day 0	subject 6	Staphylococcus epidermidis	0.0457633336067914
+Ra	Day 0	subject 6	Staphylococcus hominis	0.00013943898719009
+Ra	Day 0	subject 7	Actinobacteria	0.564150532306692
+Ra	Day 0	subject 7	Alphaproteobacteria	0.000273729287817222
+Ra	Day 0	subject 7	Bacteria	0.00238061532131947
+Ra	Day 0	subject 7	Corynebacterium tuberculostearicum	0.00177841088812159
+Ra	Day 0	subject 7	Cutibacterium acnes	0.0357208425774571
+Ra	Day 0	subject 7	Eukaryotic virus	4.20271229779977e-05
+Ra	Day 0	subject 7	Firmicutes	0.00937370738947419
+Ra	Day 0	subject 7	Fungi	0.00343516431499107
+Ra	Day 0	subject 7	Gammaproteobacteria	0.00273286897049032
+Ra	Day 0	subject 7	Malassezia globosa	0.03026339946338
+Ra	Day 0	subject 7	Malassezia restricta	0.122130266385601
+Ra	Day 0	subject 7	Micrococcus luteus	0.000368290314517716
+Ra	Day 0	subject 7	Proteobacteria	0.00040589352981382
+Ra	Day 0	subject 7	Staphylococcus aureus	0.000540822714111601
+Ra	Day 0	subject 7	Staphylococcus epidermidis	0.225952743818142
+Ra	Day 0	subject 7	Staphylococcus hominis	0.000450685595093001
+Ra	Day 0	subject 8	Actinobacteria	0.0295104923907
+Ra	Day 0	subject 8	Alphaproteobacteria	0.000712036029896776
+Ra	Day 0	subject 8	Bacteria	0.013205428947104
+Ra	Day 0	subject 8	Corynebacterium tuberculostearicum	0.00591095992566368
+Ra	Day 0	subject 8	Cutibacterium acnes	0.704946247832221
+Ra	Day 0	subject 8	Eukaryotic virus	1.2480912005202e-06
+Ra	Day 0	subject 8	Firmicutes	0.0267665638863563
+Ra	Day 0	subject 8	Fungi	0.0200867797811722
+Ra	Day 0	subject 8	Gammaproteobacteria	0.0542039767929922
+Ra	Day 0	subject 8	Malassezia globosa	0.0010072095988198
+Ra	Day 0	subject 8	Malassezia restricta	0.0589529638109716
+Ra	Day 0	subject 8	Micrococcus luteus	0.00163063115347965
+Ra	Day 0	subject 8	Proteobacteria	0.00138475718697717
+Ra	Day 0	subject 8	Staphylococcus aureus	0.000571625769838253
+Ra	Day 0	subject 8	Staphylococcus epidermidis	0.0777123986003905
+Ra	Day 0	subject 8	Staphylococcus hominis	0.00339668020221573
+Ra	Day 0	subject 9	Actinobacteria	0.112653066827258
+Ra	Day 0	subject 9	Alphaproteobacteria	0.000422362548268119
+Ra	Day 0	subject 9	Bacteria	0.000102774886745242
+Ra	Day 0	subject 9	Corynebacterium tuberculostearicum	0.00249862644179615
+Ra	Day 0	subject 9	Cutibacterium acnes	0.641770212951676
+Ra	Day 0	subject 9	Eukaryotic virus	7.91929778002724e-06
+Ra	Day 0	subject 9	Firmicutes	0.0019527228481596
+Ra	Day 0	subject 9	Fungi	0.197798364823394
+Ra	Day 0	subject 9	Gammaproteobacteria	0.00172007147782192
+Ra	Day 0	subject 9	Malassezia globosa	0.0161889804907219
+Ra	Day 0	subject 9	Malassezia restricta	0.0151438091681534
+Ra	Day 0	subject 9	Micrococcus luteus	0.00075567699260971
+Ra	Day 0	subject 9	Proteobacteria	0.000195342678574005
+Ra	Day 0	subject 9	Staphylococcus aureus	8.11288061465013e-05
+Ra	Day 0	subject 9	Staphylococcus epidermidis	0.00867057516275915
+Ra	Day 0	subject 9	Staphylococcus hominis	3.83645981343542e-05
+Ra	Day 0	subject 10	Actinobacteria	0.0182684954690595
+Ra	Day 0	subject 10	Alphaproteobacteria	1.64659510977957e-05
+Ra	Day 0	subject 10	Bacteria	7.99433857646603e-06
+Ra	Day 0	subject 10	Corynebacterium tuberculostearicum	0.000557694604573167
+Ra	Day 0	subject 10	Cutibacterium acnes	0.929582524900873
+Ra	Day 0	subject 10	Eukaryotic virus	2.38636972431822e-07
+Ra	Day 0	subject 10	Firmicutes	0.0035553329337755
+Ra	Day 0	subject 10	Fungi	0.000825683924614103
+Ra	Day 0	subject 10	Gammaproteobacteria	0.00011466506525349
+Ra	Day 0	subject 10	Malassezia globosa	0.0411399401808701
+Ra	Day 0	subject 10	Malassezia restricta	0.00142728773211473
+Ra	Day 0	subject 10	Micrococcus luteus	1.01420713283524e-05
+Ra	Day 0	subject 10	Proteobacteria	1.0738663759432e-05
+Ra	Day 0	subject 10	Staphylococcus aureus	0.000130057149975343
+Ra	Day 0	subject 10	Staphylococcus epidermidis	0.00432088034133678
+Ra	Day 0	subject 10	Staphylococcus hominis	3.18580358196482e-05
+Ra	Day 0	subject 11	Actinobacteria	0.0195571422180236
+Ra	Day 0	subject 11	Alphaproteobacteria	0.000468131707105163
+Ra	Day 0	subject 11	Bacteria	0.000515463583308317
+Ra	Day 0	subject 11	Corynebacterium tuberculostearicum	0.00291058619556105
+Ra	Day 0	subject 11	Cutibacterium acnes	0.471807383902364
+Ra	Day 0	subject 11	Eukaryotic virus	0.000908382993981071
+Ra	Day 0	subject 11	Firmicutes	0.00670621363793449
+Ra	Day 0	subject 11	Fungi	0.229406581464967
+Ra	Day 0	subject 11	Gammaproteobacteria	0.00502884975111862
+Ra	Day 0	subject 11	Malassezia globosa	0.0323685195042991
+Ra	Day 0	subject 11	Malassezia restricta	0.197511380722699
+Ra	Day 0	subject 11	Micrococcus luteus	0.000960253543244801
+Ra	Day 0	subject 11	Proteobacteria	0.00100564027385056
+Ra	Day 0	subject 11	Staphylococcus aureus	0.00025740760072126
+Ra	Day 0	subject 11	Staphylococcus epidermidis	0.0291700517603243
+Ra	Day 0	subject 11	Staphylococcus hominis	0.00141801114049722
+Ra	Day 0	subject 12	Actinobacteria	0.327648497856938
+Ra	Day 0	subject 12	Alphaproteobacteria	0.0195558562582073
+Ra	Day 0	subject 12	Bacteria	0.000644918310347356
+Ra	Day 0	subject 12	Corynebacterium tuberculostearicum	0.00183143468493991
+Ra	Day 0	subject 12	Cutibacterium acnes	0.575473773322046
+Ra	Day 0	subject 12	Eukaryotic virus	3.33291116458582e-06
+Ra	Day 0	subject 12	Firmicutes	0.0268199361414221
+Ra	Day 0	subject 12	Fungi	0.000593258187296276
+Ra	Day 0	subject 12	Gammaproteobacteria	0.00844393043547817
+Ra	Day 0	subject 12	Malassezia globosa	3.33291116458582e-05
+Ra	Day 0	subject 12	Malassezia restricta	0.00175144481698985
+Ra	Day 0	subject 12	Micrococcus luteus	0.00525100153980496
+Ra	Day 0	subject 12	Proteobacteria	0.00131816636559369
+Ra	Day 0	subject 12	Staphylococcus aureus	7.3324045620888e-05
+Ra	Day 0	subject 12	Staphylococcus epidermidis	0.0305394650010999
+Ra	Day 0	subject 12	Staphylococcus hominis	1.8331011405222e-05
+Ra	Day 0	subject 13	Actinobacteria	0.0297170947061665
+Ra	Day 0	subject 13	Alphaproteobacteria	0.000240621733004634
+Ra	Day 0	subject 13	Bacteria	0.000206058572518171
+Ra	Day 0	subject 13	Corynebacterium tuberculostearicum	6.16699987106776e-05
+Ra	Day 0	subject 13	Cutibacterium acnes	0.697304384162151
+Ra	Day 0	subject 13	Eukaryotic virus	1.69320651371886e-05
+Ra	Day 0	subject 13	Firmicutes	0.00264614003283889
+Ra	Day 0	subject 13	Fungi	0.0299083959742074
+Ra	Day 0	subject 13	Gammaproteobacteria	0.000896234401917518
+Ra	Day 0	subject 13	Malassezia globosa	0.00806129407579663
+Ra	Day 0	subject 13	Malassezia restricta	0.229009443121465
+Ra	Day 0	subject 13	Micrococcus luteus	0.00020023332075079
+Ra	Day 0	subject 13	Proteobacteria	0.000625554369793196
+Ra	Day 0	subject 13	Staphylococcus aureus	5.99612581922458e-05
+Ra	Day 0	subject 13	Staphylococcus epidermidis	0.00103844821506519
+Ra	Day 0	subject 13	Staphylococcus hominis	7.53399228581326e-06
+Ra	Day 0	subject 14	Actinobacteria	0.0901796572345573
+Ra	Day 0	subject 14	Alphaproteobacteria	0.00513019821220365
+Ra	Day 0	subject 14	Bacteria	0.00772538645737998
+Ra	Day 0	subject 14	Corynebacterium tuberculostearicum	0.012895703521683
+Ra	Day 0	subject 14	Cutibacterium acnes	0.431094617805248
+Ra	Day 0	subject 14	Eukaryotic virus	0.000162982836653586
+Ra	Day 0	subject 14	Firmicutes	0.0755613505008587
+Ra	Day 0	subject 14	Fungi	0.00694808369795519
+Ra	Day 0	subject 14	Gammaproteobacteria	0.0552486741973095
+Ra	Day 0	subject 14	Malassezia globosa	0.0146634404423103
+Ra	Day 0	subject 14	Malassezia restricta	0.106831488284041
+Ra	Day 0	subject 14	Micrococcus luteus	0.00387648408409914
+Ra	Day 0	subject 14	Proteobacteria	0.00479921768238406
+Ra	Day 0	subject 14	Staphylococcus aureus	0.000965359878640472
+Ra	Day 0	subject 14	Staphylococcus epidermidis	0.175966300164236
+Ra	Day 0	subject 14	Staphylococcus hominis	0.00795105500043879
+Ra	Day 14	subject 5	Actinobacteria	0.468186881168024
+Ra	Day 14	subject 5	Alphaproteobacteria	0.0345458029025229
+Ra	Day 14	subject 5	Bacteria	0.00305255261594017
+Ra	Day 14	subject 5	Corynebacterium tuberculostearicum	0.00670587356586856
+Ra	Day 14	subject 5	Cutibacterium acnes	0.028012041345851
+Ra	Day 14	subject 5	Eukaryotic virus	1.29895855997454e-05
+Ra	Day 14	subject 5	Firmicutes	0.0433397523535506
+Ra	Day 14	subject 5	Fungi	0.118812492084471
+Ra	Day 14	subject 5	Gammaproteobacteria	0.0291648670678284
+Ra	Day 14	subject 5	Malassezia globosa	0.000305255261594017
+Ra	Day 14	subject 5	Malassezia restricta	0.124758474892755
+Ra	Day 14	subject 5	Micrococcus luteus	0.000808601703584151
+Ra	Day 14	subject 5	Proteobacteria	0.0093979651814158
+Ra	Day 14	subject 5	Staphylococcus aureus	0.00153277110076996
+Ra	Day 14	subject 5	Staphylococcus epidermidis	0.129022306365871
+Ra	Day 14	subject 5	Staphylococcus hominis	0.00234137280435411
+Ra	Day 14	subject 6	Actinobacteria	0.0658810079344821
+Ra	Day 14	subject 6	Alphaproteobacteria	0.00162500494332256
+Ra	Day 14	subject 6	Bacteria	0.00103180623613623
+Ra	Day 14	subject 6	Corynebacterium tuberculostearicum	0.000395465804790889
+Ra	Day 14	subject 6	Cutibacterium acnes	0.495151948747632
+Ra	Day 14	subject 6	Eukaryotic virus	0.00011504459775735
+Ra	Day 14	subject 6	Firmicutes	0.0156892070191585
+Ra	Day 14	subject 6	Fungi	0.0144596678806269
+Ra	Day 14	subject 6	Gammaproteobacteria	0.0050871283070828
+Ra	Day 14	subject 6	Malassezia globosa	0.0164010454677821
+Ra	Day 14	subject 6	Malassezia restricta	0.375142457568317
+Ra	Day 14	subject 6	Micrococcus luteus	0.00265681117945879
+Ra	Day 14	subject 6	Proteobacteria	0.00138053517308819
+Ra	Day 14	subject 6	Staphylococcus aureus	0.00021570862079503
+Ra	Day 14	subject 6	Staphylococcus epidermidis	0.00457661790453456
+Ra	Day 14	subject 6	Staphylococcus hominis	0.00019054261503561
+Ra	Day 14	subject 7	Actinobacteria	0.021052241296207
+Ra	Day 14	subject 7	Alphaproteobacteria	0.00104556746134737
+Ra	Day 14	subject 7	Bacteria	0.00126802862333618
+Ra	Day 14	subject 7	Corynebacterium tuberculostearicum	0.000934336880352972
+Ra	Day 14	subject 7	Cutibacterium acnes	0.0889028957027919
+Ra	Day 14	subject 7	Eukaryotic virus	0.00126802862333618
+Ra	Day 14	subject 7	Firmicutes	0.0127841014422899
+Ra	Day 14	subject 7	Fungi	0.0080086018315969
+Ra	Day 14	subject 7	Gammaproteobacteria	0.00964739905824775
+Ra	Day 14	subject 7	Malassezia globosa	0.0556449519854659
+Ra	Day 14	subject 7	Malassezia restricta	0.219591412999147
+Ra	Day 14	subject 7	Micrococcus luteus	0.00687404990545401
+Ra	Day 14	subject 7	Proteobacteria	0.00257313410700382
+Ra	Day 14	subject 7	Staphylococcus aureus	0.00207630417856216
+Ra	Day 14	subject 7	Staphylococcus epidermidis	0.56780986986022
+Ra	Day 14	subject 7	Staphylococcus hominis	0.00051907604464054
+Ra	Day 14	subject 8	Actinobacteria	0.0918507019008745
+Ra	Day 14	subject 8	Alphaproteobacteria	0.00243883924964066
+Ra	Day 14	subject 8	Bacteria	0.0100651091723373
+Ra	Day 14	subject 8	Corynebacterium tuberculostearicum	0.00315261599790397
+Ra	Day 14	subject 8	Cutibacterium acnes	0.289868043125338
+Ra	Day 14	subject 8	Eukaryotic virus	1.46918027086787e-05
+Ra	Day 14	subject 8	Firmicutes	0.036698898849387
+Ra	Day 14	subject 8	Fungi	0.0686817290292882
+Ra	Day 14	subject 8	Gammaproteobacteria	0.0272067699826882
+Ra	Day 14	subject 8	Malassezia globosa	0.00141531032760271
+Ra	Day 14	subject 8	Malassezia restricta	0.174271715096562
+Ra	Day 14	subject 8	Micrococcus luteus	0.00373783947246634
+Ra	Day 14	subject 8	Proteobacteria	0.000988023732158643
+Ra	Day 14	subject 8	Staphylococcus aureus	0.00118269011804864
+Ra	Day 14	subject 8	Staphylococcus epidermidis	0.286523209375329
+Ra	Day 14	subject 8	Staphylococcus hominis	0.00190381276766628
+Ra	Day 14	subject 9	Actinobacteria	0.0135402594954604
+Ra	Day 14	subject 9	Alphaproteobacteria	0.00210486632528039
+Ra	Day 14	subject 9	Bacteria	0.000345575068329616
+Ra	Day 14	subject 9	Corynebacterium tuberculostearicum	0.000832521755521348
+Ra	Day 14	subject 9	Cutibacterium acnes	0.78599478495806
+Ra	Day 14	subject 9	Eukaryotic virus	0
+Ra	Day 14	subject 9	Firmicutes	0.00593760799220886
+Ra	Day 14	subject 9	Fungi	0.110301278627753
+Ra	Day 14	subject 9	Gammaproteobacteria	0.00625176714523578
+Ra	Day 14	subject 9	Malassezia globosa	0.0110741101441991
+Ra	Day 14	subject 9	Malassezia restricta	0.0172787534164808
+Ra	Day 14	subject 9	Micrococcus luteus	0.00117809682385096
+Ra	Day 14	subject 9	Proteobacteria	0.00144513210392385
+Ra	Day 14	subject 9	Staphylococcus aureus	0.00100530928968616
+Ra	Day 14	subject 9	Staphylococcus epidermidis	0.0425371493198455
+Ra	Day 14	subject 9	Staphylococcus hominis	0.000172787534164808
+Ra	Day 14	subject 10	Actinobacteria	0.00502875227263539
+Ra	Day 14	subject 10	Alphaproteobacteria	5.60920254398908e-05
+Ra	Day 14	subject 10	Bacteria	6.13151695091924e-05
+Ra	Day 14	subject 10	Corynebacterium tuberculostearicum	8.44786779904429e-05
+Ra	Day 14	subject 10	Cutibacterium acnes	0.812009734123798
+Ra	Day 14	subject 10	Eukaryotic virus	6.69925000193028e-05
+Ra	Day 14	subject 10	Firmicutes	0.0157398311062301
+Ra	Day 14	subject 10	Fungi	0.00253935639056218
+Ra	Day 14	subject 10	Gammaproteobacteria	0.0713724469612428
+Ra	Day 14	subject 10	Malassezia globosa	0.0467101232253232
+Ra	Day 14	subject 10	Malassezia restricta	0.0222905621420159
+Ra	Day 14	subject 10	Micrococcus luteus	3.83787542483464e-05
+Ra	Day 14	subject 10	Proteobacteria	3.20201440770227e-05
+Ra	Day 14	subject 10	Staphylococcus aureus	0.00147292662754304
+Ra	Day 14	subject 10	Staphylococcus epidermidis	0.0217623433113552
+Ra	Day 14	subject 10	Staphylococcus hominis	0.000734646568008287
+Ra	Day 14	subject 11	Actinobacteria	0.0121085862073477
+Ra	Day 14	subject 11	Alphaproteobacteria	9.44961103947175e-05
+Ra	Day 14	subject 11	Bacteria	0.000199168724985789
+Ra	Day 14	subject 11	Corynebacterium tuberculostearicum	0.00113879927911583
+Ra	Day 14	subject 11	Cutibacterium acnes	0.739455809015123
+Ra	Day 14	subject 11	Eukaryotic virus	0.000260712345601836
+Ra	Day 14	subject 11	Firmicutes	0.00123184160319678
+Ra	Day 14	subject 11	Fungi	0.127629354271733
+Ra	Day 14	subject 11	Gammaproteobacteria	0.00118580503659422
+Ra	Day 14	subject 11	Malassezia globosa	0.0120543115183005
+Ra	Day 14	subject 11	Malassezia restricta	0.0908286921205266
+Ra	Day 14	subject 11	Micrococcus luteus	5.8636047988517e-05
+Ra	Day 14	subject 11	Proteobacteria	9.54653012705608e-05
+Ra	Day 14	subject 11	Staphylococcus aureus	5.33054981713791e-05
+Ra	Day 14	subject 11	Staphylococcus epidermidis	0.0133656267733164
+Ra	Day 14	subject 11	Staphylococcus hominis	0.000239390146333284
+Ra	Day 14	subject 12	Actinobacteria	0.421275334639511
+Ra	Day 14	subject 12	Alphaproteobacteria	0.0318586693448804
+Ra	Day 14	subject 12	Bacteria	0.000197573143224064
+Ra	Day 14	subject 12	Corynebacterium tuberculostearicum	0.0134349737392364
+Ra	Day 14	subject 12	Cutibacterium acnes	0.134283879677956
+Ra	Day 14	subject 12	Eukaryotic virus	0
+Ra	Day 14	subject 12	Firmicutes	0.169682401172267
+Ra	Day 14	subject 12	Fungi	0.00176169386041457
+Ra	Day 14	subject 12	Gammaproteobacteria	0.0106360208768955
+Ra	Day 14	subject 12	Malassezia globosa	9.87865716120322e-05
+Ra	Day 14	subject 12	Malassezia restricta	0.00632234058317006
+Ra	Day 14	subject 12	Micrococcus luteus	0.00321056357739105
+Ra	Day 14	subject 12	Proteobacteria	0.000971401287518317
+Ra	Day 14	subject 12	Staphylococcus aureus	0.0015476562885885
+Ra	Day 14	subject 12	Staphylococcus epidermidis	0.204702240808733
+Ra	Day 14	subject 12	Staphylococcus hominis	1.64644286020054e-05
+Ra	Day 14	subject 13	Actinobacteria	0.0324482000721754
+Ra	Day 14	subject 13	Alphaproteobacteria	0.000345347557817482
+Ra	Day 14	subject 13	Bacteria	0.000164820960143857
+Ra	Day 14	subject 13	Corynebacterium tuberculostearicum	0.000231349334848604
+Ra	Day 14	subject 13	Cutibacterium acnes	0.23049964221146
+Ra	Day 14	subject 13	Eukaryotic virus	3.38818247833196e-05
+Ra	Day 14	subject 13	Firmicutes	0.00233608123167492
+Ra	Day 14	subject 13	Fungi	0.139204359461456
+Ra	Day 14	subject 13	Gammaproteobacteria	0.00179150148541802
+Ra	Day 14	subject 13	Malassezia globosa	0.0111008857803099
+Ra	Day 14	subject 13	Malassezia restricta	0.579305616706564
+Ra	Day 14	subject 13	Micrococcus luteus	0.000349935721590223
+Ra	Day 14	subject 13	Proteobacteria	0.000425640423840453
+Ra	Day 14	subject 13	Staphylococcus aureus	1.88820586032042e-05
+Ra	Day 14	subject 13	Staphylococcus epidermidis	0.00172056141477795
+Ra	Day 14	subject 13	Staphylococcus hominis	2.32937545385322e-05
+Ra	Day 14	subject 14	Actinobacteria	0.154194772344013
+Ra	Day 14	subject 14	Alphaproteobacteria	0.00874789207419898
+Ra	Day 14	subject 14	Bacteria	0.0139123102866779
+Ra	Day 14	subject 14	Corynebacterium tuberculostearicum	0.00990725126475548
+Ra	Day 14	subject 14	Cutibacterium acnes	0.457419898819561
+Ra	Day 14	subject 14	Eukaryotic virus	0.000843170320404721
+Ra	Day 14	subject 14	Firmicutes	0.122365092748735
+Ra	Day 14	subject 14	Fungi	0.00916947723440134
+Ra	Day 14	subject 14	Gammaproteobacteria	0.0256112984822934
+Ra	Day 14	subject 14	Malassezia globosa	0.00611298482293423
+Ra	Day 14	subject 14	Malassezia restricta	0.0740935919055649
+Ra	Day 14	subject 14	Micrococcus luteus	0.00337268128161888
+Ra	Day 14	subject 14	Proteobacteria	0.00653456998313659
+Ra	Day 14	subject 14	Staphylococcus aureus	0.0010539629005059
+Ra	Day 14	subject 14	Staphylococcus epidermidis	0.102761382799325
+Ra	Day 14	subject 14	Staphylococcus hominis	0.00389966273187184
+Ra	Day 56	subject 5	Actinobacteria	0.200251250661677
+Ra	Day 56	subject 5	Alphaproteobacteria	0.0241931275115747
+Ra	Day 56	subject 5	Bacteria	0.0175353577526113
+Ra	Day 56	subject 5	Corynebacterium tuberculostearicum	0.135105010847766
+Ra	Day 56	subject 5	Cutibacterium acnes	0.00400733622110059
+Ra	Day 56	subject 5	Eukaryotic virus	0
+Ra	Day 56	subject 5	Firmicutes	0.0203535402485667
+Ra	Day 56	subject 5	Fungi	0.320389326692961
+Ra	Day 56	subject 5	Gammaproteobacteria	0.00307539756503069
+Ra	Day 56	subject 5	Malassezia globosa	0.000812650508092957
+Ra	Day 56	subject 5	Malassezia restricta	0.256406146321825
+Ra	Day 56	subject 5	Micrococcus luteus	0.00508838506214168
+Ra	Day 56	subject 5	Proteobacteria	0.000633718286127536
+Ra	Day 56	subject 5	Staphylococcus aureus	0.0002012987497111
+Ra	Day 56	subject 5	Staphylococcus epidermidis	0.00700817869364569
+Ra	Day 56	subject 5	Staphylococcus hominis	0.0049392748771705
+Ra	Day 56	subject 6	Actinobacteria	0.0281723789396306
+Ra	Day 56	subject 6	Alphaproteobacteria	0.00170908756776624
+Ra	Day 56	subject 6	Bacteria	0.00101075071211982
+Ra	Day 56	subject 6	Corynebacterium tuberculostearicum	0.000716714141321327
+Ra	Day 56	subject 6	Cutibacterium acnes	0.082584458942081
+Ra	Day 56	subject 6	Eukaryotic virus	0.000111795154522344
+Ra	Day 56	subject 6	Firmicutes	0.0219241018101627
+Ra	Day 56	subject 6	Fungi	0.0361542466844314
+Ra	Day 56	subject 6	Gammaproteobacteria	0.00936628993231034
+Ra	Day 56	subject 6	Malassezia globosa	0.0131183190909369
+Ra	Day 56	subject 6	Malassezia restricta	0.746108609758339
+Ra	Day 56	subject 6	Micrococcus luteus	0.00239823578057521
+Ra	Day 56	subject 6	Proteobacteria	0.00150846886581519
+Ra	Day 56	subject 6	Staphylococcus aureus	0.000301693773163037
+Ra	Day 56	subject 6	Staphylococcus epidermidis	0.0545912585377807
+Ra	Day 56	subject 6	Staphylococcus hominis	0.000223590309044688
+Ra	Day 56	subject 7	Actinobacteria	0.0523952591872577
+Ra	Day 56	subject 7	Alphaproteobacteria	0.00352725893688857
+Ra	Day 56	subject 7	Bacteria	0.00673634046271648
+Ra	Day 56	subject 7	Corynebacterium tuberculostearicum	0.00177191374047769
+Ra	Day 56	subject 7	Cutibacterium acnes	0.0263034841807223
+Ra	Day 56	subject 7	Eukaryotic virus	0.000418815975021999
+Ra	Day 56	subject 7	Firmicutes	0.0104480011585708
+Ra	Day 56	subject 7	Fungi	0.0102764860449903
+Ra	Day 56	subject 7	Gammaproteobacteria	0.0102108255185034
+Ra	Day 56	subject 7	Malassezia globosa	0.161614181200962
+Ra	Day 56	subject 7	Malassezia restricta	0.10614208201552
+Ra	Day 56	subject 7	Micrococcus luteus	0.00177528881426907
+Ra	Day 56	subject 7	Proteobacteria	0.00108554646126581
+Ra	Day 56	subject 7	Staphylococcus aureus	0.00308727204444788
+Ra	Day 56	subject 7	Staphylococcus epidermidis	0.60124822501801
+Ra	Day 56	subject 7	Staphylococcus hominis	0.00295901924037521
+Ra	Day 56	subject 8	Actinobacteria	0.1295811903599
+Ra	Day 56	subject 8	Alphaproteobacteria	0.00133255571814077
+Ra	Day 56	subject 8	Bacteria	0.000850121656200624
+Ra	Day 56	subject 8	Corynebacterium tuberculostearicum	0.00157651668638144
+Ra	Day 56	subject 8	Cutibacterium acnes	0.0862025354978175
+Ra	Day 56	subject 8	Eukaryotic virus	8.13203227468907e-05
+Ra	Day 56	subject 8	Firmicutes	0.0065724781096168
+Ra	Day 56	subject 8	Fungi	0.0500459235319561
+Ra	Day 56	subject 8	Gammaproteobacteria	0.00653306519245726
+Ra	Day 56	subject 8	Malassezia globosa	0.00197214255103349
+Ra	Day 56	subject 8	Malassezia restricta	0.578604074297838
+Ra	Day 56	subject 8	Micrococcus luteus	0.00175212867169988
+Ra	Day 56	subject 8	Proteobacteria	0.000568244463857107
+Ra	Day 56	subject 8	Staphylococcus aureus	0.000397621455394306
+Ra	Day 56	subject 8	Staphylococcus epidermidis	0.133495042703147
+Ra	Day 56	subject 8	Staphylococcus hominis	0.000435038781811587
+Ra	Day 56	subject 9	Actinobacteria	0.0720396494798568
+Ra	Day 56	subject 9	Alphaproteobacteria	0.000299664951158029
+Ra	Day 56	subject 9	Bacteria	7.12558352916486e-05
+Ra	Day 56	subject 9	Corynebacterium tuberculostearicum	0.000327972063808136
+Ra	Day 56	subject 9	Cutibacterium acnes	0.730503110121989
+Ra	Day 56	subject 9	Eukaryotic virus	7.32080499571733e-06
+Ra	Day 56	subject 9	Firmicutes	0.00230507746631819
+Ra	Day 56	subject 9	Fungi	0.0855143231549741
+Ra	Day 56	subject 9	Gammaproteobacteria	0.00123575188327708
+Ra	Day 56	subject 9	Malassezia globosa	0.00392687979970277
+Ra	Day 56	subject 9	Malassezia restricta	0.0293603324621575
+Ra	Day 56	subject 9	Micrococcus luteus	0.000214743613207708
+Ra	Day 56	subject 9	Proteobacteria	8.63854989494644e-05
+Ra	Day 56	subject 9	Staphylococcus aureus	0.00191951506987708
+Ra	Day 56	subject 9	Staphylococcus epidermidis	0.0721709359161133
+Ra	Day 56	subject 9	Staphylococcus hominis	1.70818783233404e-05
+Ra	Day 56	subject 10	Actinobacteria	0.0197736030972928
+Ra	Day 56	subject 10	Alphaproteobacteria	6.07594491436415e-05
+Ra	Day 56	subject 10	Bacteria	1.39906626317596e-06
+Ra	Day 56	subject 10	Corynebacterium tuberculostearicum	0.000343370834305184
+Ra	Day 56	subject 10	Cutibacterium acnes	0.892773363057495
+Ra	Day 56	subject 10	Eukaryotic virus	1.99866609025136e-07
+Ra	Day 56	subject 10	Firmicutes	0.0161660108043891
+Ra	Day 56	subject 10	Fungi	0.000670152740061282
+Ra	Day 56	subject 10	Gammaproteobacteria	2.57827925642426e-05
+Ra	Day 56	subject 10	Malassezia globosa	0.0163582824822713
+Ra	Day 56	subject 10	Malassezia restricta	0.0413508024744285
+Ra	Day 56	subject 10	Micrococcus luteus	1.39906626317596e-06
+Ra	Day 56	subject 10	Proteobacteria	5.59626505270382e-06
+Ra	Day 56	subject 10	Staphylococcus aureus	0.00157634794538125
+Ra	Day 56	subject 10	Staphylococcus epidermidis	0.0108735429974035
+Ra	Day 56	subject 10	Staphylococcus hominis	1.93870610754382e-05
+Ra	Day 56	subject 11	Actinobacteria	0.0269145766412254
+Ra	Day 56	subject 11	Alphaproteobacteria	7.15813208543229e-05
+Ra	Day 56	subject 11	Bacteria	0.00236143794943376
+Ra	Day 56	subject 11	Corynebacterium tuberculostearicum	0.00136750148382113
+Ra	Day 56	subject 11	Cutibacterium acnes	0.635401287867263
+Ra	Day 56	subject 11	Eukaryotic virus	0.00210270130009574
+Ra	Day 56	subject 11	Firmicutes	0.0193157720492837
+Ra	Day 56	subject 11	Fungi	0.199284634174712
+Ra	Day 56	subject 11	Gammaproteobacteria	0.0117661796154293
+Ra	Day 56	subject 11	Malassezia globosa	0.0156457380779819
+Ra	Day 56	subject 11	Malassezia restricta	0.0770751872298922
+Ra	Day 56	subject 11	Micrococcus luteus	0.000571904928075684
+Ra	Day 56	subject 11	Proteobacteria	0.00262241151504848
+Ra	Day 56	subject 11	Staphylococcus aureus	4.84665193284478e-05
+Ra	Day 56	subject 11	Staphylococcus epidermidis	0.00342546445838291
+Ra	Day 56	subject 11	Staphylococcus hominis	0.00202515486917022
+Ra	Day 56	subject 12	Actinobacteria	0.685808239779285
+Ra	Day 56	subject 12	Alphaproteobacteria	0.000817330308605762
+Ra	Day 56	subject 12	Bacteria	0.000269719001839902
+Ra	Day 56	subject 12	Corynebacterium tuberculostearicum	0.00783819765952926
+Ra	Day 56	subject 12	Cutibacterium acnes	0.142362593152952
+Ra	Day 56	subject 12	Eukaryotic virus	0
+Ra	Day 56	subject 12	Firmicutes	0.0701060531482657
+Ra	Day 56	subject 12	Fungi	0.00268265970180158
+Ra	Day 56	subject 12	Gammaproteobacteria	0.00237025789495671
+Ra	Day 56	subject 12	Malassezia globosa	4.72235289416663e-05
+Ra	Day 56	subject 12	Malassezia restricta	0.037351086958496
+Ra	Day 56	subject 12	Micrococcus luteus	0.000119875111928845
+Ra	Day 56	subject 12	Proteobacteria	0.000806432571157686
+Ra	Day 56	subject 12	Staphylococcus aureus	0.000167098640870511
+Ra	Day 56	subject 12	Staphylococcus epidermidis	0.0492377940799858
+Ra	Day 56	subject 12	Staphylococcus hominis	1.54384613847755e-05
+Ra	Day 56	subject 13	Actinobacteria	0.0438702349741573
+Ra	Day 56	subject 13	Alphaproteobacteria	0.000760890287780704
+Ra	Day 56	subject 13	Bacteria	0.000227724691938198
+Ra	Day 56	subject 13	Corynebacterium tuberculostearicum	0.000255411092451125
+Ra	Day 56	subject 13	Cutibacterium acnes	0.111636909857694
+Ra	Day 56	subject 13	Eukaryotic virus	0.000144665490399417
+Ra	Day 56	subject 13	Firmicutes	0.00356814558189406
+Ra	Day 56	subject 13	Fungi	0.186701217999237
+Ra	Day 56	subject 13	Gammaproteobacteria	0.00849802491533183
+Ra	Day 56	subject 13	Malassezia globosa	0.0127843168684252
+Ra	Day 56	subject 13	Malassezia restricta	0.629602186092279
+Ra	Day 56	subject 13	Micrococcus luteus	0.000511146002452108
+Ra	Day 56	subject 13	Proteobacteria	0.000612177078008052
+Ra	Day 56	subject 13	Staphylococcus aureus	1.8538554729416e-05
+Ra	Day 56	subject 13	Staphylococcus epidermidis	0.000770038133564215
+Ra	Day 56	subject 13	Staphylococcus hominis	3.83723796582672e-05
+Ra	Day 56	subject 14	Actinobacteria	0.112025095989793
+Ra	Day 56	subject 14	Alphaproteobacteria	0.00945638841550481
+Ra	Day 56	subject 14	Bacteria	0.0164063355730129
+Ra	Day 56	subject 14	Corynebacterium tuberculostearicum	0.0209623352927652
+Ra	Day 56	subject 14	Cutibacterium acnes	0.610362851777551
+Ra	Day 56	subject 14	Eukaryotic virus	5.22997585330017e-05
+Ra	Day 56	subject 14	Firmicutes	0.0536348825574385
+Ra	Day 56	subject 14	Fungi	0.00497242421222256
+Ra	Day 56	subject 14	Gammaproteobacteria	0.0602187314052156
+Ra	Day 56	subject 14	Malassezia globosa	0.0141831024414119
+Ra	Day 56	subject 14	Malassezia restricta	0.0622416465937562
+Ra	Day 56	subject 14	Micrococcus luteus	0.00477407984495589
+Ra	Day 56	subject 14	Proteobacteria	0.00846466657917148
+Ra	Day 56	subject 14	Staphylococcus aureus	0.000500301463702488
+Ra	Day 56	subject 14	Staphylococcus epidermidis	0.0212998167534876
+Ra	Day 56	subject 14	Staphylococcus hominis	0.000445041341478939
+Ac	Day 0	subject 5	Actinobacteria	0.356173526768234
+Ac	Day 0	subject 5	Alphaproteobacteria	0.0293511971472396
+Ac	Day 0	subject 5	Bacteria	0.000802968198334321
+Ac	Day 0	subject 5	Corynebacterium tuberculostearicum	0.0478192304413643
+Ac	Day 0	subject 5	Cutibacterium acnes	0.0772273623392623
+Ac	Day 0	subject 5	Eukaryotic virus	7.13644946268417e-06
+Ac	Day 0	subject 5	Firmicutes	0.0106707956647089
+Ac	Day 0	subject 5	Fungi	0.00851213733602929
+Ac	Day 0	subject 5	Gammaproteobacteria	0.0151107651458004
+Ac	Day 0	subject 5	Malassezia globosa	0.0129358733551562
+Ac	Day 0	subject 5	Malassezia restricta	0.213732818703834
+Ac	Day 0	subject 5	Micrococcus luteus	0.00427841908666151
+Ac	Day 0	subject 5	Proteobacteria	0.00161291600108819
+Ac	Day 0	subject 5	Staphylococcus aureus	0.00435417524249616
+Ac	Day 0	subject 5	Staphylococcus epidermidis	0.0999065281965432
+Ac	Day 0	subject 5	Staphylococcus hominis	0.117504149923785
+Ac	Day 0	subject 6	Actinobacteria	0.168906827335187
+Ac	Day 0	subject 6	Alphaproteobacteria	0.0102495526114019
+Ac	Day 0	subject 6	Bacteria	0.012483540591207
+Ac	Day 0	subject 6	Corynebacterium tuberculostearicum	0.00578551666586554
+Ac	Day 0	subject 6	Cutibacterium acnes	0.369957077486681
+Ac	Day 0	subject 6	Eukaryotic virus	0.0215763050705617
+Ac	Day 0	subject 6	Firmicutes	0.220805480717177
+Ac	Day 0	subject 6	Fungi	0.00352867660443283
+Ac	Day 0	subject 6	Gammaproteobacteria	0.0612364867367307
+Ac	Day 0	subject 6	Malassezia globosa	0.0113251764535303
+Ac	Day 0	subject 6	Malassezia restricta	0.055274457440362
+Ac	Day 0	subject 6	Micrococcus luteus	0.0119232705899226
+Ac	Day 0	subject 6	Proteobacteria	0.0126498091851184
+Ac	Day 0	subject 6	Staphylococcus aureus	0.000996035557839014
+Ac	Day 0	subject 6	Staphylococcus epidermidis	0.00996114358120488
+Ac	Day 0	subject 6	Staphylococcus hominis	0.0233406433727781
+Ac	Day 0	subject 7	Actinobacteria	0.105989558987783
+Ac	Day 0	subject 7	Alphaproteobacteria	0.00410050827359191
+Ac	Day 0	subject 7	Bacteria	0.0952317983438054
+Ac	Day 0	subject 7	Corynebacterium tuberculostearicum	0.0115954525996743
+Ac	Day 0	subject 7	Cutibacterium acnes	0.203822384703573
+Ac	Day 0	subject 7	Eukaryotic virus	0.0302725389569812
+Ac	Day 0	subject 7	Firmicutes	0.282086923148836
+Ac	Day 0	subject 7	Fungi	0.00340304668933314
+Ac	Day 0	subject 7	Gammaproteobacteria	0.032642924270679
+Ac	Day 0	subject 7	Malassezia globosa	0.0226367492139718
+Ac	Day 0	subject 7	Malassezia restricta	0.104507299359861
+Ac	Day 0	subject 7	Micrococcus luteus	0.00591796769289056
+Ac	Day 0	subject 7	Proteobacteria	0.0165484139206936
+Ac	Day 0	subject 7	Staphylococcus aureus	0.00171905214109635
+Ac	Day 0	subject 7	Staphylococcus epidermidis	0.00998833873753302
+Ac	Day 0	subject 7	Staphylococcus hominis	0.0695370429596972
+Ac	Day 0	subject 8	Actinobacteria	0.216095741620709
+Ac	Day 0	subject 8	Alphaproteobacteria	0.00863963009656447
+Ac	Day 0	subject 8	Bacteria	0.0277152300074517
+Ac	Day 0	subject 8	Corynebacterium tuberculostearicum	0.0244505351462039
+Ac	Day 0	subject 8	Cutibacterium acnes	0.455218902495756
+Ac	Day 0	subject 8	Eukaryotic virus	1.3657132565518e-05
+Ac	Day 0	subject 8	Firmicutes	0.0908069146062181
+Ac	Day 0	subject 8	Fungi	0.00460672152850628
+Ac	Day 0	subject 8	Gammaproteobacteria	0.0686635812928014
+Ac	Day 0	subject 8	Malassezia globosa	0.00142204892838456
+Ac	Day 0	subject 8	Malassezia restricta	0.0307443393319443
+Ac	Day 0	subject 8	Micrococcus luteus	0.034174626925549
+Ac	Day 0	subject 8	Proteobacteria	0.0021646555116346
+Ac	Day 0	subject 8	Staphylococcus aureus	0.000542017448693995
+Ac	Day 0	subject 8	Staphylococcus epidermidis	0.0253864755123346
+Ac	Day 0	subject 8	Staphylococcus hominis	0.00935492241468348
+Ac	Day 0	subject 9	Actinobacteria	0.0816664274395699
+Ac	Day 0	subject 9	Alphaproteobacteria	0.0047994342199945
+Ac	Day 0	subject 9	Bacteria	0.00208270159952624
+Ac	Day 0	subject 9	Corynebacterium tuberculostearicum	0.0243545858883896
+Ac	Day 0	subject 9	Cutibacterium acnes	0.481954197041379
+Ac	Day 0	subject 9	Eukaryotic virus	0.000918885537597152
+Ac	Day 0	subject 9	Firmicutes	0.0293542737841639
+Ac	Day 0	subject 9	Fungi	0.0270922310762653
+Ac	Day 0	subject 9	Gammaproteobacteria	0.0470973198010011
+Ac	Day 0	subject 9	Malassezia globosa	0.0961648569374432
+Ac	Day 0	subject 9	Malassezia restricta	0.150485567635204
+Ac	Day 0	subject 9	Micrococcus luteus	0.0247693518086361
+Ac	Day 0	subject 9	Proteobacteria	0.00316064939225227
+Ac	Day 0	subject 9	Staphylococcus aureus	0.000801965274364963
+Ac	Day 0	subject 9	Staphylococcus epidermidis	0.0239797439604664
+Ac	Day 0	subject 9	Staphylococcus hominis	0.00131780860374709
+Ac	Day 0	subject 10	Actinobacteria	0.142210394494302
+Ac	Day 0	subject 10	Alphaproteobacteria	0.00143236756026637
+Ac	Day 0	subject 10	Bacteria	0.00173082885661944
+Ac	Day 0	subject 10	Corynebacterium tuberculostearicum	0.000614188948693517
+Ac	Day 0	subject 10	Cutibacterium acnes	0.788792753655719
+Ac	Day 0	subject 10	Eukaryotic virus	1.20864491911576e-05
+Ac	Day 0	subject 10	Firmicutes	0.00605013113797372
+Ac	Day 0	subject 10	Fungi	0.00346708428226348
+Ac	Day 0	subject 10	Gammaproteobacteria	0.0283212637393945
+Ac	Day 0	subject 10	Malassezia globosa	0.00759399002547281
+Ac	Day 0	subject 10	Malassezia restricta	0.00645465719253492
+Ac	Day 0	subject 10	Micrococcus luteus	0.00965337297030902
+Ac	Day 0	subject 10	Proteobacteria	0.000895383889059223
+Ac	Day 0	subject 10	Staphylococcus aureus	0.000100638189183516
+Ac	Day 0	subject 10	Staphylococcus epidermidis	0.00241679651377473
+Ac	Day 0	subject 10	Staphylococcus hominis	0.0002540620952427
+Ac	Day 0	subject 11	Actinobacteria	0.0778941773076716
+Ac	Day 0	subject 11	Alphaproteobacteria	0.00209610670201233
+Ac	Day 0	subject 11	Bacteria	0.00402443335147137
+Ac	Day 0	subject 11	Corynebacterium tuberculostearicum	0.0142197407721924
+Ac	Day 0	subject 11	Cutibacterium acnes	0.0957642781778018
+Ac	Day 0	subject 11	Eukaryotic virus	3.16494190043703e-05
+Ac	Day 0	subject 11	Firmicutes	0.141062985775683
+Ac	Day 0	subject 11	Fungi	0.0135352744214353
+Ac	Day 0	subject 11	Gammaproteobacteria	0.0437067036901316
+Ac	Day 0	subject 11	Malassezia globosa	0.0365962613265835
+Ac	Day 0	subject 11	Malassezia restricta	0.0028980190895568
+Ac	Day 0	subject 11	Micrococcus luteus	0.0107413552281218
+Ac	Day 0	subject 11	Proteobacteria	0.00156035448874558
+Ac	Day 0	subject 11	Staphylococcus aureus	0.02653060212829
+Ac	Day 0	subject 11	Staphylococcus epidermidis	0.00771178132463114
+Ac	Day 0	subject 11	Staphylococcus hominis	0.521626276796667
+Ac	Day 0	subject 12	Actinobacteria	0.210029262442049
+Ac	Day 0	subject 12	Alphaproteobacteria	0.0421199479019396
+Ac	Day 0	subject 12	Bacteria	0.0150743742252398
+Ac	Day 0	subject 12	Corynebacterium tuberculostearicum	0.0423602648115964
+Ac	Day 0	subject 12	Cutibacterium acnes	0.387307078159767
+Ac	Day 0	subject 12	Eukaryotic virus	1.9291495041259e-05
+Ac	Day 0	subject 12	Firmicutes	0.138114978412817
+Ac	Day 0	subject 12	Fungi	0.0113874939300689
+Ac	Day 0	subject 12	Gammaproteobacteria	0.0297904778282847
+Ac	Day 0	subject 12	Malassezia globosa	0.00266443105798417
+Ac	Day 0	subject 12	Malassezia restricta	0.0365011621747798
+Ac	Day 0	subject 12	Micrococcus luteus	0.0258886351597969
+Ac	Day 0	subject 12	Proteobacteria	0.0108732377908262
+Ac	Day 0	subject 12	Staphylococcus aureus	0.00075016356431867
+Ac	Day 0	subject 12	Staphylococcus epidermidis	0.0356264306710518
+Ac	Day 0	subject 12	Staphylococcus hominis	0.0114927703744369
+Ac	Day 0	subject 13	Actinobacteria	0.107509163760286
+Ac	Day 0	subject 13	Alphaproteobacteria	0.0029734063458619
+Ac	Day 0	subject 13	Bacteria	0.00304828942951076
+Ac	Day 0	subject 13	Corynebacterium tuberculostearicum	0.000693125127920511
+Ac	Day 0	subject 13	Cutibacterium acnes	0.312669178978903
+Ac	Day 0	subject 13	Eukaryotic virus	0.000359119178596497
+Ac	Day 0	subject 13	Firmicutes	0.0376043212105307
+Ac	Day 0	subject 13	Fungi	0.217869592251336
+Ac	Day 0	subject 13	Gammaproteobacteria	0.0262682095169322
+Ac	Day 0	subject 13	Malassezia globosa	0.0359494735525163
+Ac	Day 0	subject 13	Malassezia restricta	0.238705467823504
+Ac	Day 0	subject 13	Micrococcus luteus	0.00258597770881279
+Ac	Day 0	subject 13	Proteobacteria	0.00384152502139476
+Ac	Day 0	subject 13	Staphylococcus aureus	7.45406305224134e-05
+Ac	Day 0	subject 13	Staphylococcus epidermidis	0.00955672524860099
+Ac	Day 0	subject 13	Staphylococcus hominis	0.000291884214771533
+Ac	Day 0	subject 14	Actinobacteria	0.111397476769738
+Ac	Day 0	subject 14	Alphaproteobacteria	0.0122517550470165
+Ac	Day 0	subject 14	Bacteria	0.0169273183429037
+Ac	Day 0	subject 14	Corynebacterium tuberculostearicum	0.0160231708120305
+Ac	Day 0	subject 14	Cutibacterium acnes	0.314893970097266
+Ac	Day 0	subject 14	Eukaryotic virus	0.0031324392223818
+Ac	Day 0	subject 14	Firmicutes	0.131835316840838
+Ac	Day 0	subject 14	Fungi	0.0240116606803603
+Ac	Day 0	subject 14	Gammaproteobacteria	0.25770514183654
+Ac	Day 0	subject 14	Malassezia globosa	0.0167006399174719
+Ac	Day 0	subject 14	Malassezia restricta	0.0397765036264271
+Ac	Day 0	subject 14	Micrococcus luteus	0.0139129229798034
+Ac	Day 0	subject 14	Proteobacteria	0.00956069721151321
+Ac	Day 0	subject 14	Staphylococcus aureus	0.00232324001310458
+Ac	Day 0	subject 14	Staphylococcus epidermidis	0.0117693149264749
+Ac	Day 0	subject 14	Staphylococcus hominis	0.0177784316761287
+Ac	Day 14	subject 5	Actinobacteria	0.35695879659628
+Ac	Day 14	subject 5	Alphaproteobacteria	0.0688265758802085
+Ac	Day 14	subject 5	Bacteria	0.00144902117097549
+Ac	Day 14	subject 5	Corynebacterium tuberculostearicum	0.0263581196430922
+Ac	Day 14	subject 5	Cutibacterium acnes	0.116765204966382
+Ac	Day 14	subject 5	Eukaryotic virus	2.44433876133777e-05
+Ac	Day 14	subject 5	Firmicutes	0.0144499015617609
+Ac	Day 14	subject 5	Fungi	0.0233824588246847
+Ac	Day 14	subject 5	Gammaproteobacteria	0.0303998552265323
+Ac	Day 14	subject 5	Malassezia globosa	0.00581023611883603
+Ac	Day 14	subject 5	Malassezia restricta	0.30931691881236
+Ac	Day 14	subject 5	Micrococcus luteus	0.0138087986761118
+Ac	Day 14	subject 5	Proteobacteria	0.00284015010812983
+Ac	Day 14	subject 5	Staphylococcus aureus	0.000723867338445289
+Ac	Day 14	subject 5	Staphylococcus epidermidis	0.0114086295450228
+Ac	Day 14	subject 5	Staphylococcus hominis	0.017477022143565
+Ac	Day 14	subject 6	Actinobacteria	0.144385803742172
+Ac	Day 14	subject 6	Alphaproteobacteria	0.0157587773569813
+Ac	Day 14	subject 6	Bacteria	0.00591666979139325
+Ac	Day 14	subject 6	Corynebacterium tuberculostearicum	0.00408427804233796
+Ac	Day 14	subject 6	Cutibacterium acnes	0.486708194283
+Ac	Day 14	subject 6	Eukaryotic virus	0.0102191579070165
+Ac	Day 14	subject 6	Firmicutes	0.0753105978226905
+Ac	Day 14	subject 6	Fungi	0.00653692801879835
+Ac	Day 14	subject 6	Gammaproteobacteria	0.0275413401327384
+Ac	Day 14	subject 6	Malassezia globosa	0.0139196153669887
+Ac	Day 14	subject 6	Malassezia restricta	0.171312874706796
+Ac	Day 14	subject 6	Micrococcus luteus	0.0219709942046738
+Ac	Day 14	subject 6	Proteobacteria	0.0120171776636211
+Ac	Day 14	subject 6	Staphylococcus aureus	0.000217949679403052
+Ac	Day 14	subject 6	Staphylococcus epidermidis	0.00183655805117052
+Ac	Day 14	subject 6	Staphylococcus hominis	0.00226308323021736
+Ac	Day 14	subject 7	Actinobacteria	0.196705959754332
+Ac	Day 14	subject 7	Alphaproteobacteria	0.011363237089117
+Ac	Day 14	subject 7	Bacteria	0.0530347201252273
+Ac	Day 14	subject 7	Corynebacterium tuberculostearicum	0.00796164964769637
+Ac	Day 14	subject 7	Cutibacterium acnes	0.212561532832703
+Ac	Day 14	subject 7	Eukaryotic virus	0.00182300644315657
+Ac	Day 14	subject 7	Firmicutes	0.265811143661565
+Ac	Day 14	subject 7	Fungi	0.00374123696588585
+Ac	Day 14	subject 7	Gammaproteobacteria	0.0712856625635443
+Ac	Day 14	subject 7	Malassezia globosa	0.0291849073398415
+Ac	Day 14	subject 7	Malassezia restricta	0.0670632130030263
+Ac	Day 14	subject 7	Micrococcus luteus	0.0189765804778416
+Ac	Day 14	subject 7	Proteobacteria	0.019427749111539
+Ac	Day 14	subject 7	Staphylococcus aureus	0.00101640247501132
+Ac	Day 14	subject 7	Staphylococcus epidermidis	0.0369902265467421
+Ac	Day 14	subject 7	Staphylococcus hominis	0.00305277196277197
+Ac	Day 14	subject 8	Actinobacteria	0.318682450001012
+Ac	Day 14	subject 8	Alphaproteobacteria	0.0150248473420251
+Ac	Day 14	subject 8	Bacteria	0.0196144856352358
+Ac	Day 14	subject 8	Corynebacterium tuberculostearicum	0.0143320606824799
+Ac	Day 14	subject 8	Cutibacterium acnes	0.318705621104358
+Ac	Day 14	subject 8	Eukaryotic virus	3.28501718327961e-05
+Ac	Day 14	subject 8	Firmicutes	0.0677965952556726
+Ac	Day 14	subject 8	Fungi	0.0293296306496796
+Ac	Day 14	subject 8	Gammaproteobacteria	0.0611086522366421
+Ac	Day 14	subject 8	Malassezia globosa	0.00233030906438898
+Ac	Day 14	subject 8	Malassezia restricta	0.0232523488606123
+Ac	Day 14	subject 8	Micrococcus luteus	0.0986015505867715
+Ac	Day 14	subject 8	Proteobacteria	0.00327651133521577
+Ac	Day 14	subject 8	Staphylococcus aureus	0.00155011748336007
+Ac	Day 14	subject 8	Staphylococcus epidermidis	0.0171551223243608
+Ac	Day 14	subject 8	Staphylococcus hominis	0.00920684726635242
+Ac	Day 14	subject 9	Actinobacteria	0.109806735583315
+Ac	Day 14	subject 9	Alphaproteobacteria	0.0191226274921035
+Ac	Day 14	subject 9	Bacteria	0.0108317202444503
+Ac	Day 14	subject 9	Corynebacterium tuberculostearicum	0.0224258955943401
+Ac	Day 14	subject 9	Cutibacterium acnes	0.537307498566436
+Ac	Day 14	subject 9	Eukaryotic virus	0.000115107488217323
+Ac	Day 14	subject 9	Firmicutes	0.0431399633134482
+Ac	Day 14	subject 9	Fungi	0.0170850137442565
+Ac	Day 14	subject 9	Gammaproteobacteria	0.0982331528574641
+Ac	Day 14	subject 9	Malassezia globosa	0.0193528424685382
+Ac	Day 14	subject 9	Malassezia restricta	0.0374854399587725
+Ac	Day 14	subject 9	Micrococcus luteus	0.0603955262260267
+Ac	Day 14	subject 9	Proteobacteria	0.0162180114706196
+Ac	Day 14	subject 9	Staphylococcus aureus	0.00125403800236762
+Ac	Day 14	subject 9	Staphylococcus epidermidis	0.00591325119516421
+Ac	Day 14	subject 9	Staphylococcus hominis	0.00131317579447928
+Ac	Day 14	subject 10	Actinobacteria	0.100687024056957
+Ac	Day 14	subject 10	Alphaproteobacteria	0.000970574468688042
+Ac	Day 14	subject 10	Bacteria	0.00159119979909377
+Ac	Day 14	subject 10	Corynebacterium tuberculostearicum	0.000446078273300872
+Ac	Day 14	subject 10	Cutibacterium acnes	0.835645074133031
+Ac	Day 14	subject 10	Eukaryotic virus	4.76370554729847e-06
+Ac	Day 14	subject 10	Firmicutes	0.0117883390351225
+Ac	Day 14	subject 10	Fungi	0.00521357035577796
+Ac	Day 14	subject 10	Gammaproteobacteria	0.015220649955099
+Ac	Day 14	subject 10	Malassezia globosa	0.0150153220313809
+Ac	Day 14	subject 10	Malassezia restricta	0.00553139501819003
+Ac	Day 14	subject 10	Micrococcus luteus	0.00220510708321485
+Ac	Day 14	subject 10	Proteobacteria	0.00110493539438108
+Ac	Day 14	subject 10	Staphylococcus aureus	0.000294616866155998
+Ac	Day 14	subject 10	Staphylococcus epidermidis	0.00327327644247447
+Ac	Day 14	subject 10	Staphylococcus hominis	0.00100807338158601
+Ac	Day 14	subject 11	Actinobacteria	0.0155576061357322
+Ac	Day 14	subject 11	Alphaproteobacteria	0.000220813790963386
+Ac	Day 14	subject 11	Bacteria	0.000385568908358856
+Ac	Day 14	subject 11	Corynebacterium tuberculostearicum	0.00225448563187505
+Ac	Day 14	subject 11	Cutibacterium acnes	0.0123731865626035
+Ac	Day 14	subject 11	Eukaryotic virus	4.43613912879966e-05
+Ac	Day 14	subject 11	Firmicutes	0.0425816387539349
+Ac	Day 14	subject 11	Fungi	0.00358797581178587
+Ac	Day 14	subject 11	Gammaproteobacteria	0.00638064678025684
+Ac	Day 14	subject 11	Malassezia globosa	0.0188501703940903
+Ac	Day 14	subject 11	Malassezia restricta	0.000554738094539201
+Ac	Day 14	subject 11	Micrococcus luteus	0.00409305563249523
+Ac	Day 14	subject 11	Proteobacteria	0.000428937134170256
+Ac	Day 14	subject 11	Staphylococcus aureus	0.0216571870861121
+Ac	Day 14	subject 11	Staphylococcus epidermidis	0.00467306427082784
+Ac	Day 14	subject 11	Staphylococcus hominis	0.866356563620967
+Ac	Day 14	subject 12	Actinobacteria	0.289682345043372
+Ac	Day 14	subject 12	Alphaproteobacteria	0.0341725604859226
+Ac	Day 14	subject 12	Bacteria	0.00919560256782865
+Ac	Day 14	subject 12	Corynebacterium tuberculostearicum	0.014047800149197
+Ac	Day 14	subject 12	Cutibacterium acnes	0.365245000106151
+Ac	Day 14	subject 12	Eukaryotic virus	3.66037838063396e-05
+Ac	Day 14	subject 12	Firmicutes	0.0714234991899583
+Ac	Day 14	subject 12	Fungi	0.0148311211226527
+Ac	Day 14	subject 12	Gammaproteobacteria	0.0600485073343002
+Ac	Day 14	subject 12	Malassezia globosa	0.00256885354752892
+Ac	Day 14	subject 12	Malassezia restricta	0.0665705695329138
+Ac	Day 14	subject 12	Micrococcus luteus	0.0188443599791798
+Ac	Day 14	subject 12	Proteobacteria	0.00818167775639304
+Ac	Day 14	subject 12	Staphylococcus aureus	0.00032650575155255
+Ac	Day 14	subject 12	Staphylococcus epidermidis	0.0380035124990941
+Ac	Day 14	subject 12	Staphylococcus hominis	0.00682148115014946
+Ac	Day 14	subject 13	Actinobacteria	0.127976502774195
+Ac	Day 14	subject 13	Alphaproteobacteria	0.0084779718831579
+Ac	Day 14	subject 13	Bacteria	0.00521596676620826
+Ac	Day 14	subject 13	Corynebacterium tuberculostearicum	0.00101371298495472
+Ac	Day 14	subject 13	Cutibacterium acnes	0.368612848117072
+Ac	Day 14	subject 13	Eukaryotic virus	0.0001085994305273
+Ac	Day 14	subject 13	Firmicutes	0.0169583097669809
+Ac	Day 14	subject 13	Fungi	0.0888045225629513
+Ac	Day 14	subject 13	Gammaproteobacteria	0.0488975442450997
+Ac	Day 14	subject 13	Malassezia globosa	0.0161253592328385
+Ac	Day 14	subject 13	Malassezia restricta	0.30233998648777
+Ac	Day 14	subject 13	Micrococcus luteus	0.0103692345147918
+Ac	Day 14	subject 13	Proteobacteria	0.00470869622361451
+Ac	Day 14	subject 13	Staphylococcus aureus	3.37155094774297e-05
+Ac	Day 14	subject 13	Staphylococcus epidermidis	0.000277176977914449
+Ac	Day 14	subject 13	Staphylococcus hominis	7.9852522446544e-05
+Ac	Day 14	subject 14	Actinobacteria	0.157505826822109
+Ac	Day 14	subject 14	Alphaproteobacteria	0.0113513037867011
+Ac	Day 14	subject 14	Bacteria	0.0162451574764953
+Ac	Day 14	subject 14	Corynebacterium tuberculostearicum	0.0242865104273604
+Ac	Day 14	subject 14	Cutibacterium acnes	0.340163444334388
+Ac	Day 14	subject 14	Eukaryotic virus	0.000872049078425754
+Ac	Day 14	subject 14	Firmicutes	0.0744693812625646
+Ac	Day 14	subject 14	Fungi	0.00873064400768035
+Ac	Day 14	subject 14	Gammaproteobacteria	0.204924764614437
+Ac	Day 14	subject 14	Malassezia globosa	0.0119289093858654
+Ac	Day 14	subject 14	Malassezia restricta	0.0429391099909975
+Ac	Day 14	subject 14	Micrococcus luteus	0.0553215300230816
+Ac	Day 14	subject 14	Proteobacteria	0.00839107509098416
+Ac	Day 14	subject 14	Staphylococcus aureus	0.000672369017777166
+Ac	Day 14	subject 14	Staphylococcus epidermidis	0.00988472707007303
+Ac	Day 14	subject 14	Staphylococcus hominis	0.0323131976110593
+Ac	Day 56	subject 5	Actinobacteria	0.263233328149643
+Ac	Day 56	subject 5	Alphaproteobacteria	0.0522399884134503
+Ac	Day 56	subject 5	Bacteria	0.00331458083186889
+Ac	Day 56	subject 5	Corynebacterium tuberculostearicum	0.0704678469908009
+Ac	Day 56	subject 5	Cutibacterium acnes	0.0263539277135453
+Ac	Day 56	subject 5	Eukaryotic virus	3.29709421880559e-05
+Ac	Day 56	subject 5	Firmicutes	0.0216508297130927
+Ac	Day 56	subject 5	Fungi	0.0203317250543787
+Ac	Day 56	subject 5	Gammaproteobacteria	0.0558938896301048
+Ac	Day 56	subject 5	Malassezia globosa	0.00625179788411982
+Ac	Day 56	subject 5	Malassezia restricta	0.155620577872493
+Ac	Day 56	subject 5	Micrococcus luteus	0.018519257633207
+Ac	Day 56	subject 5	Proteobacteria	0.000926790492354947
+Ac	Day 56	subject 5	Staphylococcus aureus	0.00286820499916905
+Ac	Day 56	subject 5	Staphylococcus epidermidis	0.0666364099315954
+Ac	Day 56	subject 5	Staphylococcus hominis	0.235657873747989
+Ac	Day 56	subject 6	Actinobacteria	0.178972269592693
+Ac	Day 56	subject 6	Alphaproteobacteria	0.0386461252937496
+Ac	Day 56	subject 6	Bacteria	0.0155744442597956
+Ac	Day 56	subject 6	Corynebacterium tuberculostearicum	0.00641313767500895
+Ac	Day 56	subject 6	Cutibacterium acnes	0.124901154030183
+Ac	Day 56	subject 6	Eukaryotic virus	0.00344636442013524
+Ac	Day 56	subject 6	Firmicutes	0.163406747959228
+Ac	Day 56	subject 6	Fungi	0.00864267892932945
+Ac	Day 56	subject 6	Gammaproteobacteria	0.220166920032077
+Ac	Day 56	subject 6	Malassezia globosa	0.0317433584988573
+Ac	Day 56	subject 6	Malassezia restricta	0.147720770870302
+Ac	Day 56	subject 6	Micrococcus luteus	0.0246487552378605
+Ac	Day 56	subject 6	Proteobacteria	0.0261834469666974
+Ac	Day 56	subject 6	Staphylococcus aureus	0.00120678521119299
+Ac	Day 56	subject 6	Staphylococcus epidermidis	0.00378430889240093
+Ac	Day 56	subject 6	Staphylococcus hominis	0.00454273213048895
+Ac	Day 56	subject 7	Actinobacteria	0.109009414336308
+Ac	Day 56	subject 7	Alphaproteobacteria	0.040353838895204
+Ac	Day 56	subject 7	Bacteria	0.0226250649487676
+Ac	Day 56	subject 7	Corynebacterium tuberculostearicum	0.00380236463283292
+Ac	Day 56	subject 7	Cutibacterium acnes	0.108894945243958
+Ac	Day 56	subject 7	Eukaryotic virus	0.0023839432711086
+Ac	Day 56	subject 7	Firmicutes	0.109976927012516
+Ac	Day 56	subject 7	Fungi	0.00363514021966121
+Ac	Day 56	subject 7	Gammaproteobacteria	0.104045437261979
+Ac	Day 56	subject 7	Malassezia globosa	0.0667961992279806
+Ac	Day 56	subject 7	Malassezia restricta	0.0889136186367627
+Ac	Day 56	subject 7	Micrococcus luteus	0.0184305192517106
+Ac	Day 56	subject 7	Proteobacteria	0.00402234436682666
+Ac	Day 56	subject 7	Staphylococcus aureus	0.00341117895202053
+Ac	Day 56	subject 7	Staphylococcus epidermidis	0.0237508435874414
+Ac	Day 56	subject 7	Staphylococcus hominis	0.289948220154921
+Ac	Day 56	subject 8	Actinobacteria	0.405591263986713
+Ac	Day 56	subject 8	Alphaproteobacteria	0.0268425340761456
+Ac	Day 56	subject 8	Bacteria	0.0109031082981274
+Ac	Day 56	subject 8	Corynebacterium tuberculostearicum	0.0171884781261502
+Ac	Day 56	subject 8	Cutibacterium acnes	0.227792702530113
+Ac	Day 56	subject 8	Eukaryotic virus	0.000147652811812854
+Ac	Day 56	subject 8	Firmicutes	0.0627850819935136
+Ac	Day 56	subject 8	Fungi	0.0141040875646055
+Ac	Day 56	subject 8	Gammaproteobacteria	0.0753534623503025
+Ac	Day 56	subject 8	Malassezia globosa	0.00555752600734214
+Ac	Day 56	subject 8	Malassezia restricta	0.0274689280287898
+Ac	Day 56	subject 8	Micrococcus luteus	0.0663523424695887
+Ac	Day 56	subject 8	Proteobacteria	0.00453752229537798
+Ac	Day 56	subject 8	Staphylococcus aureus	0.000704447436385428
+Ac	Day 56	subject 8	Staphylococcus epidermidis	0.0473432717503799
+Ac	Day 56	subject 8	Staphylococcus hominis	0.0073275902746539
+Ac	Day 56	subject 9	Actinobacteria	0.17997106444789
+Ac	Day 56	subject 9	Alphaproteobacteria	0.0074909648450334
+Ac	Day 56	subject 9	Bacteria	0.00992570134129542
+Ac	Day 56	subject 9	Corynebacterium tuberculostearicum	0.0438056591484186
+Ac	Day 56	subject 9	Cutibacterium acnes	0.312020935044873
+Ac	Day 56	subject 9	Eukaryotic virus	0.00128307846606989
+Ac	Day 56	subject 9	Firmicutes	0.0747413380675432
+Ac	Day 56	subject 9	Fungi	0.0286657943731303
+Ac	Day 56	subject 9	Gammaproteobacteria	0.0844226435105395
+Ac	Day 56	subject 9	Malassezia globosa	0.0210284225512857
+Ac	Day 56	subject 9	Malassezia restricta	0.0629134988385431
+Ac	Day 56	subject 9	Micrococcus luteus	0.110538420303305
+Ac	Day 56	subject 9	Proteobacteria	0.0147490619001781
+Ac	Day 56	subject 9	Staphylococcus aureus	0.00402330983520569
+Ac	Day 56	subject 9	Staphylococcus epidermidis	0.0430667073993164
+Ac	Day 56	subject 9	Staphylococcus hominis	0.00135339992737292
+Ac	Day 56	subject 10	Actinobacteria	0.0584074201912424
+Ac	Day 56	subject 10	Alphaproteobacteria	0.00129070408306918
+Ac	Day 56	subject 10	Bacteria	0.00259338377103282
+Ac	Day 56	subject 10	Corynebacterium tuberculostearicum	0.000930105313469442
+Ac	Day 56	subject 10	Cutibacterium acnes	0.896195190650299
+Ac	Day 56	subject 10	Eukaryotic virus	4.79024195778253e-06
+Ac	Day 56	subject 10	Firmicutes	0.00508484183818616
+Ac	Day 56	subject 10	Fungi	0.00417682486263316
+Ac	Day 56	subject 10	Gammaproteobacteria	0.0127069151666778
+Ac	Day 56	subject 10	Malassezia globosa	0.00560777658524409
+Ac	Day 56	subject 10	Malassezia restricta	0.00408953600918023
+Ac	Day 56	subject 10	Micrococcus luteus	0.00456031034380897
+Ac	Day 56	subject 10	Proteobacteria	0.00225992970586051
+Ac	Day 56	subject 10	Staphylococcus aureus	0.000248560332698271
+Ac	Day 56	subject 10	Staphylococcus epidermidis	0.00142083898958894
+Ac	Day 56	subject 10	Staphylococcus hominis	0.000422871915050914
+Ac	Day 56	subject 11	Actinobacteria	0.17816878970725
+Ac	Day 56	subject 11	Alphaproteobacteria	0.00391493640352277
+Ac	Day 56	subject 11	Bacteria	0.000899517833726265
+Ac	Day 56	subject 11	Corynebacterium tuberculostearicum	0.00681151770026603
+Ac	Day 56	subject 11	Cutibacterium acnes	0.0299448302593886
+Ac	Day 56	subject 11	Eukaryotic virus	0.000165589545120988
+Ac	Day 56	subject 11	Firmicutes	0.20492530037305
+Ac	Day 56	subject 11	Fungi	0.00574321798566085
+Ac	Day 56	subject 11	Gammaproteobacteria	0.0742197468004043
+Ac	Day 56	subject 11	Malassezia globosa	0.0107520957684251
+Ac	Day 56	subject 11	Malassezia restricta	0.00117457360177238
+Ac	Day 56	subject 11	Micrococcus luteus	0.11497918082193
+Ac	Day 56	subject 11	Proteobacteria	0.000636407580129172
+Ac	Day 56	subject 11	Staphylococcus aureus	0.0106020559878024
+Ac	Day 56	subject 11	Staphylococcus epidermidis	0.00344741368284536
+Ac	Day 56	subject 11	Staphylococcus hominis	0.353614825948706
+Ac	Day 56	subject 12	Actinobacteria	0.175323338171119
+Ac	Day 56	subject 12	Alphaproteobacteria	0.0298388704291572
+Ac	Day 56	subject 12	Bacteria	0.041041008060597
+Ac	Day 56	subject 12	Corynebacterium tuberculostearicum	0.0164726335621535
+Ac	Day 56	subject 12	Cutibacterium acnes	0.537339085960482
+Ac	Day 56	subject 12	Eukaryotic virus	9.33511469286649e-06
+Ac	Day 56	subject 12	Firmicutes	0.0887006124384363
+Ac	Day 56	subject 12	Fungi	0.008608623120004
+Ac	Day 56	subject 12	Gammaproteobacteria	0.0325301290826712
+Ac	Day 56	subject 12	Malassezia globosa	0.00284336611056839
+Ac	Day 56	subject 12	Malassezia restricta	0.0378500462088177
+Ac	Day 56	subject 12	Micrococcus luteus	0.00855371068063419
+Ac	Day 56	subject 12	Proteobacteria	0.00396083425174388
+Ac	Day 56	subject 12	Staphylococcus aureus	0.000274013072455316
+Ac	Day 56	subject 12	Staphylococcus epidermidis	0.0160124673202345
+Ac	Day 56	subject 12	Staphylococcus hominis	0.000641926416232996
+Ac	Day 56	subject 13	Actinobacteria	0.0909409784997624
+Ac	Day 56	subject 13	Alphaproteobacteria	0.0152519531593816
+Ac	Day 56	subject 13	Bacteria	0.00230499864062845
+Ac	Day 56	subject 13	Corynebacterium tuberculostearicum	0.00188799430433102
+Ac	Day 56	subject 13	Cutibacterium acnes	0.262986692502333
+Ac	Day 56	subject 13	Eukaryotic virus	3.92490010086081e-05
+Ac	Day 56	subject 13	Firmicutes	0.0162481736500984
+Ac	Day 56	subject 13	Fungi	0.14497459572551
+Ac	Day 56	subject 13	Gammaproteobacteria	0.137945895056517
+Ac	Day 56	subject 13	Malassezia globosa	0.0328128168199573
+Ac	Day 56	subject 13	Malassezia restricta	0.284638579942457
+Ac	Day 56	subject 13	Micrococcus luteus	0.00479541947206834
+Ac	Day 56	subject 13	Proteobacteria	0.00435194487927673
+Ac	Day 56	subject 13	Staphylococcus aureus	5.50268386233642e-05
+Ac	Day 56	subject 13	Staphylococcus epidermidis	0.000583519201041598
+Ac	Day 56	subject 13	Staphylococcus hominis	0.000182162307006729
+Ac	Day 56	subject 14	Actinobacteria	0.14781424914504
+Ac	Day 56	subject 14	Alphaproteobacteria	0.0115601161537519
+Ac	Day 56	subject 14	Bacteria	0.0191635392860606
+Ac	Day 56	subject 14	Corynebacterium tuberculostearicum	0.0339535641160293
+Ac	Day 56	subject 14	Cutibacterium acnes	0.436500968862817
+Ac	Day 56	subject 14	Eukaryotic virus	0.000642249005977856
+Ac	Day 56	subject 14	Firmicutes	0.0780890621883674
+Ac	Day 56	subject 14	Fungi	0.00617473930362642
+Ac	Day 56	subject 14	Gammaproteobacteria	0.171909382507772
+Ac	Day 56	subject 14	Malassezia globosa	0.0161532029195798
+Ac	Day 56	subject 14	Malassezia restricta	0.0391358365796489
+Ac	Day 56	subject 14	Micrococcus luteus	0.0110261894872438
+Ac	Day 56	subject 14	Proteobacteria	0.0071463467742083
+Ac	Day 56	subject 14	Staphylococcus aureus	0.00114214196447686
+Ac	Day 56	subject 14	Staphylococcus epidermidis	0.0118726407412761
+Ac	Day 56	subject 14	Staphylococcus hominis	0.00771577096412371
+Vf	Day 0	subject 5	Actinobacteria	0.389935282310771
+Vf	Day 0	subject 5	Alphaproteobacteria	0.0451435003086047
+Vf	Day 0	subject 5	Bacteria	0.00245132462665287
+Vf	Day 0	subject 5	Corynebacterium tuberculostearicum	0.0408532213500282
+Vf	Day 0	subject 5	Cutibacterium acnes	0.180145860497784
+Vf	Day 0	subject 5	Eukaryotic virus	3.60624463311876e-05
+Vf	Day 0	subject 5	Firmicutes	0.0287267917131033
+Vf	Day 0	subject 5	Fungi	0.0222363578818739
+Vf	Day 0	subject 5	Gammaproteobacteria	0.0334023512484577
+Vf	Day 0	subject 5	Malassezia globosa	0.00774443915349341
+Vf	Day 0	subject 5	Malassezia restricta	0.221194948169739
+Vf	Day 0	subject 5	Micrococcus luteus	0.0122474058945854
+Vf	Day 0	subject 5	Proteobacteria	0.00540372139098731
+Vf	Day 0	subject 5	Staphylococcus aureus	0.000432634140490765
+Vf	Day 0	subject 5	Staphylococcus epidermidis	0.00494009428543876
+Vf	Day 0	subject 5	Staphylococcus hominis	0.00510600458165892
+Vf	Day 0	subject 6	Actinobacteria	0.193221930487868
+Vf	Day 0	subject 6	Alphaproteobacteria	0.00304914961135151
+Vf	Day 0	subject 6	Bacteria	0.00567404744307208
+Vf	Day 0	subject 6	Corynebacterium tuberculostearicum	0.00599956322838247
+Vf	Day 0	subject 6	Cutibacterium acnes	0.621801163633569
+Vf	Day 0	subject 6	Eukaryotic virus	0.000302467901909915
+Vf	Day 0	subject 6	Firmicutes	0.0746311805140104
+Vf	Day 0	subject 6	Fungi	0.00199506462299282
+Vf	Day 0	subject 6	Gammaproteobacteria	0.0211847038880499
+Vf	Day 0	subject 6	Malassezia globosa	0.00697710648050995
+Vf	Day 0	subject 6	Malassezia restricta	0.043959427188962
+Vf	Day 0	subject 6	Micrococcus luteus	0.00598917745376373
+Vf	Day 0	subject 6	Proteobacteria	0.00662896962445465
+Vf	Day 0	subject 6	Staphylococcus aureus	0.000370188843259454
+Vf	Day 0	subject 6	Staphylococcus epidermidis	0.0033123507489495
+Vf	Day 0	subject 6	Staphylococcus hominis	0.00490350832889329
+Vf	Day 0	subject 7	Actinobacteria	0.0977409020112475
+Vf	Day 0	subject 7	Alphaproteobacteria	0.0096936073773483
+Vf	Day 0	subject 7	Bacteria	0.0591347547697506
+Vf	Day 0	subject 7	Corynebacterium tuberculostearicum	0.00511157388734783
+Vf	Day 0	subject 7	Cutibacterium acnes	0.406701658403459
+Vf	Day 0	subject 7	Eukaryotic virus	0.00173541088767982
+Vf	Day 0	subject 7	Firmicutes	0.264942139251748
+Vf	Day 0	subject 7	Fungi	0.00253932454790146
+Vf	Day 0	subject 7	Gammaproteobacteria	0.0749359109786803
+Vf	Day 0	subject 7	Malassezia globosa	0.0079888348373561
+Vf	Day 0	subject 7	Malassezia restricta	0.0475973590658871
+Vf	Day 0	subject 7	Micrococcus luteus	0.00485549217533183
+Vf	Day 0	subject 7	Proteobacteria	0.00893587988304383
+Vf	Day 0	subject 7	Staphylococcus aureus	0.000180629064725567
+Vf	Day 0	subject 7	Staphylococcus epidermidis	0.00565986312432493
+Vf	Day 0	subject 7	Staphylococcus hominis	0.00224665973416889
+Vf	Day 0	subject 8	Actinobacteria	0.189988635233235
+Vf	Day 0	subject 8	Alphaproteobacteria	0.00504417945859055
+Vf	Day 0	subject 8	Bacteria	0.0400792064199858
+Vf	Day 0	subject 8	Corynebacterium tuberculostearicum	0.0397200966894948
+Vf	Day 0	subject 8	Cutibacterium acnes	0.424179389457127
+Vf	Day 0	subject 8	Eukaryotic virus	9.2177898735665e-06
+Vf	Day 0	subject 8	Firmicutes	0.128625680020044
+Vf	Day 0	subject 8	Fungi	0.00440021441603445
+Vf	Day 0	subject 8	Gammaproteobacteria	0.0552632107892182
+Vf	Day 0	subject 8	Malassezia globosa	0.00106235028292854
+Vf	Day 0	subject 8	Malassezia restricta	0.0400651236854568
+Vf	Day 0	subject 8	Micrococcus luteus	0.0209487077362734
+Vf	Day 0	subject 8	Proteobacteria	0.00189323162014307
+Vf	Day 0	subject 8	Staphylococcus aureus	0.000452183803242179
+Vf	Day 0	subject 8	Staphylococcus epidermidis	0.0391621643524253
+Vf	Day 0	subject 8	Staphylococcus hominis	0.00910640824592757
+Vf	Day 0	subject 9	Actinobacteria	0.132539084145599
+Vf	Day 0	subject 9	Alphaproteobacteria	0.0040660229099861
+Vf	Day 0	subject 9	Bacteria	0.00124251700989253
+Vf	Day 0	subject 9	Corynebacterium tuberculostearicum	0.024757501158217
+Vf	Day 0	subject 9	Cutibacterium acnes	0.37273402796072
+Vf	Day 0	subject 9	Eukaryotic virus	0.0014985056729922
+Vf	Day 0	subject 9	Firmicutes	0.0109835306087225
+Vf	Day 0	subject 9	Fungi	0.0295785906997447
+Vf	Day 0	subject 9	Gammaproteobacteria	0.0241405121590073
+Vf	Day 0	subject 9	Malassezia globosa	0.0614254698727324
+Vf	Day 0	subject 9	Malassezia restricta	0.11461206544153
+Vf	Day 0	subject 9	Micrococcus luteus	0.214953262538266
+Vf	Day 0	subject 9	Proteobacteria	0.00349227401142774
+Vf	Day 0	subject 9	Staphylococcus aureus	0.000784498968959784
+Vf	Day 0	subject 9	Staphylococcus epidermidis	0.00258332349227401
+Vf	Day 0	subject 9	Staphylococcus hominis	0.000608813349926873
+Vf	Day 0	subject 10	Actinobacteria	0.123928997477395
+Vf	Day 0	subject 10	Alphaproteobacteria	0.00252727118022646
+Vf	Day 0	subject 10	Bacteria	0.0215918588486302
+Vf	Day 0	subject 10	Corynebacterium tuberculostearicum	0.00147044343366041
+Vf	Day 0	subject 10	Cutibacterium acnes	0.708043635132787
+Vf	Day 0	subject 10	Eukaryotic virus	4.6665929344983e-06
+Vf	Day 0	subject 10	Firmicutes	0.0410288406332069
+Vf	Day 0	subject 10	Fungi	0.00486912306785553
+Vf	Day 0	subject 10	Gammaproteobacteria	0.0383435275055987
+Vf	Day 0	subject 10	Malassezia globosa	0.0363032930746361
+Vf	Day 0	subject 10	Malassezia restricta	0.007188575309399
+Vf	Day 0	subject 10	Micrococcus luteus	0.00756563601850646
+Vf	Day 0	subject 10	Proteobacteria	0.00319117180170775
+Vf	Day 0	subject 10	Staphylococcus aureus	0.000332105863838462
+Vf	Day 0	subject 10	Staphylococcus epidermidis	0.00286746580515139
+Vf	Day 0	subject 10	Staphylococcus hominis	0.000743388254465579
+Vf	Day 0	subject 11	Actinobacteria	0.246674270901665
+Vf	Day 0	subject 11	Alphaproteobacteria	0.00451831956982663
+Vf	Day 0	subject 11	Bacteria	0.00275204033311626
+Vf	Day 0	subject 11	Corynebacterium tuberculostearicum	0.0204998052670697
+Vf	Day 0	subject 11	Cutibacterium acnes	0.451813019106037
+Vf	Day 0	subject 11	Eukaryotic virus	8.64598346475493e-05
+Vf	Day 0	subject 11	Firmicutes	0.0719816792403591
+Vf	Day 0	subject 11	Fungi	0.0279766970915388
+Vf	Day 0	subject 11	Gammaproteobacteria	0.0776880283270974
+Vf	Day 0	subject 11	Malassezia globosa	0.0180474989708107
+Vf	Day 0	subject 11	Malassezia restricta	0.00488973991453961
+Vf	Day 0	subject 11	Micrococcus luteus	0.0343058147808243
+Vf	Day 0	subject 11	Proteobacteria	0.0149522963811403
+Vf	Day 0	subject 11	Staphylococcus aureus	0.00124702447289246
+Vf	Day 0	subject 11	Staphylococcus epidermidis	0.0026699431506757
+Vf	Day 0	subject 11	Staphylococcus hominis	0.0198973626577594
+Vf	Day 0	subject 12	Actinobacteria	0.200118216542901
+Vf	Day 0	subject 12	Alphaproteobacteria	0.230110444633153
+Vf	Day 0	subject 12	Bacteria	0.0084166290790377
+Vf	Day 0	subject 12	Corynebacterium tuberculostearicum	0.0225320586777386
+Vf	Day 0	subject 12	Cutibacterium acnes	0.313064331901944
+Vf	Day 0	subject 12	Eukaryotic virus	1.11592960716038e-05
+Vf	Day 0	subject 12	Firmicutes	0.0306434270126241
+Vf	Day 0	subject 12	Fungi	0.00820676231743302
+Vf	Day 0	subject 12	Gammaproteobacteria	0.0345912979809234
+Vf	Day 0	subject 12	Malassezia globosa	0.00076495174684381
+Vf	Day 0	subject 12	Malassezia restricta	0.0229244339267079
+Vf	Day 0	subject 12	Micrococcus luteus	0.120441202568942
+Vf	Day 0	subject 12	Proteobacteria	0.00516063446717781
+Vf	Day 0	subject 12	Staphylococcus aureus	4.60770934569448e-05
+Vf	Day 0	subject 12	Staphylococcus epidermidis	0.00262063469036373
+Vf	Day 0	subject 12	Staphylococcus hominis	0.00034773806468288
+Vf	Day 0	subject 13	Actinobacteria	0.129866290231728
+Vf	Day 0	subject 13	Alphaproteobacteria	0.00315069575831851
+Vf	Day 0	subject 13	Bacteria	0.00434835880992549
+Vf	Day 0	subject 13	Corynebacterium tuberculostearicum	0.00104907031266226
+Vf	Day 0	subject 13	Cutibacterium acnes	0.430081192131945
+Vf	Day 0	subject 13	Eukaryotic virus	0.000259131239867014
+Vf	Day 0	subject 13	Firmicutes	0.0510862115277578
+Vf	Day 0	subject 13	Fungi	0.0941687665032379
+Vf	Day 0	subject 13	Gammaproteobacteria	0.060680618865061
+Vf	Day 0	subject 13	Malassezia globosa	0.00512519495827346
+Vf	Day 0	subject 13	Malassezia restricta	0.203439071610409
+Vf	Day 0	subject 13	Micrococcus luteus	0.00410233049450576
+Vf	Day 0	subject 13	Proteobacteria	0.0103323528907491
+Vf	Day 0	subject 13	Staphylococcus aureus	6.69085503691052e-05
+Vf	Day 0	subject 13	Staphylococcus epidermidis	0.00200237776260874
+Vf	Day 0	subject 13	Staphylococcus hominis	0.000241428352581855
+Vf	Day 0	subject 14	Actinobacteria	0.113287157952237
+Vf	Day 0	subject 14	Alphaproteobacteria	0.013313190283539
+Vf	Day 0	subject 14	Bacteria	0.0119910892610232
+Vf	Day 0	subject 14	Corynebacterium tuberculostearicum	0.018439425752377
+Vf	Day 0	subject 14	Cutibacterium acnes	0.420509636230177
+Vf	Day 0	subject 14	Eukaryotic virus	0.00125211245967122
+Vf	Day 0	subject 14	Firmicutes	0.101878168689507
+Vf	Day 0	subject 14	Fungi	0.0111550673426538
+Vf	Day 0	subject 14	Gammaproteobacteria	0.21606963008484
+Vf	Day 0	subject 14	Malassezia globosa	0.0081391577473925
+Vf	Day 0	subject 14	Malassezia restricta	0.0392605964391185
+Vf	Day 0	subject 14	Micrococcus luteus	0.0141944487120397
+Vf	Day 0	subject 14	Proteobacteria	0.0078596302555436
+Vf	Day 0	subject 14	Staphylococcus aureus	0.00212611597616975
+Vf	Day 0	subject 14	Staphylococcus epidermidis	0.00690240863078472
+Vf	Day 0	subject 14	Staphylococcus hominis	0.0136221641829262
+Vf	Day 14	subject 5	Actinobacteria	0.392756887568459
+Vf	Day 14	subject 5	Alphaproteobacteria	0.0826651391542774
+Vf	Day 14	subject 5	Bacteria	0.00178104955284524
+Vf	Day 14	subject 5	Corynebacterium tuberculostearicum	0.0338239590066701
+Vf	Day 14	subject 5	Cutibacterium acnes	0.1592949987214
+Vf	Day 14	subject 5	Eukaryotic virus	4.9945304342267e-05
+Vf	Day 14	subject 5	Firmicutes	0.0168198026694323
+Vf	Day 14	subject 5	Fungi	0.0195681262830394
+Vf	Day 14	subject 5	Gammaproteobacteria	0.0420216482927142
+Vf	Day 14	subject 5	Malassezia globosa	0.00351104390569617
+Vf	Day 14	subject 5	Malassezia restricta	0.221625184686637
+Vf	Day 14	subject 5	Micrococcus luteus	0.012817185979443
+Vf	Day 14	subject 5	Proteobacteria	0.00290992442054568
+Vf	Day 14	subject 5	Staphylococcus aureus	0.000318096093877638
+Vf	Day 14	subject 5	Staphylococcus epidermidis	0.00341204121353327
+Vf	Day 14	subject 5	Staphylococcus hominis	0.00662496714708871
+Vf	Day 14	subject 6	Actinobacteria	0.129901865999681
+Vf	Day 14	subject 6	Alphaproteobacteria	0.0191369530843602
+Vf	Day 14	subject 6	Bacteria	0.00996927846333218
+Vf	Day 14	subject 6	Corynebacterium tuberculostearicum	0.00568163000449588
+Vf	Day 14	subject 6	Cutibacterium acnes	0.473240373465683
+Vf	Day 14	subject 6	Eukaryotic virus	0.000359155011977453
+Vf	Day 14	subject 6	Firmicutes	0.0988578632636779
+Vf	Day 14	subject 6	Fungi	0.00593865092968792
+Vf	Day 14	subject 6	Gammaproteobacteria	0.0472166874802053
+Vf	Day 14	subject 6	Malassezia globosa	0.0132421305686132
+Vf	Day 14	subject 6	Malassezia restricta	0.138087665157264
+Vf	Day 14	subject 6	Micrococcus luteus	0.0410521516478988
+Vf	Day 14	subject 6	Proteobacteria	0.00991850889786215
+Vf	Day 14	subject 6	Staphylococcus aureus	0.000517611585456185
+Vf	Day 14	subject 6	Staphylococcus epidermidis	0.00264537200704983
+Vf	Day 14	subject 6	Staphylococcus hominis	0.00423410243275462
+Vf	Day 14	subject 7	Actinobacteria	0.189602218326059
+Vf	Day 14	subject 7	Alphaproteobacteria	0.0123755712308164
+Vf	Day 14	subject 7	Bacteria	0.0202613976506773
+Vf	Day 14	subject 7	Corynebacterium tuberculostearicum	0.00345680854503177
+Vf	Day 14	subject 7	Cutibacterium acnes	0.360448777841493
+Vf	Day 14	subject 7	Eukaryotic virus	0.00101934499926694
+Vf	Day 14	subject 7	Firmicutes	0.148486901633641
+Vf	Day 14	subject 7	Fungi	0.00321968431825194
+Vf	Day 14	subject 7	Gammaproteobacteria	0.0848022745418514
+Vf	Day 14	subject 7	Malassezia globosa	0.0156820083149634
+Vf	Day 14	subject 7	Malassezia restricta	0.0611008405475488
+Vf	Day 14	subject 7	Micrococcus luteus	0.0392645910199899
+Vf	Day 14	subject 7	Proteobacteria	0.0178213315219356
+Vf	Day 14	subject 7	Staphylococcus aureus	0.00084236935684102
+Vf	Day 14	subject 7	Staphylococcus epidermidis	0.039044817346389
+Vf	Day 14	subject 7	Staphylococcus hominis	0.00257106280524322
+Vf	Day 14	subject 8	Actinobacteria	0.345120711636958
+Vf	Day 14	subject 8	Alphaproteobacteria	0.0113604542458459
+Vf	Day 14	subject 8	Bacteria	0.0337004761968719
+Vf	Day 14	subject 8	Corynebacterium tuberculostearicum	0.0206973695514282
+Vf	Day 14	subject 8	Cutibacterium acnes	0.285240431144304
+Vf	Day 14	subject 8	Eukaryotic virus	1.87528968790871e-05
+Vf	Day 14	subject 8	Firmicutes	0.111850386347688
+Vf	Day 14	subject 8	Fungi	0.00929256723863846
+Vf	Day 14	subject 8	Gammaproteobacteria	0.0551598722471571
+Vf	Day 14	subject 8	Malassezia globosa	0.00171031487887783
+Vf	Day 14	subject 8	Malassezia restricta	0.024352157102647
+Vf	Day 14	subject 8	Micrococcus luteus	0.0616808120105715
+Vf	Day 14	subject 8	Proteobacteria	0.00355924914414566
+Vf	Day 14	subject 8	Staphylococcus aureus	0.00131777113204396
+Vf	Day 14	subject 8	Staphylococcus epidermidis	0.022648177661904
+Vf	Day 14	subject 8	Staphylococcus hominis	0.0122904965640385
+Vf	Day 14	subject 9	Actinobacteria	0.0817693826314143
+Vf	Day 14	subject 9	Alphaproteobacteria	0.0148327286856796
+Vf	Day 14	subject 9	Bacteria	0.00830305734100688
+Vf	Day 14	subject 9	Corynebacterium tuberculostearicum	0.0164321122198135
+Vf	Day 14	subject 9	Cutibacterium acnes	0.578450907102309
+Vf	Day 14	subject 9	Eukaryotic virus	0.00020213067977398
+Vf	Day 14	subject 9	Firmicutes	0.0362605431755057
+Vf	Day 14	subject 9	Fungi	0.0257039577056271
+Vf	Day 14	subject 9	Gammaproteobacteria	0.0995267918001666
+Vf	Day 14	subject 9	Malassezia globosa	0.0183225900986057
+Vf	Day 14	subject 9	Malassezia restricta	0.0603402598523988
+Vf	Day 14	subject 9	Micrococcus luteus	0.0356502262686153
+Vf	Day 14	subject 9	Proteobacteria	0.0115449979525274
+Vf	Day 14	subject 9	Staphylococcus aureus	0.00480142132537544
+Vf	Day 14	subject 9	Staphylococcus epidermidis	0.0067337644582309
+Vf	Day 14	subject 9	Staphylococcus hominis	0.00112512870294901
+Vf	Day 14	subject 10	Actinobacteria	0.111338475412592
+Vf	Day 14	subject 10	Alphaproteobacteria	0.00815334033913228
+Vf	Day 14	subject 10	Bacteria	0.00689651387361947
+Vf	Day 14	subject 10	Corynebacterium tuberculostearicum	0.000633323839493642
+Vf	Day 14	subject 10	Cutibacterium acnes	0.643447488571285
+Vf	Day 14	subject 10	Eukaryotic virus	6.49933244634296e-06
+Vf	Day 14	subject 10	Firmicutes	0.0364023277431371
+Vf	Day 14	subject 10	Fungi	0.0108660172726259
+Vf	Day 14	subject 10	Gammaproteobacteria	0.0377839413916197
+Vf	Day 14	subject 10	Malassezia globosa	0.112919113063543
+Vf	Day 14	subject 10	Malassezia restricta	0.0111490993080666
+Vf	Day 14	subject 10	Micrococcus luteus	0.00368786565966491
+Vf	Day 14	subject 10	Proteobacteria	0.00486525583972242
+Vf	Day 14	subject 10	Staphylococcus aureus	0.000696584008638046
+Vf	Day 14	subject 10	Staphylococcus epidermidis	0.00871372722561696
+Vf	Day 14	subject 10	Staphylococcus hominis	0.00244042711879682
+Vf	Day 14	subject 11	Actinobacteria	0.175370615412875
+Vf	Day 14	subject 11	Alphaproteobacteria	0.00486529617059014
+Vf	Day 14	subject 11	Bacteria	0.0264684903288808
+Vf	Day 14	subject 11	Corynebacterium tuberculostearicum	0.0212863288512004
+Vf	Day 14	subject 11	Cutibacterium acnes	0.424173449534179
+Vf	Day 14	subject 11	Eukaryotic virus	0.000499964706079641
+Vf	Day 14	subject 11	Firmicutes	0.170574152136686
+Vf	Day 14	subject 11	Fungi	0.0478098074979886
+Vf	Day 14	subject 11	Gammaproteobacteria	0.0746002329788732
+Vf	Day 14	subject 11	Malassezia globosa	0.0276480092473971
+Vf	Day 14	subject 11	Malassezia restricta	0.00660113307133935
+Vf	Day 14	subject 11	Micrococcus luteus	0.00594458815504834
+Vf	Day 14	subject 11	Proteobacteria	0.00453146638244336
+Vf	Day 14	subject 11	Staphylococcus aureus	0.000307895581474163
+Vf	Day 14	subject 11	Staphylococcus epidermidis	0.00339991599656966
+Vf	Day 14	subject 11	Staphylococcus hominis	0.00591865394837572
+Vf	Day 14	subject 12	Actinobacteria	0.249310885041743
+Vf	Day 14	subject 12	Alphaproteobacteria	0.143888336463742
+Vf	Day 14	subject 12	Bacteria	0.0227542501324404
+Vf	Day 14	subject 12	Corynebacterium tuberculostearicum	0.0135847009396893
+Vf	Day 14	subject 12	Cutibacterium acnes	0.243386479465366
+Vf	Day 14	subject 12	Eukaryotic virus	5.09930904362459e-05
+Vf	Day 14	subject 12	Firmicutes	0.130511857310001
+Vf	Day 14	subject 12	Fungi	0.00879559986288525
+Vf	Day 14	subject 12	Gammaproteobacteria	0.0686997328528651
+Vf	Day 14	subject 12	Malassezia globosa	0.00270263379312103
+Vf	Day 14	subject 12	Malassezia restricta	0.0392915926558618
+Vf	Day 14	subject 12	Micrococcus luteus	0.0300993798673613
+Vf	Day 14	subject 12	Proteobacteria	0.0061312108875914
+Vf	Day 14	subject 12	Staphylococcus aureus	0.000613333559969291
+Vf	Day 14	subject 12	Staphylococcus epidermidis	0.0330272331432424
+Vf	Day 14	subject 12	Staphylococcus hominis	0.00715178093368348
+Vf	Day 14	subject 13	Actinobacteria	0.131782447543826
+Vf	Day 14	subject 13	Alphaproteobacteria	0.0090212051977213
+Vf	Day 14	subject 13	Bacteria	0.00645708918163623
+Vf	Day 14	subject 13	Corynebacterium tuberculostearicum	0.000901643585846795
+Vf	Day 14	subject 13	Cutibacterium acnes	0.337042289492693
+Vf	Day 14	subject 13	Eukaryotic virus	0.000351977236897612
+Vf	Day 14	subject 13	Firmicutes	0.0219756844776846
+Vf	Day 14	subject 13	Fungi	0.0934698683876986
+Vf	Day 14	subject 13	Gammaproteobacteria	0.0798569818238097
+Vf	Day 14	subject 13	Malassezia globosa	0.00465702131393866
+Vf	Day 14	subject 13	Malassezia restricta	0.299263041698572
+Vf	Day 14	subject 13	Micrococcus luteus	0.0099964158415511
+Vf	Day 14	subject 13	Proteobacteria	0.00443620090650831
+Vf	Day 14	subject 13	Staphylococcus aureus	4.29240532801965e-05
+Vf	Day 14	subject 13	Staphylococcus epidermidis	0.000546327811471835
+Vf	Day 14	subject 13	Staphylococcus hominis	0.000198881446864911
+Vf	Day 14	subject 14	Actinobacteria	0.094723845960385
+Vf	Day 14	subject 14	Alphaproteobacteria	0.00699981455089562
+Vf	Day 14	subject 14	Bacteria	0.0139025858718267
+Vf	Day 14	subject 14	Corynebacterium tuberculostearicum	0.0116914228519024
+Vf	Day 14	subject 14	Cutibacterium acnes	0.506351758845033
+Vf	Day 14	subject 14	Eukaryotic virus	0.00427396675634274
+Vf	Day 14	subject 14	Firmicutes	0.0846313500440759
+Vf	Day 14	subject 14	Fungi	0.010463394125074
+Vf	Day 14	subject 14	Gammaproteobacteria	0.126295920881823
+Vf	Day 14	subject 14	Malassezia globosa	0.00958746465670323
+Vf	Day 14	subject 14	Malassezia restricta	0.0702770812851369
+Vf	Day 14	subject 14	Micrococcus luteus	0.0291937536677006
+Vf	Day 14	subject 14	Proteobacteria	0.00469973757681531
+Vf	Day 14	subject 14	Staphylococcus aureus	0.000772281201811813
+Vf	Day 14	subject 14	Staphylococcus epidermidis	0.0133726587050572
+Vf	Day 14	subject 14	Staphylococcus hominis	0.0127629630194163
+Vf	Day 56	subject 5	Actinobacteria	0.409565441256789
+Vf	Day 56	subject 5	Alphaproteobacteria	0.0945425138340262
+Vf	Day 56	subject 5	Bacteria	0.00471197324047841
+Vf	Day 56	subject 5	Corynebacterium tuberculostearicum	0.0970152829456426
+Vf	Day 56	subject 5	Cutibacterium acnes	0.0248866878590426
+Vf	Day 56	subject 5	Eukaryotic virus	0.000162848408160662
+Vf	Day 56	subject 5	Firmicutes	0.0384251372617957
+Vf	Day 56	subject 5	Fungi	0.0218270790249247
+Vf	Day 56	subject 5	Gammaproteobacteria	0.0459744012162634
+Vf	Day 56	subject 5	Malassezia globosa	0.00387831880664933
+Vf	Day 56	subject 5	Malassezia restricta	0.189153587310088
+Vf	Day 56	subject 5	Micrococcus luteus	0.00974440503249342
+Vf	Day 56	subject 5	Proteobacteria	0.000741830733484945
+Vf	Day 56	subject 5	Staphylococcus aureus	0.000978939248299759
+Vf	Day 56	subject 5	Staphylococcus epidermidis	0.0300756513281543
+Vf	Day 56	subject 5	Staphylococcus hominis	0.0283159024937068
+Vf	Day 56	subject 6	Actinobacteria	0.180952753391345
+Vf	Day 56	subject 6	Alphaproteobacteria	0.0325830339231231
+Vf	Day 56	subject 6	Bacteria	0.0633486424945332
+Vf	Day 56	subject 6	Corynebacterium tuberculostearicum	0.00519627226225109
+Vf	Day 56	subject 6	Cutibacterium acnes	0.188442980900101
+Vf	Day 56	subject 6	Eukaryotic virus	0.00606587884691054
+Vf	Day 56	subject 6	Firmicutes	0.199326972075832
+Vf	Day 56	subject 6	Fungi	0.0082223580408574
+Vf	Day 56	subject 6	Gammaproteobacteria	0.131809700890813
+Vf	Day 56	subject 6	Malassezia globosa	0.0139850638920962
+Vf	Day 56	subject 6	Malassezia restricta	0.108815722422546
+Vf	Day 56	subject 6	Micrococcus luteus	0.023206844614164
+Vf	Day 56	subject 6	Proteobacteria	0.0242719816548085
+Vf	Day 56	subject 6	Staphylococcus aureus	0.0012493791404078
+Vf	Day 56	subject 6	Staphylococcus epidermidis	0.00435287079024944
+Vf	Day 56	subject 6	Staphylococcus hominis	0.00816954465996246
+Vf	Day 56	subject 7	Actinobacteria	0.180955367451369
+Vf	Day 56	subject 7	Alphaproteobacteria	0.0699757075457291
+Vf	Day 56	subject 7	Bacteria	0.044557207406246
+Vf	Day 56	subject 7	Corynebacterium tuberculostearicum	0.00246997041329752
+Vf	Day 56	subject 7	Cutibacterium acnes	0.128910871331442
+Vf	Day 56	subject 7	Eukaryotic virus	0.00295052525050957
+Vf	Day 56	subject 7	Firmicutes	0.235730473896302
+Vf	Day 56	subject 7	Fungi	0.00514865638089265
+Vf	Day 56	subject 7	Gammaproteobacteria	0.128033247878737
+Vf	Day 56	subject 7	Malassezia globosa	0.0532876263238166
+Vf	Day 56	subject 7	Malassezia restricta	0.101276931942439
+Vf	Day 56	subject 7	Micrococcus luteus	0.0212228084357737
+Vf	Day 56	subject 7	Proteobacteria	0.00423030794198319
+Vf	Day 56	subject 7	Staphylococcus aureus	0.000426594230491205
+Vf	Day 56	subject 7	Staphylococcus epidermidis	0.0156933734338698
+Vf	Day 56	subject 7	Staphylococcus hominis	0.00513033013710067
+Vf	Day 56	subject 8	Actinobacteria	0.463557716729714
+Vf	Day 56	subject 8	Alphaproteobacteria	0.0140933379139199
+Vf	Day 56	subject 8	Bacteria	0.0171061769466877
+Vf	Day 56	subject 8	Corynebacterium tuberculostearicum	0.0197253383458405
+Vf	Day 56	subject 8	Cutibacterium acnes	0.191950572514402
+Vf	Day 56	subject 8	Eukaryotic virus	2.31386037716567e-05
+Vf	Day 56	subject 8	Firmicutes	0.0775255705674389
+Vf	Day 56	subject 8	Fungi	0.00910932551077129
+Vf	Day 56	subject 8	Gammaproteobacteria	0.0572241238369504
+Vf	Day 56	subject 8	Malassezia globosa	0.00188751017803977
+Vf	Day 56	subject 8	Malassezia restricta	0.0359187187983695
+Vf	Day 56	subject 8	Micrococcus luteus	0.0642299788678131
+Vf	Day 56	subject 8	Proteobacteria	0.00372735054738331
+Vf	Day 56	subject 8	Staphylococcus aureus	0.000838345894060117
+Vf	Day 56	subject 8	Staphylococcus epidermidis	0.0364709387170865
+Vf	Day 56	subject 8	Staphylococcus hominis	0.0066118560277509
+Vf	Day 56	subject 9	Actinobacteria	0.19037035916232
+Vf	Day 56	subject 9	Alphaproteobacteria	0.00790187364656605
+Vf	Day 56	subject 9	Bacteria	0.0111719213800064
+Vf	Day 56	subject 9	Corynebacterium tuberculostearicum	0.0515962621414096
+Vf	Day 56	subject 9	Cutibacterium acnes	0.382634747060829
+Vf	Day 56	subject 9	Eukaryotic virus	0.00169198713698153
+Vf	Day 56	subject 9	Firmicutes	0.0953396034466339
+Vf	Day 56	subject 9	Fungi	0.0179193987526824
+Vf	Day 56	subject 9	Gammaproteobacteria	0.0584941581496194
+Vf	Day 56	subject 9	Malassezia globosa	0.0239895472399071
+Vf	Day 56	subject 9	Malassezia restricta	0.0656644097937663
+Vf	Day 56	subject 9	Micrococcus luteus	0.0638095433058812
+Vf	Day 56	subject 9	Proteobacteria	0.0189803396613
+Vf	Day 56	subject 9	Staphylococcus aureus	0.000435234986840595
+Vf	Day 56	subject 9	Staphylococcus epidermidis	0.00919244773842467
+Vf	Day 56	subject 9	Staphylococcus hominis	0.000808166396832843
+Vf	Day 56	subject 10	Actinobacteria	0.0895627713727691
+Vf	Day 56	subject 10	Alphaproteobacteria	0.00119875715243398
+Vf	Day 56	subject 10	Bacteria	0.0721815771894088
+Vf	Day 56	subject 10	Corynebacterium tuberculostearicum	0.00123817963077809
+Vf	Day 56	subject 10	Cutibacterium acnes	0.607352311824351
+Vf	Day 56	subject 10	Eukaryotic virus	2.74584426277416e-06
+Vf	Day 56	subject 10	Firmicutes	0.111217087624205
+Vf	Day 56	subject 10	Fungi	0.00610342340094779
+Vf	Day 56	subject 10	Gammaproteobacteria	0.0430964179677065
+Vf	Day 56	subject 10	Malassezia globosa	0.0355935946514092
+Vf	Day 56	subject 10	Malassezia restricta	0.00537322495878292
+Vf	Day 56	subject 10	Micrococcus luteus	0.00414857841758564
+Vf	Day 56	subject 10	Proteobacteria	0.0189304387427642
+Vf	Day 56	subject 10	Staphylococcus aureus	0.000473069740129376
+Vf	Day 56	subject 10	Staphylococcus epidermidis	0.00283488806958126
+Vf	Day 56	subject 10	Staphylococcus hominis	0.000692933412884365
+Vf	Day 56	subject 11	Actinobacteria	0.198941846469819
+Vf	Day 56	subject 11	Alphaproteobacteria	0.00375048237118068
+Vf	Day 56	subject 11	Bacteria	0.00270755335888036
+Vf	Day 56	subject 11	Corynebacterium tuberculostearicum	0.00766146616730689
+Vf	Day 56	subject 11	Cutibacterium acnes	0.136030241638858
+Vf	Day 56	subject 11	Eukaryotic virus	0.000874501591061194
+Vf	Day 56	subject 11	Firmicutes	0.305807063746972
+Vf	Day 56	subject 11	Fungi	0.0103457369120748
+Vf	Day 56	subject 11	Gammaproteobacteria	0.171419154590118
+Vf	Day 56	subject 11	Malassezia globosa	0.00905264364175752
+Vf	Day 56	subject 11	Malassezia restricta	0.00258321429202442
+Vf	Day 56	subject 11	Micrococcus luteus	0.118307879051278
+Vf	Day 56	subject 11	Proteobacteria	0.00175362667996032
+Vf	Day 56	subject 11	Staphylococcus aureus	0.000776252262005036
+Vf	Day 56	subject 11	Staphylococcus epidermidis	0.00250114720540104
+Vf	Day 56	subject 11	Staphylococcus hominis	0.0274871900213028
+Vf	Day 56	subject 12	Actinobacteria	0.538070985921008
+Vf	Day 56	subject 12	Alphaproteobacteria	0.0757035756215803
+Vf	Day 56	subject 12	Bacteria	0.00447017287551206
+Vf	Day 56	subject 12	Corynebacterium tuberculostearicum	0.0107651836164914
+Vf	Day 56	subject 12	Cutibacterium acnes	0.23454850492475
+Vf	Day 56	subject 12	Eukaryotic virus	5.71111701562045e-06
+Vf	Day 56	subject 12	Firmicutes	0.0338677397764886
+Vf	Day 56	subject 12	Fungi	0.0058587901841672
+Vf	Day 56	subject 12	Gammaproteobacteria	0.0435132724999653
+Vf	Day 56	subject 12	Malassezia globosa	0.00125726161729587
+Vf	Day 56	subject 12	Malassezia restricta	0.0229285030699973
+Vf	Day 56	subject 12	Micrococcus luteus	0.0209600714052802
+Vf	Day 56	subject 12	Proteobacteria	0.00500511416930851
+Vf	Day 56	subject 12	Staphylococcus aureus	6.71736144218214e-05
+Vf	Day 56	subject 12	Staphylococcus epidermidis	0.00284549606354461
+Vf	Day 56	subject 12	Staphylococcus hominis	0.000132443523171769
+Vf	Day 56	subject 13	Actinobacteria	0.0911802553164524
+Vf	Day 56	subject 13	Alphaproteobacteria	0.00914537109313116
+Vf	Day 56	subject 13	Bacteria	0.00419220599290852
+Vf	Day 56	subject 13	Corynebacterium tuberculostearicum	0.00141174386552104
+Vf	Day 56	subject 13	Cutibacterium acnes	0.313088316622357
+Vf	Day 56	subject 13	Eukaryotic virus	9.59524968531901e-05
+Vf	Day 56	subject 13	Firmicutes	0.0565901903063855
+Vf	Day 56	subject 13	Fungi	0.149668252793244
+Vf	Day 56	subject 13	Gammaproteobacteria	0.0985790389340307
+Vf	Day 56	subject 13	Malassezia globosa	0.00724504359447774
+Vf	Day 56	subject 13	Malassezia restricta	0.260504548112346
+Vf	Day 56	subject 13	Micrococcus luteus	0.00374970836201707
+Vf	Day 56	subject 13	Proteobacteria	0.00366005668578275
+Vf	Day 56	subject 13	Staphylococcus aureus	7.61499177652897e-05
+Vf	Day 56	subject 13	Staphylococcus epidermidis	0.000644303914141778
+Vf	Day 56	subject 13	Staphylococcus hominis	0.000168861992585914
+Vf	Day 56	subject 14	Actinobacteria	0.151500770589783
+Vf	Day 56	subject 14	Alphaproteobacteria	0.0145105815133632
+Vf	Day 56	subject 14	Bacteria	0.0303790925835432
+Vf	Day 56	subject 14	Corynebacterium tuberculostearicum	0.0309269631244596
+Vf	Day 56	subject 14	Cutibacterium acnes	0.428384956583844
+Vf	Day 56	subject 14	Eukaryotic virus	0.00214449498176897
+Vf	Day 56	subject 14	Firmicutes	0.0907134533699207
+Vf	Day 56	subject 14	Fungi	0.0073788670450701
+Vf	Day 56	subject 14	Gammaproteobacteria	0.168416156072623
+Vf	Day 56	subject 14	Malassezia globosa	0.0106078261850167
+Vf	Day 56	subject 14	Malassezia restricta	0.0288162989136563
+Vf	Day 56	subject 14	Micrococcus luteus	0.0140444686689471
+Vf	Day 56	subject 14	Proteobacteria	0.0115090403337969
+Vf	Day 56	subject 14	Staphylococcus aureus	0.00165676803368041
+Vf	Day 56	subject 14	Staphylococcus epidermidis	0.00680374393865353
+Vf	Day 56	subject 14	Staphylococcus hominis	0.00220651806187272

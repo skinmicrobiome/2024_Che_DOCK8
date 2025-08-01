@@ -1,0 +1,26 @@
+Subject	Group	Ref	MLST	Relative_abu	Sourmash	StrainGR
+Pt05	Pre-Tx	Cuti_acnes_KPA171202	ST5 (IB)	21.857	Y	Y
+Pt05	Pre-Tx	Cuti_acnes_T28811_new	ST139 (II)	14.839	Y	Y
+Pt05	Pre-Tx	Cuti_acnes_FDAARGOS_503	ST1 (IA1)	8.381	Y	Y
+Pt05	Post-Tx-offIS-12M	Cuti_acnes_KPA171202	ST5 (IB)	28.231	Y	Y
+Pt05	Post-Tx-offIS-12M	Cuti_acnes_FDAARGOS_503	ST1 (IA1)	2.812	N	Y
+Pt05	Post-Tx-offIS-12M	Cuti_acnes_PA_30_2_L1	ST4 (IA1)	0.997	Y	Y
+Pt05	Post-Tx-offIS-24M	Cuti_acnes_KPA171202	ST5 (IB)	53.603	Y	Y
+Pt05	Post-Tx-offIS-24M	Cuti_acnes_FDAARGOS_503	ST1 (IA1)	3.271	Y	Y
+Pt05	Post-Tx-offIS-24M	Cuti_acnes_PA_30_2_L1	ST4 (IA1)	2.169	Y	Y
+Pt06	Pre-Tx	Cuti_acnes_HKGB3	ST2 (IA2)	15.259	Y	Y
+Pt06	Pre-Tx	Cuti_acnes_FDAARGOS_503	ST1 (IA1)	8.007	N	Y
+Pt06	Post-Tx-offIS-12M	Cuti_acnes_HKGB3	ST2 (IA2)	8.521	Y	Y
+Pt06	Post-Tx-offIS-12M	Cuti_acnes_FDAARGOS_503	ST1 (IA1)	35.54	Y	Y
+Pt06	Post-Tx-offIS-24M	Cuti_acnes_HKGB3	ST2 (IA2)	19.645	Y	Y
+Pt06	Post-Tx-offIS-24M	Cuti_acnes_FDAARGOS_503	ST1 (IA1)	19.351	Y	Y
+Pt04	Pre-Tx	Cuti_acnes_T28811_new	ST139 (II)	19.843	Y	Y
+Pt04	Pre-Tx	Cuti_acnes_FDAARGOS_503	ST1 (IA1)	5.509	Y	Y
+Pt04	Pre-Tx	Cuti_acnes_KPA171202	ST5 (IB)	2.505	Y	Y
+Pt04	Pre-Tx	Cuti_acnes_CCSM0331	ST153	5.012	Y	N
+Pt04	Pre-Tx	Cuti_acnes_HKGB3	ST2 (IA2)	2.947	N	Y
+Pt04	Post-Tx-offIS-24M	Cuti_acnes_T28811_new	ST139 (II)	14.638	Y	Y
+Pt04	Post-Tx-offIS-24M	Cuti_acnes_FDAARGOS_503	ST1 (IA1)	25.141	Y	Y
+Pt04	Post-Tx-offIS-24M	Cuti_acnes_KPA171202	ST5 (IB)	1.484	Y	Y
+Pt04	Post-Tx-offIS-24M	Cuti_acnes_HKGB3	ST2 (IA2)	4.588	N	Y
+Pt04	Post-Tx-offIS-24M	Cuti_acnes_PA_30_2_L1	ST4 (IA1)	6.757	Y	Y
