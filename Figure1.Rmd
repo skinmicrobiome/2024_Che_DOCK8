@@ -33,9 +33,9 @@ library(ape)
 
 # Figure 1d
 ```{r}
-df1c <- read.delim("/Users/youche/Desktop/DOCK8_codes/Input_files/Fig1c_input.txt", header = TRUE, sep = "\t", colClasses = "numeric") 
+df1d <- read.delim("/Users/youche/Desktop/DOCK8_codes/Input_files/Fig1d_input.txt", header = TRUE, sep = "\t", colClasses = "numeric") 
 
-p1c <- ggplot(df1c, aes(x=Samples)) +
+p1d <- ggplot(df1c, aes(x=Samples)) +
   geom_smooth(aes(y=HPVs), method = "nls", formula=y~SSasymp(x, Asym, R0, lrc), se=F, linewidth=0.6, color="#2B7FB7") +
   geom_smooth(aes(y=Poly*15), method = "nls", formula=y~SSasymp(x, Asym, R0, lrc), se=F, linewidth=0.6, color="#D66027") +
   scale_y_continuous(
@@ -54,18 +54,18 @@ p1c <- ggplot(df1c, aes(x=Samples)) +
   labs(x = "Number of samples") + 
   theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank())
 
-p1c
+p1d
 ```
 
 # Figure 1e
 ```{r}
-df1d <- read.delim("/Users/youche/Desktop/DOCK8_codes/Input_files/Fig1d_input.txt", header = TRUE, sep = "\t", colClasses = c("factor", "factor", "factor", "numeric")) # input
+df1e <- read.delim("/Users/youche/Desktop/DOCK8_codes/Input_files/Fig1e_input.txt", header = TRUE, sep = "\t", colClasses = c("factor", "factor", "factor", "numeric")) # input
 
-df1d$subject_id <- factor(df1d$subject_id, levels = c("Pt01", "Pt02", "Pt03", "Pt04", "Pt05", "Pt06", "Pt07", "Pt08", "Pt09", "Pt10", "Pt11", "Pt12", "Pt13", "Pt14", "Pt15", "Pt16", "Pt17", "Pt18", "Pt19", "Pt20", "Pt21", "Pt22", "Pt23", "Pt24", "Hv01", "Hv02", "Hv03", "Hv04", "Hv05", "Hv06", "DPt07", "DPt08", "DPt09", "DPt10", "DPt14", "DPt15", "DPt18"))
-df1d$kingdom <- factor(df1d$kingdom, levels = c("Bacteria", "Fungi", "Phage", "Eukaryotic virus"))
-df1d$Group <- factor(df1d$Group, levels = c("Pre-Tx", "Post-Tx-onIS-1M", "Post-Tx-onIS-2M", "Post-Tx-onIS-3M","Post-Tx-onIS-6M","Post-Tx-onIS>12M","Post-Tx-offIS-12M","Post-Tx-offIS-24M","HVs", "Donor"))
+df1e$subject_id <- factor(df1e$subject_id, levels = c("Pt01", "Pt02", "Pt03", "Pt04", "Pt05", "Pt06", "Pt07", "Pt08", "Pt09", "Pt10", "Pt11", "Pt12", "Pt13", "Pt14", "Pt15", "Pt16", "Pt17", "Pt18", "Pt19", "Pt20", "Pt21", "Pt22", "Pt23", "Pt24", "Hv01", "Hv02", "Hv03", "Hv04", "Hv05", "Hv06", "DPt07", "DPt08", "DPt09", "DPt10", "DPt14", "DPt15", "DPt18"))
+df1e$kingdom <- factor(df1e$kingdom, levels = c("Bacteria", "Fungi", "Phage", "Eukaryotic virus"))
+df1e$Group <- factor(df1e$Group, levels = c("Pre-Tx", "Post-Tx-onIS-1M", "Post-Tx-onIS-2M", "Post-Tx-onIS-3M","Post-Tx-onIS-6M","Post-Tx-onIS>12M","Post-Tx-offIS-12M","Post-Tx-offIS-24M","HVs", "Donor"))
 
-p1d <- df1d %>% 
+p1e <- df1e %>% 
   filter(!Group=="Donor") %>% 
   ggplot(aes(x=subject_id, y = mean_abu, fill = kingdom)) +
   geom_bar(stat = "identity", position = "fill", width = 0.8) +
@@ -77,20 +77,20 @@ p1d <- df1d %>%
   ylab("Mean relative abundance (%)") +
   scale_fill_manual("Kingdom", values = c("#31a253", "#3073b9","#c793c2","#5d488b"))
 
-p1d
+p1e
 ```
 
 # Figure 1f
 ```{r}
-df1e <- read.delim("/Users/youche/Desktop/DOCK8_codes/Input_files/Fig1e_input.txt", header = TRUE, sep = "\t", colClasses = c("factor", "factor", "factor", "numeric")) # input
+df1f <- read.delim("/Users/youche/Desktop/DOCK8_codes/Input_files/Fig1f_input.txt", header = TRUE, sep = "\t", colClasses = c("factor", "factor", "factor", "numeric")) # input
 
-df1e$subject_id <- factor(df1e$subject_id, levels = c("Pt01", "Pt02", "Pt03", "Pt04", "Pt05", "Pt06", "Pt07", "Pt08", "Pt09", "Pt10", "Pt11", "Pt12", "Pt13", "Pt14", "Pt15", "Pt16", "Pt17", "Pt18", "Pt19", "Pt20", "Pt21", "Pt22", "Pt23", "Pt24", "Hv01", "Hv02", "Hv03", "Hv04", "Hv05", "Hv06", "DPt07", "DPt08", "DPt09", "DPt10", "DPt14", "DPt15", "DPt18"))
-df1e$Group <- factor(df1e$Group, levels = c("Pre-Tx", "Post-Tx-onIS-1M", "Post-Tx-onIS-2M", "Post-Tx-onIS-3M","Post-Tx-onIS-6M","Post-Tx-onIS>12M","Post-Tx-offIS-12M","Post-Tx-offIS-24M","HVs", "Donor"))
-df1e$Classification <- factor(df1e$Classification, levels = c("Others", "Anelloviridae","Herpesviridae", "Papillomaviridae","Betapapillomavirus", "Gammapapillomavirus", "Polyomaviridae", "Alphapolyomavirus", "Deltapolyomavirus", "Poxviridae", "Molluscipoxvirus"))
+df1f$subject_id <- factor(df1f$subject_id, levels = c("Pt01", "Pt02", "Pt03", "Pt04", "Pt05", "Pt06", "Pt07", "Pt08", "Pt09", "Pt10", "Pt11", "Pt12", "Pt13", "Pt14", "Pt15", "Pt16", "Pt17", "Pt18", "Pt19", "Pt20", "Pt21", "Pt22", "Pt23", "Pt24", "Hv01", "Hv02", "Hv03", "Hv04", "Hv05", "Hv06", "DPt07", "DPt08", "DPt09", "DPt10", "DPt14", "DPt15", "DPt18"))
+df1f$Group <- factor(df1f$Group, levels = c("Pre-Tx", "Post-Tx-onIS-1M", "Post-Tx-onIS-2M", "Post-Tx-onIS-3M","Post-Tx-onIS-6M","Post-Tx-onIS>12M","Post-Tx-offIS-12M","Post-Tx-offIS-24M","HVs", "Donor"))
+df1f$Classification <- factor(df1f$Classification, levels = c("Others", "Anelloviridae","Herpesviridae", "Papillomaviridae","Betapapillomavirus", "Gammapapillomavirus", "Polyomaviridae", "Alphapolyomavirus", "Deltapolyomavirus", "Poxviridae", "Molluscipoxvirus"))
 
 colors <- c("#F0F0F0", "#E0E4CC", "#a8e6ce", "#BDD7E7","#3182BD", "#08519C", "#FEE6CE", "#FDD0A2", "#F16913", "#faefbe", "#fccf09")
 
-p1e <- df1e %>% 
+p1f <- df1f %>% 
   filter(!Group=="Donor") %>% 
   ggplot(aes(x = subject_id, y = mean_abu, fill = Classification)) +
   geom_bar(stat = "identity", position = "fill", width = 0.8) + 
@@ -102,16 +102,16 @@ p1e <- df1e %>%
   ylab("Mean relative abundance (%)") + 
   scale_fill_manual("Viral classification", values = colors)
 
-p1e
+p1f
 ```
 
 # Figure 1g
 ```{r}
-df1f <- read.delim("/Users/youche/Desktop/DOCK8_codes/Input_files/Fig1f_input.txt", header = TRUE, sep = "\t", colClasses = c("character", "factor", "factor", "factor", "factor", "numeric", "numeric")) # input
+df1g <- read.delim("/Users/youche/Desktop/DOCK8_codes/Input_files/Fig1g_input.txt", header = TRUE, sep = "\t", colClasses = c("character", "factor", "factor", "factor", "factor", "numeric", "numeric")) # input
 
-df1f$site_specific <- factor(df1f$site_specific, levels = c("Ra", "Mb", "Vf", "Hp", "Ac", "Ic", "Pc", "Ph"))
-df1f$subject_id <- factor(df1f$subject_id, levels = c("Pt01", "Pt02", "Pt03", "Pt04", "Pt05", "Pt06", "Pt07", "Pt08", "Pt09", "Pt10", "Pt11", "Pt12", "Pt13", "Pt14", "Pt15", "Pt16", "Pt17", "Pt18", "Pt19", "Pt20", "Pt21", "Pt22", "Pt23", "Pt24", "Hv01", "Hv02", "Hv03", "Hv04", "Hv05", "Hv06", "DPt07", "DPt08", "DPt09", "DPt10", "DPt14", "DPt15", "DPt18"))
-df1f$Group <- factor(df1f$Group, levels = c("Pre-Tx", "Post-Tx-onIS-1M", "Post-Tx-onIS-2M", "Post-Tx-onIS-3M","Post-Tx-onIS-6M","Post-Tx-onIS>12M","Post-Tx-offIS-12M","Post-Tx-offIS-24M","HVs", "Donor"))
+df1g$site_specific <- factor(df1g$site_specific, levels = c("Ra", "Mb", "Vf", "Hp", "Ac", "Ic", "Pc", "Ph"))
+df1g$subject_id <- factor(df1g$subject_id, levels = c("Pt01", "Pt02", "Pt03", "Pt04", "Pt05", "Pt06", "Pt07", "Pt08", "Pt09", "Pt10", "Pt11", "Pt12", "Pt13", "Pt14", "Pt15", "Pt16", "Pt17", "Pt18", "Pt19", "Pt20", "Pt21", "Pt22", "Pt23", "Pt24", "Hv01", "Hv02", "Hv03", "Hv04", "Hv05", "Hv06", "DPt07", "DPt08", "DPt09", "DPt10", "DPt14", "DPt15", "DPt18"))
+df1g$Group <- factor(df1g$Group, levels = c("Pre-Tx", "Post-Tx-onIS-1M", "Post-Tx-onIS-2M", "Post-Tx-onIS-3M","Post-Tx-onIS-6M","Post-Tx-onIS>12M","Post-Tx-offIS-12M","Post-Tx-offIS-24M","HVs", "Donor"))
 
 pre_postoff_12 <- c("Pt11", "Pt05", "Pt10", "Pt07", "Pt08", "Pt06", "Pt16", "Pt15", "Pt14", "Pt18", "Pt17", "Pt19", "Pt20")
 pre_postoff_24 <-  c("Pt01", "Pt11", "Pt02", "Pt09", "Pt05", "Pt03", "Pt04", "Pt10", "Pt07", "Pt08", "Pt06", "Pt24")
@@ -122,33 +122,33 @@ pre_poston1 <- c("Pt22", "Pt20", "Pt23")
 pre_poston_12 <- c("Pt09", "Pt12", "Pt13")
 
 # subset each group
-df1f %>%
+df1g %>%
   filter(subject_id %in% pre_postoff_12) %>%
-  filter(Group %in% c("Post-Tx-offIS-12M", "Pre-Tx")) -> df1h_pre_postoff12
+  filter(Group %in% c("Post-Tx-offIS-12M", "Pre-Tx")) -> df1g_pre_postoff12
 
-df1f %>%
+df1g %>%
   filter(subject_id %in% pre_poston_12) %>%
-  filter(Group %in% c("Post-Tx-onIS>12M", "Pre-Tx")) -> df1h_pre_poston12
+  filter(Group %in% c("Post-Tx-onIS>12M", "Pre-Tx")) -> df1g_pre_poston12
 
-df1f %>%
+df1g %>%
   filter(subject_id %in% pre_postoff_24) %>%
-  filter(Group %in% c("Post-Tx-offIS-24M", "Pre-Tx")) -> df1h_pre_postoff24
+  filter(Group %in% c("Post-Tx-offIS-24M", "Pre-Tx")) -> df1g_pre_postoff24
 
-df1f %>%
+df1g %>%
   filter(subject_id %in% pre_poston6) %>%
-  filter(Group %in% c("Post-Tx-onIS-6M", "Pre-Tx")) -> df1h_pre_poston6
+  filter(Group %in% c("Post-Tx-onIS-6M", "Pre-Tx")) -> df1g_pre_poston6
 
-df1f %>%
+df1g %>%
   filter(subject_id %in% pre_poston3) %>%
-  filter(Group %in% c("Post-Tx-onIS-3M", "Pre-Tx")) -> df1h_pre_poston3
+  filter(Group %in% c("Post-Tx-onIS-3M", "Pre-Tx")) -> df1g_pre_poston3
 
-df1f %>%
+df1g %>%
   filter(subject_id %in% pre_poston2) %>%
-  filter(Group %in% c("Post-Tx-onIS-2M", "Pre-Tx")) -> df1h_pre_poston2
+  filter(Group %in% c("Post-Tx-onIS-2M", "Pre-Tx")) -> df1g_pre_poston2
 
-df1f %>%
+df1g %>%
   filter(subject_id %in% pre_poston1) %>%
-  filter(Group %in% c("Post-Tx-onIS-1M", "Pre-Tx")) -> df1h_pre_poston1
+  filter(Group %in% c("Post-Tx-onIS-1M", "Pre-Tx")) -> df1g_pre_poston1
 
 # define function for paired comparisons
 paired_comparison <- function(taxa, df, abu){
@@ -215,25 +215,25 @@ paired_comparison <- function(taxa, df, abu){
 
 target_taxa <- c("Eukaryotic virus", "Bacteria", "Fungi")
 
-df1h_pre_postoff12 %>% 
-  filter(site_specific %in% c("Ra", "Vf", "Ac")) -> df1h_pre_postoff12_three_sites
+df1g_pre_postoff12 %>% 
+  filter(site_specific %in% c("Ra", "Vf", "Ac")) -> df1g_pre_postoff12_three_sites
 
 # target three sites in main figure
-p_pre_postoff12_highlight_3_sites <- map("Eukaryotic virus", paired_comparison, df1h_pre_postoff12_three_sites, relative_abu)
-p1f <- cowplot::plot_grid(plotlist = lapply(p_pre_postoff12_highlight_3_sites, "[[", 1), ncol = 1)
-p1f
+p_pre_postoff12_highlight_3_sites <- map("Eukaryotic virus", paired_comparison, df1g_pre_postoff12_three_sites, relative_abu)
+p1g <- cowplot::plot_grid(plotlist = lapply(p_pre_postoff12_highlight_3_sites, "[[", 1), ncol = 1)
+p1g
 ```
 
 # Figure 1h
 ```{r}
-df1g <- read.delim("/Users/youche/Desktop/DOCK8_codes/Input_files/Fig1g_input.txt", header = TRUE, sep = "\t", colClasses = c("factor", "factor", "factor", "numeric", "numeric")) # input
+df1h <- read.delim("/Users/youche/Desktop/DOCK8_codes/Input_files/Fig1h_input.txt", header = TRUE, sep = "\t", colClasses = c("factor", "factor", "factor", "numeric", "numeric")) # input
 
-df1g$group <- factor(df1g$group, levels = c("Pre-Tx", "Post-Tx-onIS-1M", "Post-Tx-onIS-2M", "Post-Tx-onIS-3M", "Post-Tx-onIS-6M", "Post-Tx-offIS-12M", "Post-Tx-offIS-24M"))
-df1g$kingdom <- factor(df1g$kingdom, levels = c("Bacteria", "Fungi", "Eukaryotic virus"))
-df1g$site_specific <- factor(df1g$site_specific, levels = c("Ra", "Mb", "Vf", "Hp", "Ac", "Ic", "Pc", "Ph"))
-df1g$sd[is.na(df1g$sd)] = 0
+df1h$group <- factor(df1h$group, levels = c("Pre-Tx", "Post-Tx-onIS-1M", "Post-Tx-onIS-2M", "Post-Tx-onIS-3M", "Post-Tx-onIS-6M", "Post-Tx-offIS-12M", "Post-Tx-offIS-24M"))
+df1h$kingdom <- factor(df1h$kingdom, levels = c("Bacteria", "Fungi", "Eukaryotic virus"))
+df1h$site_specific <- factor(df1h$site_specific, levels = c("Ra", "Mb", "Vf", "Hp", "Ac", "Ic", "Pc", "Ph"))
+df1h$sd[is.na(df1g$sd)] = 0
 
-p1g <- df1g %>% 
+p1h <- df1h %>% 
   filter(site_specific %in% c("Ra", "Vf", "Ac")) %>% 
   ggplot(aes(x=group, y=mean_fold, group=kingdom, color =kingdom)) +
   geom_point(size=0.7) +
@@ -246,7 +246,7 @@ p1g <- df1g %>%
   theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank(), legend.title=element_text(size=10), legend.text=element_text(size=8)) + 
   ylab("Genome equivalents log10 fold change")
 
-p1g
+p1h
 ```
 
 

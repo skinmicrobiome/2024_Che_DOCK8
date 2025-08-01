@@ -36,6 +36,7 @@ library(combinat)
 library(plotROC)
 library(cowplot)
 library(AmesHousing)
+library(colorRamp2)
 ```
 
 

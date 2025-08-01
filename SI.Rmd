@@ -38,6 +38,8 @@ library(cowplot)
 library(AmesHousing)
 library(plotly)
 library(segmented)
+library(dabestr)
+
 ```
 
 # SI Figure 1d, 
@@ -277,14 +279,14 @@ pSI3a
 
 # SI Figure 4
 ```{r}
-# need results from fig1f
-p_pre_postoff12 <- map(target_taxa, paired_comparison, df1h_pre_postoff12, relative_abu)
-p_pre_postoff24 <- map(target_taxa, paired_comparison, df1h_pre_postoff24, relative_abu)
-p_pre_poston6 <- map(target_taxa, paired_comparison, df1h_pre_poston6, relative_abu)
-p_pre_poston3 <- map(target_taxa, paired_comparison, df1h_pre_poston3, relative_abu)
-p_pre_poston2 <- map(target_taxa, paired_comparison, df1h_pre_poston2, relative_abu)
-p_pre_poston1 <- map(target_taxa, paired_comparison, df1h_pre_poston1, relative_abu)
-p_pre_poston12 <- map(target_taxa, paired_comparison, df1h_pre_poston12, relative_abu)
+# need results from fig1g
+p_pre_postoff12 <- map(target_taxa, paired_comparison, df1g_pre_postoff12, relative_abu)
+p_pre_postoff24 <- map(target_taxa, paired_comparison, df1g_pre_postoff24, relative_abu)
+p_pre_poston6 <- map(target_taxa, paired_comparison, df1g_pre_poston6, relative_abu)
+p_pre_poston3 <- map(target_taxa, paired_comparison, df1g_pre_poston3, relative_abu)
+p_pre_poston2 <- map(target_taxa, paired_comparison, df1g_pre_poston2, relative_abu)
+p_pre_poston1 <- map(target_taxa, paired_comparison, df1g_pre_poston1, relative_abu)
+p_pre_poston12 <- map(target_taxa, paired_comparison, df1g_pre_poston12, relative_abu)
 
 p_on1 <- cowplot::plot_grid(plotlist = lapply(p_pre_poston1, "[[", 1), ncol = 1)
 p_on2 <- cowplot::plot_grid(plotlist = lapply(p_pre_poston2, "[[", 1), ncol = 1)
@@ -373,8 +375,8 @@ pSI5b
 
 # SI Figure 5c
 ```{r}
-# need results from fig1g
-pSI5c <- df1g %>% 
+# need results from fig1h
+pSI5c <- df1h %>% 
   ggplot(aes(x=group, y=mean_fold, group=kingdom, color =kingdom)) +
   geom_point(size=0.7) +
   geom_line(size=0.5) +
@@ -620,8 +622,9 @@ p_coryne <- function(species){
     column_to_rownames(var = "site_specific") -> df_coryne_target_plot_heatmap
   
   row_order_site = c("Ra", "Mb", "Vf", "Hp", "Ac", "Ic", "Pc", "Ph")
+  column_split = c(rep("Pre-Tx", 24), rep("Post-Tx-onIS≤3M", 7), rep("Post-Tx-onIS-6M", 7), rep("Post-Tx-onIS>12M", 3), rep("Post-Tx-offIS-12M", 13), rep("Post-Tx-offIS-24M", 12), rep("HVs", 6))
   column_split_site = column_split
-  colnames(df_coryne_target_plot_heatmap) = temp_name
+  #colnames(df_coryne_target_plot_heatmap) = temp_name
   row_ha = rowAnnotation(number_of_samples= anno_barplot(rowSums(df_coryne_target_plot_heatmap>0) %>% unname(), ylim = c(0, 45)))
   col_fun = colorRamp2(c(0, 3, 5, 10, 20, 30, 90), c("#F5F5F5", "#F9D8A3", "#FDF1D1", "#E6F598", "#ABDDA4", "#66C2A5", "#3288BD"))
   # plot 3, 7
@@ -727,6 +730,7 @@ dabest_plot_fun_ASV <- function(site){
   dabest_plot(show_zero_dot=FALSE, raw_marker_size=0.5, tufte_size=0.3, es_marker_size=0.5, es_line_size=0.3, raw_marker_spread=1.5, swarm_x_text=6, swarm_y_text=6, contrast_x_text=6, contrast_y_text=6, raw_marker_alpha=0.5, swarm_label="Number of unique ASV", contrast_label="Mean difference", custom_palette="igv")
   return(p)
 }
+
 
 poston1_ASV <- prepare_paired_samples(c("Pre-Tx", "Post-Tx-onIS-1M"))
 poston2_ASV <- prepare_paired_samples(c("Pre-Tx", "Post-Tx-onIS-2M"))
@@ -1144,6 +1148,86 @@ pSI9f <- df_supp19d %>%
 pSI9f
 ```
 
+# SI Figure 9g
+```{r}
+df_SI9g <- read.delim2(file = "/Users/youche/Desktop/DOCK8_codes/Input_files/SI_9g.txt", header = TRUE, sep = "\t", stringsAsFactors = FALSE, check.names = FALSE)
+df_SI9g$relative_abu <- as.numeric(df_SI9g$relative_abu)
+
+df_donor_hvs <- df_SI9g %>% 
+  filter(grp=="donor_vs_hvs")
+df_recipients_hvs <- df_SI9g %>% 
+  filter(grp=="recipient_vs_hvs")
+
+
+Bray_distance_two <- function(df){
+  df %>% 
+    nest(data=c(taxa, new_subject, relative_abu)) -> nested_df_2
+  
+  nested_df_2 %>% 
+    mutate(distance = map(data, function(x){
+      x <- x %>% pivot_wider(names_from = taxa, values_from = relative_abu) %>% column_to_rownames(var = "new_subject")
+      x[is.na(x)] = 0
+      dis_temp <- vegdist(x, method="bray") %>%
+        as.matrix() 
+      dis_temp <- dis_temp[8:19,1:7]
+      values <- as.vector(t(dis_temp))
+      pairwise_comparisons <-  apply(expand.grid(colnames(dis_temp), rownames(dis_temp)), 1, function(x) paste(x[1], x[2], sep = " - "))
+      comparison_df <- data.frame(PairwiseComparison = pairwise_comparisons, Value = values)
+      return(comparison_df)
+    })) -> nested_df_dist
+  return(nested_df_dist)
+}
+
+# donor vs hvs
+dist_donor_hvs <- Bray_distance_two(df_donor_hvs)
+
+combined_data_donor_hvs <- pmap(dist_donor_hvs[c("site_specific", "distance")], function(site_specific, distance) {
+  bind_cols(site_specific, distance) 
+})
+
+combined_data_donor_hvs_df <- map(combined_data_donor_hvs, function(df) {
+  names(df)[1] <- "site_specific"
+  df
+}) %>% do.call(rbind, .)
+
+
+# recipients vs hvs
+dist_recipient_hvs <- Bray_distance_two(df_recipients_hvs)
+
+combined_data_recipient_hvs <- pmap(dist_recipient_hvs[c("site_specific", "distance")], function(site_specific, distance) {
+  bind_cols(site_specific, distance) 
+})
+
+combined_data_recipient_hvs_df <- map(combined_data_recipient_hvs, function(df) {
+  names(df)[1] <- "site_specific"
+  df
+}) %>% do.call(rbind, .)
+
+
+# let's plot
+combined_data_donor_hvs_df$group = "Donor vs. HVs"
+combined_data_recipient_hvs_df$group = "+12M vs. HVs"
+
+
+df_second <- rbind(combined_data_donor_hvs_df, combined_data_recipient_hvs_df)
+df_second$site_specific <- factor(df_second$site_specific, levels = c("Ra", "Vf", "Ac", "Ic", "Pc"))
+
+pSI9g <- df_second %>% 
+  #filter(site_specific=="Ra") %>% 
+  ggboxplot(x="group", y="Value", size = 0.1, outlier.size = 0.01) +
+  geom_jitter(aes(color=site_specific), position = position_jitter(width = 0.2), size=0.2) +
+  scale_color_manual(values = c("#8177cc","#60a862","#c75a93","#b2953e","#cc5d43")) + 
+  geom_pwc(aes(group=group), method = "wilcox_test", label = "{p.adj.format} {p.adj.signif}", p.adjust.method = "BH", size = 0.1, label.size = 5) +
+  #stat_compare_means(comparisons = my_comparisons, size=3, method = "wilcox.test",  p.adjust.methods = "BH") +
+  theme(axis.text.x=element_text(size = 8, angle = 45, hjust=1, vjust=0.99), axis.ticks.x=element_blank(), axis.title.x=element_blank(), axis.title.y=element_text(size=10), axis.text.y=element_text(size=8)) +
+  ylab("Bray Curtis dissimilarity") +
+  theme(legend.title=element_text(size=10), legend.text=element_text(size=8), legend.position = "right") +
+  labs(color="Skin site")
+
+pSI9g
+```
+
+
 # SI Figure 10a
 ```{r}
 # need results from figure5b
@@ -1168,5 +1252,267 @@ pSI10b <- df_5c %>%
 pSI10b
 ```
 
+# SI Figure 11a
+```{r}
+df_SI11a1 <- read.delim2(file = "/Users/youche/Desktop/DOCK8_codes/Input_files/SI_11a1.txt", header = TRUE, sep = "\t", stringsAsFactors = FALSE, check.names = FALSE)
+df_SI11a1$mean <- as.numeric(df_SI11a1$mean)
+df_SI11a1$status <- factor(df_SI11a1$status, levels = c("Pre", "+24M", "+36M"))
+df_SI11a1$Target <- factor(df_SI11a1$Target, levels = c("Bacteria","Fungi", "Phage","Eukaryotic viruses"))
+kingdom_pall <- c("#31a253", "#3073b9","#c793c2","#5d488b")
 
+pSI11a1 <- ggplot(df_SI11a1) +
+  aes(x=status, y=mean, fill=Target) +
+  geom_bar(stat='identity', position='fill', width=0.7) +
+  facet_grid(~subject_de, scales='free', space='free') +
+  ylab('Mean relative abundance (%)') +
+  scale_y_continuous(breaks=c(0,0.25,0.5,0.75,1), labels=c('0', '', '50', '', '100'), limits=c(0,1)) +
+  scale_fill_manual("Classification", values=kingdom_pall) +
+  theme_bw(base_family='Arial', base_size=16) +
+  theme(legend.position='right') +
+  theme(plot.margin=grid::unit(c(0.1,0.1,0.1,0.1), 'cm')) +
+  guides(fill = guide_legend(reverse=FALSE, ncol=1))
+
+# 
+df_SI11a2 <- read.delim2(file = "/Users/youche/Desktop/DOCK8_codes/Input_files/SI_11a2.txt", header = TRUE, sep = "\t", stringsAsFactors = FALSE, check.names = FALSE)
+df_SI11a2$mean <- as.numeric(df_SI11a2$mean)
+df_SI11a2$status <- factor(df_SI11a2$status, levels = c("Pre", "+24M", "+36M"))
+df_SI11a2$Target <- factor(df_SI11a2$Target, levels = c("Others", "Herpesviridae", "Papillomaviridae","Betapapillomavirus", "Gammapapillomavirus", 'Polyomaviridae', "Alphapolyomavirus", "Deltapolyomavirus", "Molluscipoxvirus"))
+kingdom_pall <- c("#F0F0F0", "#a8e6ce", "#BDD7E7","#3182BD", "#08519C", "#FDD0A2", "#F16913", "#fccf09")
+
+
+pSI11a2 <- ggplot(df_SI11a2) +
+  aes(x=status, y=mean, fill=Target) +
+  geom_bar(stat='identity', position='stack', width=0.7) +
+  facet_grid(~subject_de, scales='free', space='free') +
+  ylab('Mean relative abundance (%)') +
+  scale_y_continuous(breaks=c(0,0.25,0.5,0.75,1), labels=c('0', '', '50', '', '100'), limits=c(0,1)) +
+  scale_fill_manual("Classification", values=kingdom_pall) +
+  theme_bw(base_family='Arial', base_size=16) +
+  theme(legend.position='right') +
+  guides(fill = guide_legend(reverse=FALSE, ncol=1))
+
+pSI11a1
+pSI11a2
+```
+
+# SI Figure 11b
+```{r}
+df_SI11b <- read.delim2(file = "/Users/youche/Desktop/DOCK8_codes/Input_files/SI_11b.txt", header = TRUE, sep = "\t", stringsAsFactors = FALSE, check.names = FALSE)
+df_SI11b$abu_new <- as.numeric(df_SI11b$abu_new)
+df_SI11b$site_specific <- factor(df_SI11b$site_specific, levels = c("Ra", "Ac", "Vf"))
+df_SI11b$day <- factor(df_SI11b$day, levels = c("Day 0", "Day 14", "Day 56"))
+df_SI11b$subject_id <- factor(df_SI11b$subject_id, levels = c("subject 5", "subject 6", "subject 7", "subject 8", "subject 9", "subject 10", "subject 11", "subject 12", "subject 13", "subject 14"))
+
+color_pall_comb1 <- c(brewer.pal(5, 'Greens'),
+               brewer.pal(5, 'Oranges')[c(1,3, 4, 5)],
+               brewer.pal(11, 'BrBG')[5:3],
+               brewer.pal(11, "PiYG")[5:3],
+               brewer.pal(5, 'Purples'),
+               brewer.pal(9, 'Blues')[7:8],
+               brewer.pal(9, 'Blues')[3]
+               )
+
+df_SI11b$new_taxa <- factor(df_SI11b$new_taxa, levels = c("Bacteria", "Actinobacteria", "Micrococcus luteus", "Corynebacterium tuberculostearicum", "Cutibacterium acnes", "Firmicutes", "Staphylococcus hominis", "Staphylococcus epidermidis","Staphylococcus aureus", "Proteobacteria", "Alphaproteobacteria",  "Gammaproteobacteria", "Fungi", "Malassezia restricta", "Malassezia globosa", "Eukaryotic virus"))
+
+pSI11b <- df_SI11b %>% 
+  ggplot(aes(x=day, y = abu_new, fill = new_taxa)) +
+  geom_bar(stat = "identity", position = "fill", width = 0.8) +
+  scale_y_continuous(labels = function(x) x*100) +
+  facet_grid(subject_id ~ site_specific,scales = "free_x",space = "free_x") +
+  theme(axis.text.x = element_text(angle = 45, size=8, hjust=0.95,vjust=1), axis.title.x=element_blank(), axis.text.y=element_text(size=7), axis.title.y=element_text(size=12)) +
+  theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank(), legend.box = "vertical", legend.title=element_text(size=12), legend.text=element_text(size=8), legend.key.size=unit(0.5, "cm")) +
+  theme(strip.text.x=element_text(size=8), strip.text.y=element_text(size=8)) +
+  ylab("Mean relative abundance (%)") + 
+  scale_fill_manual("Classification", values = color_pall_comb1) +
+  guides(fill=guide_legend(ncol=2))
+
+pSI11b
+```
+
+# SI Figure 11c
+```{r}
+df_SI11c <- read.delim2(file = "/Users/youche/Desktop/DOCK8_codes/Input_files/SI_11c.txt", header = TRUE, sep = "\t", stringsAsFactors = FALSE, check.names = FALSE)
+df_SI11c$relative_abu <- as.numeric(df_SI11c$relative_abu)
+
+pairs_grp <- c("Pre-Tx", "Post-Tx-onIS-1M", "Post-Tx-onIS-2M", "Post-Tx-onIS-3M", "Post-Tx-onIS-6M", "Post-Tx-onIS>12M", "Post-Tx-offIS-12M", "Post-Tx-offIS-24M")
+
+combn(pairs_grp, 2) %>% 
+  data.frame() %>% 
+  select(c(3, 4, 6, 7, 24, 28)) -> comb_pairs
+
+pairwise_PERMANOVA_ctrl <- function(Pcoa_df, Pcoa_metatable, site) {
+  pairwise_PER_out_ctrl <- map(comb_pairs, ~paste(., collapse = " VS ")) %>% 
+    unlist() %>% 
+    unname() %>%
+    data.frame()
+  colnames(pairwise_PER_out_ctrl) = "Comparisons"
+  pairwise_PER_out_ctrl %>% 
+    mutate(R2_time=NA, pvalue_time=NA, F_time=NA) -> pairwise_PER_out_ctrl
+  #ncol(comb_pairs
+  for (i in 1:ncol(comb_pairs)){
+    Pcoa_metatable %>%
+      filter(Group %in% comb_pairs[,i]) %>%
+      group_by(subject_id) %>% 
+      dplyr::summarise(num= dplyr::n()) %>%
+      filter(num == 1) %>%
+      ungroup() %>% .$subject_id -> need_remove # remove unpaired samples
+    
+    Pcoa_metatable %>%
+      filter(Group %in% comb_pairs[,i]) %>%
+      filter(!subject_id %in% need_remove) %>% 
+      droplevels() -> meta_temp
+    
+    if (nrow(meta_temp) >=6){
+      Pcoa_df[rownames(Pcoa_df) %in% meta_temp$variable,] -> df_temp
+      meta_temp <- meta_temp[order(meta_temp$subject_id, meta_temp$Group),]
+      df_temp <- df_temp[match(meta_temp$variable, rownames(df_temp)),]
+      df_temp[is.na(df_temp)] = 0
+      
+      bray_dist <- vegdist(df_temp)
+      fit1 <- adonis2(bray_dist ~ Group, permutations=1, data = meta_temp)
+      pop <- rep(NA, 999)
+      pop[1] <- fit1$R2[1]
+      ctrl <- permute::how(plots = Plots(strata = meta_temp$subject_id) , within = Within(type = "series", mirror = FALSE))
+      nobs <- nrow(df_temp)
+      # nobs <- 5
+      set.seed(111)
+      # pval <- c()
+      for(n in 2:999){
+        idx <- shuffle(nobs, control = ctrl)
+        meta_temp <- meta_temp[idx,]
+        fit.rand <- adonis2(bray_dist ~ Group, data = meta_temp, permutations = 1)
+        pop[n] <- fit.rand$R2[1]
+      }
+      pval <- sum(pop >= pop[1]) / (999)
+      pairwise_PER_out_ctrl[i, 2] <- fit1$R2[1]
+      pairwise_PER_out_ctrl[i, 3] <- pval
+      pairwise_PER_out_ctrl[i, 4] <- fit1$F[1]
+    }
+  }
+  pairwise_PER_out_ctrl$p_adj_time <- p.adjust(pairwise_PER_out_ctrl$pvalue_time, method = "BH")
+  pairwise_PER_out_ctrl$site <- {{site}}
+  return(pairwise_PER_out_ctrl)
+}
+  
+df_SI11c$Group <- factor(df_SI11c$Group)
+#df_supp16$relative_abu <- as.numeric(df_supp16$relative_abu)
+
+Pcoa_for_each_site <- function(site, topn=3, pairwise_PERMANOVA_ctrl_func = FALSE, variable_scalar = 1, label_s = 5, arrow = FALSE, HV = TRUE){
+  
+  # select site
+  if(HV == TRUE) {
+    df_supp16_temp = df_SI11c %>% filter(!Group=="Donor")
+  }
+  else{
+    df_supp16_temp = df_SI11c %>% 
+      filter(!Group %in% c("HVs", "Donor"))
+  }
+  
+  df_supp16_temp %>% 
+    filter(site_specific %in% {{site}}) %>% 
+    select(variable, taxa, relative_abu) %>% 
+    pivot_wider(names_from = taxa, values_from = relative_abu) %>%
+    column_to_rownames(var = "variable") -> Pcoa_df
+  Pcoa_df[is.na(Pcoa_df)] = 0
+  
+  # metatable
+  df_supp16_temp %>%
+    filter(site_specific %in% {{site}}) %>% 
+    select(variable, Group, subject_id) %>%
+    unique() -> Pcoa_metatable
+  
+  # PERMANOVA test
+  set.seed(111)
+  if (pairwise_PERMANOVA_ctrl_func==TRUE){
+    pairwise_PERMANOVA_ctrl_out <- pairwise_PERMANOVA_ctrl(Pcoa_df, Pcoa_metatable, {{site}})
+  }
+  else{
+    pairwise_PERMANOVA_ctrl_out <- NULL
+  }
+  # Compute bray-curtis distance
+  vgd <- vegdist(Pcoa_df, method='bray') # sample are rows
+  trait_pcoa = pcoa(vgd)
+  n <- nrow(Pcoa_df)
+  points <- scale(trait_pcoa$vectors)
+  # Compute covariance of variables with all axises
+  S <- cov(Pcoa_df, points)
+  # select positive values
+  pos_eigen = trait_pcoa$values$Eigenvalues[seq(ncol(S))]
+  # Standardize value of covariance
+  Stand_cov <- S %*% diag((pos_eigen/(n - 1))^(-0.5))
+  colnames(Stand_cov) <- colnames(trait_pcoa$vectors)
+  # Compute contribution
+  varcorr <- Stand_cov^2
+  varcontr <- varcorr %>% data.frame() %>% mutate_if(is.numeric, funs(./sum(.)*100))
+  Vartemp <- list(VarContribution=varcontr,
+                    VarCoordinates=Stand_cov)
+  
+  # first two axises
+  varcontr12 <- Vartemp$VarContribution[,1:2]
+  tmpvars <- names(sort(rowSums(varcontr12), decreasing=TRUE))
+  # target arrow number
+  varlist = tmpvars[1:{{topn}}]
+  
+  biplotcoord <- Vartemp$VarCoordinates[match(varlist, rownames(Vartemp$VarCoordinates)),1:2, drop=FALSE]
+  biplotcoord <- data.frame(biplotcoord, check.names=FALSE)
+  trait_pcoa$U <- biplotcoord
+  
+  # add metainfo
+  trait_pcoa$vectors <- data.frame(trait_pcoa$vectors) %>% rownames_to_column(var = "variable")
+  trait_pcoa$vectors <- trait_pcoa$vectors %>% left_join(Pcoa_metatable)
+  
+  trait_pcoa$vectors %>% 
+  mutate(new_grp = case_when(
+    Group %in% c("Post-Tx-onIS-1M", "Post-Tx-onIS-2M", "Post-Tx-onIS-3M") ~ "Post-Tx-onIS<=3M",
+    TRUE ~ Group
+  )) -> trait_pcoa$vectors
+trait_pcoa$vectors$new_grp <- factor(trait_pcoa$vectors$new_grp, levels = c("Pre-Tx", "Post-Tx-onIS<=3M", "Post-Tx-onIS-6M", "Post-Tx-onIS>12M", "Post-Tx-offIS-12M", "Post-Tx-offIS-24M", "HVs", "Day 0", "Day 14", "Day 56"))
+  
+  my_colors <- c("#C7E9B4", "#47af6f","#7FCDBB", "#FEE090", "#1D91C0", "#081D58", "#c51b8a", "#8e768a", "#bb72b2", "#d05c67")
+  names(my_colors) <- c("Pre-Tx", "Post-Tx-onIS<=3M", "Post-Tx-onIS-6M", "Post-Tx-onIS>12M", "Post-Tx-offIS-12M", "Post-Tx-offIS-24M", "HVs", "Day 0", "Day 14", "Day 56")
+  pcoa_df = as.data.frame(trait_pcoa$vectors)
+  arrow_df = as.data.frame(trait_pcoa$U/variable_scalar)
+  arrow_df$variable = rownames(arrow_df) 
+  eigen_values = trait_pcoa$values$Relative_eig[c(1, 2)]*100
+  axes_labs = list(paste("PC1 (", round(eigen_values[[1]], 1), "%)", sep = ''), paste("PC1 (", round(eigen_values[[2]],1), "%)", sep = ''))
+  
+  #pdes={{site}}
+  if(arrow == TRUE) {
+    p0 <- ggplot(pcoa_df, aes(x=Axis.1, y=Axis.2)) +
+      geom_point(aes(color = factor(new_grp)), size = 1.5, alpha=0.99) +
+      geom_segment(data = arrow_df, x = 0, y = 0, alpha = 0.9, mapping = aes(xend = Axis.1, yend = Axis.2), arrow = arrow(length = unit(1, "mm")), linewidth =0.25) +
+      ggrepel::geom_text_repel(data = arrow_df, aes(label = variable),
+                                  size = 2, fontface = "italic") +
+      labs(x = axes_labs[[1]], y = axes_labs[[2]]) +
+      theme_bw() +
+      theme(axis.title.x=element_text(size = 8), axis.text.x = element_text(size = 6), axis.title.y=element_text(size = 8), axis.text.y = element_text(size = 6)) + 
+      theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank()) +
+      scale_color_manual(values=my_colors) +
+      #ggtitle(pdes) +
+      theme(plot.title = element_text(vjust = -9, hjust = 0.03, size = 6)) +
+      theme(legend.position="none") + 
+      guides(color=guide_legend(title = "Group"))}
+  
+  else {
+    p0 <- ggplot(pcoa_df, aes(x=Axis.1, y=Axis.2)) +
+      geom_point(aes(color = factor(new_grp)), size = 1.5, alpha=0.99) +
+      labs(x = axes_labs[[1]], y = axes_labs[[2]]) +
+      theme_bw() +
+      theme(axis.title.x=element_text(size = 8), axis.text.x = element_text(size = 6), axis.title.y=element_text(size = 8), axis.text.y = element_text(size = 6)) + 
+      theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank()) +
+      scale_color_manual(values=my_colors) + 
+      #ggtitle(pdes) +
+      theme(plot.title = element_text(vjust = -9, hjust = 0.03, size = 6)) +
+      theme(legend.position="none") + 
+      guides(color=guide_legend(title = "Group"))}
+  return(list(p0, pairwise_PERMANOVA_ctrl_out))
+  }
+
+
+l_sites <- list("Ra","Vf","Ac")
+
+p_pcoa <- Pcoa_for_each_site(c("Ra", "Vf", "Ac"), pairwise_PERMANOVA_ctrl_func = FALSE)
+pSI11c <- p_pcoa[[1]]
+pSI11c
+```
 

@@ -241,7 +241,7 @@ spearman_viral_load <- function(immune){
   return(spearman_result)
 }
 
-immune_list <- c("CD19", "CD4", "CD8", "NK")
+immune_list <- c("CD4", "CD8", "NK", "CD19")
 
 spearman_viral_load_temp <- map(immune_list, spearman_viral_load)
 
@@ -272,6 +272,6 @@ spearman_output_plot <- function(variable){
 }
 
 spearman_total_load_plot_list <- map(immune_list, spearman_output_plot)
-fig5d <- cowplot::plot_grid(plotlist = spearman_total_load_plot_list, ncol = 4)
+fig5d <- cowplot::plot_grid(plotlist = spearman_total_load_plot_list, ncol = 1)
 ```
 
