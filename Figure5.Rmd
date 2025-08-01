@@ -1,0 +1,277 @@
+---
+title: "Figure5"
+output: html_document
+date: "2024-12-13"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# loading libraries
+```{r}
+library(reshape2)
+library(tidyverse)
+library(ggplot2)
+library(RColorBrewer)
+library(gtable)
+library(ggh4x)
+library(broom)
+library(vegan)
+library(stringi)
+library(gridExtra)
+library(VennDiagram)
+library(eulerr)
+library(magrittr)
+library(circlize)
+library(ComplexHeatmap)
+library(rsample)
+library(randomForest)
+library(ranger)
+library(caret)
+library(skimr)
+library(RANN)
+library(caretEnsemble)
+library(combinat)
+library(plotROC)
+library(cowplot)
+library(AmesHousing)
+library(ggrepel)
+library(lmerTest)
+```
+
+# Figure 5a
+```{r}
+df_5a <- read.delim("/Users/youche/Desktop/DOCK8_codes/Input_files/Figure5a.txt", header = TRUE, sep = "\t") # input
+
+df_5a$Group <- factor(df_5a$Group, levels = c("Pre-Tx", "Post-Tx-onIS-1M", "Post-Tx-onIS-2M", "Post-Tx-onIS-3M","Post-Tx-onIS-6M", "Post-Tx-onIS>12M", "Post-Tx-offIS-12M", "Post-Tx-offIS-24M"))
+
+p5a <- df_5a %>% 
+  ggplot(aes(x=Group, y=Number)) + 
+  geom_boxplot(lwd = 0.15, outlier.size = 0.1, outlier.shape = NA, width=0.4) +
+  geom_dotplot(binaxis='y', stackdir='center',stackratio=1.8, dotsize=0.2, aes(fill=variable), color=NA) + 
+  facet_grid(variable~., scales = "free") + 
+  scale_fill_manual("Group", values = c("#B0B0B0")) + 
+  theme(axis.text.x = element_text(angle = 45, size=8, hjust=0.95,vjust=1), axis.title.x=element_blank(), axis.text.y=element_text(size=8), axis.title.y=element_blank()) +
+  theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank(), legend.title=element_text(size=10), legend.text=element_text(size=7)) + scale_y_continuous(
+  labels = scales::number_format(accuracy = 0.1))
+
+p5a
+```
+
+# Figure 5b
+```{r}
+df_5b <- read.delim("/Users/youche/Desktop/DOCK8_codes/Input_files/Figure5b.txt", header = TRUE, sep = "\t") # input
+
+df_5b %>% 
+  group_by(variable, SS) %>% 
+  summarise(new_value=sum(value)) %>% 
+  ungroup() %>% 
+  data.frame() %>% 
+  pivot_wider(names_from = variable, values_from = new_value) %>% 
+  column_to_rownames(var = "SS") -> df_5b_input
+
+df_5b %>% 
+  dplyr::select(variable, site_specific) %>% 
+  unique() %>% 
+  group_by(site_specific) %>% 
+  nest() -> nested_sites_16s
+
+meta_clean_16s_scorad <- df_5b %>% 
+  filter(!Group=="HVs") %>% 
+  select(variable, subject_id, site_specific, Tanner, Sex, Antibiotics, SCORAD, Immune) %>% 
+  unique()
+
+robust_random_nested_mlm_16s_scorad <- function(my_data){
+  fixed_factors <- c("SCORAD", "Antibiotics", "Sex", "Tanner", "Immune")
+  random_factors <- "(1|subject_id)"
+  fixed_effects <- paste("abundance", paste(fixed_factors, collapse = ' + '), sep = " ~ ")
+  full_formula <- paste(fixed_effects, random_factors, sep = " + ")
+
+  set.seed(111)
+  m <- lmerTest::lmer(as.formula(full_formula), data = my_data)
+  m_out <- data.frame(broom.mixed::tidy(m, effects = c("fixed"), conf.int = TRUE)[-1,]) %>% 
+    select(term, estimate, conf.low, conf.high, std.error, statistic, df, p.value) %>% 
+    mutate(padj = p.adjust(p.value, method = "BH")) %>%
+    mutate_if(is.numeric, round, digits=3) %>% 
+    unite("CI (95%)", conf.low:conf.high, sep="-")
+  return(m_out)
+}
+
+run_mlm_16s_scorad <- function(site, nested.df, trans.method){
+  target_met <- {{nested.df}} %>% 
+    filter(site_specific == {{site}}) %>% 
+    .[[2]] %>% 
+    .[[1]] %>% 
+    .$variable
+  my_df <- df_5b_input[,colnames(df_5b_input) %in% c(target_met)]
+  my_df[rowSums(my_df>0)>=0.1*ncol(my_df),] -> my_df
+  df_transform <- decostand(as.data.frame(my_df), {{trans.method}}, MARGIN = 2)
+  df_clean_otu_ml <- t(df_transform) %>% 
+    data.frame(check.names = FALSE) %>% 
+    rownames_to_column(var = "tube_label")
+  
+  meta_clean_16s_scorad %>% 
+    filter(variable %in% df_clean_otu_ml$tube_label) -> meta_clean_16s_scorad_new
+  meta_clean_16s_scorad_new <- meta_clean_16s_scorad_new %>% 
+    mutate_at(c("SCORAD"), as.numeric)
+  meta_clean_16s_scorad_new <- meta_clean_16s_scorad_new %>% 
+    mutate_at(c("subject_id", "site_specific", "Sex", "Antibiotics", "Tanner", "Immune"), as.factor)
+  meta_clean_16s_scorad_new <- meta_clean_16s_scorad_new %>% 
+    mutate_at(c("SCORAD"), ~scale(., center = TRUE, scale = TRUE)) 
+  meta_clean_16s_scorad_new$SCORAD <- as.numeric(meta_clean_16s_scorad_new$SCORAD)
+  
+  # combine results
+  test_df <- left_join(df_clean_otu_ml, meta_clean_16s_scorad_new, by=c("tube_label"="variable")) %>%
+  pivot_longer(cols = c(-subject_id, -tube_label, -site_specific, -Sex, -Tanner, -Antibiotics, -SCORAD, -Immune), names_to = "species", values_to = "abundance") %>%
+  arrange(species)
+  
+  mlm_out <- test_df %>%
+    tidyr::nest(data = c(-species)) %>%
+    dplyr::mutate(model = map(data, ~ robust_random_nested_mlm_16s_scorad(my_data = .))) %>%
+    dplyr::select(-data) %>%
+    unnest(cols = c(model)) %>% 
+    data.frame() %>%
+    dplyr::rename(feature = species, metadata = term, coef = estimate, stderr = std.error, pval = p.value) %>%
+    mutate(log2FoldChange = log2(exp(coef))) %>% 
+    mutate(site=paste0({{site}}))
+  return(mlm_out)
+} 
+
+All_sites = c("Ra", "Mb", "Vf", "Hp", "Ac", "Ic", "Pc", "Ph")
+rclr_mlm_16s_scorad <- map(All_sites, run_mlm_16s_scorad, nested_sites_16s, "rclr")
+rclr_mlm_16s_scorad_out <- do.call(rbind, rclr_mlm_16s_scorad)
+
+
+rclr_mlm_16s_scorad_out %>% 
+  filter(metadata=="SCORAD") %>% 
+  select(c(feature, pval, padj, log2FoldChange, site))-> df_scorad
+
+ass_plot <- function(site){
+  df_p = paste("df", {{site}}, sep = "_")
+  df_p = df_scorad %>% 
+    filter(site == {{site}})
+  df_p <-  df_p %>% 
+    mutate_at(c(2:4), as.numeric) %>% 
+    mutate(across(where(is.numeric), round, 3))
+  df_p = df_p %>% 
+    mutate(group = case_when(
+    padj <= 0.1 & log2FoldChange > (0.7) ~ "increased",
+    padj <= 0.1 & log2FoldChange < (-0.7) ~ "decreased",
+    TRUE ~ "ns"
+  ))
+
+  cols <- c("increased" = "#d04671", "decreased" = "#936bc0", "ns" = "grey") 
+  sizes <- c("increased" = 1.5, "decreased" = 1.5, "ns" = 1)
+  alphas <- c("increased" = 1, "decreased" = 1, "ns" = 0.7)
+  species <- df_p %>% 
+    filter(group %in% c("increased", "decreased")) 
+  df_p <- df_p %>% 
+  mutate(group=fct_relevel(group, "increased", "decreased"))
+  pdes <- paste({{site}})
+  
+  p <- df_p %>% 
+    ggplot(aes(x=log2FoldChange, y=-log10(padj), size=group, alpha=group)) + 
+    geom_point(aes(color=group)) +
+    geom_hline(yintercept=-log10(0.1), linetype = "dashed", size=0.1) +
+    geom_vline(xintercept = c(-0.6, 0.6),
+             linetype = "dashed", size=0.1) +
+  scale_color_manual(values = cols) +
+  scale_size_manual(values = sizes) +
+  scale_alpha_manual(values = alphas) +
+  # geom_label_repel(data = species,
+  #                  aes(label=feature), fill = "white") +
+  geom_text_repel(data = species, aes(label = feature), show.legend  = F) +
+  theme_bw() + # Select theme with a white background  
+  theme(panel.border = element_rect(colour = "black", fill = NA, size= 0.5),    
+        panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank()) +
+  scale_x_continuous(breaks = c(seq(-2, 2, 1)),     
+                     limits = c(-2, 2)) +
+  scale_y_continuous(breaks = c(seq(0, 3, 0.5)),     
+                     limits = c(0, 3)) + 
+    theme(axis.title.x=element_text(size=8), axis.title.y=element_text(size=8)) + 
+    ylab("-log10(adjusted P-value)") +
+    theme(legend.position = "none") +
+    ggtitle(pdes) +
+    theme(plot.title = element_text(vjust = -10, hjust = 0.04, size = 6))
+  return(p)
+}
+
+all_sites <- c("Ra", "Mb", "Ac", "Ic", "Vf", "Pc", "Hp", "Ph")
+asso_all_plots <- map(all_sites, ass_plot)
+
+p5b <- asso_all_plots[[3]]
+
+p5b
+```
+
+# Figure 5c
+```{r}
+df_5c <- read.delim("/Users/youche/Desktop/DOCK8_codes/Input_files/fig5c.txt", header = TRUE, sep = "\t") # input
+df_5c$grp <- factor(df_5c$grp, levels = c("increased", "normal", "decreased"))
+df_5c$Group <- factor(df_5c$Group, levels = c("Pre-Tx", "Post-Tx-onIS-1M", "Post-Tx-onIS-2M", "Post-Tx-onIS-3M","Post-Tx-onIS-6M", "Post-Tx-onIS>12M", "Post-Tx-offIS-12M", "Post-Tx-offIS-24M"))
+
+p5c <- df_5c %>%  
+  filter(KEY %in% c("CD4", "CD8", "NK", "CD19")) %>% 
+  ggplot(aes(x=Group, y=log_num)) + 
+  geom_boxplot(lwd = 0.15, outlier.size = 0.1, outlier.shape = NA, width=0.4) +
+  geom_dotplot(binaxis='y', stackdir='center',stackratio=1.8, dotsize=1, aes(fill=grp), color=NA) +
+  # geom_smooth(method = "loess", se = FALSE, aes(group = KEY), span = 0.7, fill="lightgrey", size=0.3) + 
+  facet_grid(KEY~., scales = "free") + 
+  scale_fill_manual("Group", values = c("#dfd049", "#1E6CB5", "#936bc0")) + 
+  theme(axis.text.x = element_text(angle = 45, size=8, hjust=0.95,vjust=1), axis.title.x=element_blank(), axis.text.y=element_text(size=8), axis.title.y=element_blank()) +
+  theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank(), legend.title=element_text(size=10), legend.text=element_text(size=7)) + scale_y_continuous(
+  labels = scales::number_format(accuracy = 0.1)) 
+
+p5c
+```
+
+# Figure 5d
+```{r}
+df_supp22 <- read.delim("/Users/youche/Desktop/DOCK8_codes/Input_files/fig5d.txt", header = TRUE, sep = "\t") # input
+
+df_supp22$grp <- factor(df_supp22$grp, levels = c("Pre-Tx", "Post-Tx-onIS<=3M", "Post-Tx-onIS-6M", "Post-Tx-onIS>=12M", "Post-Tx-offIS-12M", "Post-Tx-offIS-24M"))
+
+spearman_viral_load <- function(immune){
+  viral_load <- df_supp22[["log_total_load"]]
+  immune_var <- df_supp22[[{{immune}}]]
+  spearman_result <- cor.test(viral_load, immune_var, method = "spearman") %>% tidy()
+  spearman_result$Immune <- {{immune}}
+  return(spearman_result)
+}
+
+immune_list <- c("CD4", "CD8", "NK", "CD19")
+
+spearman_viral_load_temp <- map(immune_list, spearman_viral_load)
+
+spearman_viral_load_out <- spearman_viral_load_temp %>% 
+  do.call(rbind, .) %>% 
+  mutate(p.adj = round(p.adjust(p.value, method = "BH"), 2))
+
+spearman_output_plot <- function(variable){
+  # variable_str <- deparse(substitute(variable))
+  R <- spearman_viral_load_out %>% filter(Immune==variable) %>% .$estimate %>% unname()
+  p.adj <- spearman_viral_load_out %>% filter(Immune==variable) %>% .$p.adj %>% unname()
+  spearman_sta <- paste0("R=", round(R,2), ", p=", p.adj)
+
+  p1 <- df_supp22 %>% 
+    ggplot(aes(x=log_total_load, y=eval(parse(text = variable)))) +
+    geom_point(aes(color=grp), size=0.4) +
+    geom_smooth(method = "lm", color = "black", size=0.5) +
+    scale_color_manual(values = c("#C7E9B4", "#47af6f","#7FCDBB", "#FEE090", "#1D91C0", "#081D58")) +
+    theme_bw() +
+    theme(axis.title.x=element_blank()) +
+    theme(legend.position = "none") +
+    ggtitle(spearman_sta) +
+    theme(plot.title = element_text(hjust = 0.05, vjust = -8.5, size = 6)) +
+    theme(panel.grid.minor=element_blank(), panel.grid.major=element_blank()) +
+    ylab({{variable}})
+
+  return(p1)
+}
+
+spearman_total_load_plot_list <- map(immune_list, spearman_output_plot)
+fig5d <- cowplot::plot_grid(plotlist = spearman_total_load_plot_list, ncol = 1)
+```
+
