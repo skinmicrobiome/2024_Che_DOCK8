@@ -1,9 +1,0 @@
-Term	logp	Group
-Interferon Alpha/Beta Signaling R-HSA-909733	11.37376732	Post
-Interferon Gamma Signaling R-HSA-877300	6.896835321	Post
-Chemokine Receptors Bind Chemokines R-HSA-380108	5.948189249	Post
-Cytokine Signaling In Immune System R-HSA-1280215	3.331538454	Post
-Signaling By Interleukins R-HSA-449147	2.245056357	Post
-Developmental Biology R-HSA-1266738	8.342510408	Pre
-Cellular Responses To Stress R-HSA-2262752	6.59919869	Pre
-Cellular Responses To Stimuli R-HSA-8953897	6.59919869	Pre
